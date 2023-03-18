@@ -4,48 +4,103 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>TechnicJelle</title>
+
+		<meta name="og:title" content="TechnicJelle">
+		<meta name="description" content="On this website you'll find info about me and my projects">
+		<meta name="og:description" content="On this website you'll find info about me and my projects">
+		<meta name="theme-color" content="#001FF1">
+		<meta name="og:image" content="https://raw.githubusercontent.com/TechnicJelle/TechnicJelle/main/Default(128)0001-0051.gif">
 		
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
 		<style>
+/* Global styles */
+:root {
+	--main-text-colour: #EEEEEE;
+}
+
+html {
+	height: 100%;
+}
+
 body {
 	background: #151515;
-	color: #EEEEEE;
+	color: var(--main-text-colour);
+
+	font-family: "Segoe UI", "Roboto", "Helvetica", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 16px;
+}
+
+.mono {
+	font-family: "JetBrainsMono NF", "JetBrains Mono", "ui-monospace", "SFMono-Regular", "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+}
+
+h1, h2 {
+	padding-bottom: 4px;
+	border-bottom: solid 1px;
+}
+
+main, h1, h2, .card {
+	border-color: #1C2229 !important;
+}
+
+img, .card {
+	border-radius: 3px;
+}
+
+a, a:visited {
+	color: #58A6FF;
+	text-decoration: none;
+}
+.stealth-link {
+	color: var(--main-text-colour);
+}
+
+summary {
+	cursor: pointer;
+	color: #aaaaaa;
+}
+
+/* Specific styles */
+body {
 	max-width: 900px;
 	margin: auto;
 	padding: 0 24px;
-	font-family: "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-	font-size: 16px;
-	
-	min-height: 100vh;
+
+	/* Push footer to bottom */
+	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
-main {
-	flex-grow: 1;
-	
-	margin: auto;
-	padding: 0 24px;
-	
-	border-style: solid;
-	border-width: 2px;
-	border-color: #1C2229;
-	border-radius: 8px;
-}
-
 header {
-	font-family: "JetBrainsMono NF", "JetBrains Mono", "ui-monospace", "SFMono-Regular", "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
 	font-size: 14px;
 	padding-top: 6px;
 	padding-left: 4px;
 	margin-bottom: 12px;
 }
-.small {
+
+span.small {
 	font-size: 12px;
 	color: #8B949E;
 	padding: 0 4px;
+}
+
+main {
+	flex-grow: 1; /* Push footer to bottom */
+
+	margin: auto;
+	padding: 0 24px;
+
+	border: solid 2px;
+	border-radius: 8px;
+}
+
+/* Haiku style */
+h1 + table tr>th:nth-child(2) {
+	padding-left: 16px;
+	font-style: italic;
 }
 
 footer {
@@ -53,33 +108,7 @@ footer {
 	font-size: 14px;
 }
 
-a {
-	color: #58A6FF;
-	text-decoration: none;
-}
-a:visited {
-	color: #58A6FF;
-}
-
-.muted {
-	color: #EEEEEE !important;
-}
-
-h1, h2 {
-	padding-bottom: 4px;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-}
-
-img {
-	border-radius: 3px;
-}
-
-h1 + table tr>th:nth-child(2) {
-	padding-left: 16px;
-	font-style: italic;
-}
-
+/* Card styles */
 .card * {
 	padding: 0;
 	margin: 0;
@@ -87,7 +116,6 @@ h1 + table tr>th:nth-child(2) {
 
 .card {
 	border: 1px solid;
-	border-radius: 3px;
 	padding: 8px;
 	margin: 2px 0;
 	width: 47%;
@@ -102,16 +130,13 @@ h1 + table tr>th:nth-child(2) {
 	}
 }
 
-h1, h2, .card {
-	border-color: #1C2229;
-}
-
 .card .stars {
 	position: absolute;
 	top: 4px;
 	right: 8px;
 }
 
+/* Language colours */
 .card .AutoHotkey {color: #6594B9;}
 .card .C {color: #555555;}
 .card .Cpp {color: #F34B7D;}
@@ -126,8 +151,8 @@ h1, h2, .card {
 		</style>
 	</head>
 	<body>
-		<header>
-			<a href="https://github.com/TechnicJelle?tab=repositories&type=source">TechnicJelle</a><span class="small">/</span><a href="https://github.com/TechnicJelle" class="muted"><span>README</span><span class="small">.md</span></a>
+		<header class="mono">
+			<a href="https://github.com/TechnicJelle?tab=repositories&type=source">TechnicJelle</a><span class="small">/</span><a href="https://github.com/TechnicJelle/TechnicJelle"><span class="stealth-link">README</span><span class="small">.md</span></a>
 		</header>
 		
 		<main>
@@ -146,11 +171,11 @@ h1, h2, .card {
 </tr>
 </tbody>
 </table>
-<p>My name is Jelle (/jɛlə/).
-I'm studying <em>Creative Media and Game Technologies</em> at <strong>Saxion University of Applied Sciences</strong> to become a game developer.</p>
+<p>My name is Jelle (<a href="https://en.wikipedia.org/wiki/Help:IPA/Dutch">IPA:</a> /jɛlə/), but you can call me Tech, if you prefer.
+I'm currently studying <em>Creative Media and Game Technologies</em> at <em>Saxion University of Applied Sciences</em> to become a better game developer.</p>
 <p>I love learning fun things and having fun learning things!</p>
 <details>
-<p><summary style="cursor: pointer; color: #aaaaaa;">Click here to read about my full journey as a developer</summary></p>
+<p><summary>Click here to read about my full journey as a developer</summary></p>
 <p>My first start with programming was GameMaker 8.1 Lite when I was eight. I started off only using the visual programming, and I never really got into GML. Sadly, most of the games I made back then have been lost to time.</p>
 <p>A year or two later I discovered Minecraft with its redstone, and I was sold. When command blocks were added a little later, I was even more hooked. I spent years playing with it, learning and getting better. I also loved the big tech modpacks, though my computer back then couldn't really run them well.</p>
 <p>When I was around eleven, my primary school installed Scratch on their computers. Me being the curious type and seeing that a new icon had appeared on the desktop, I clicked it and almost immediately recognized it as being a similar thing to GameMaker. I quickly became quite good at it, though sadly most of those projects have also been lost.</p>
@@ -225,7 +250,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/DoomGame"><h4>Doom Game</h4></a>
 	<p>Doom-ish clone made in the Saxion GXP Engine</p>
 	<p class="Cs">Language: C#</p>
-	<a href="https://github.com/TechnicJelle/DoomGame/stargazers" class="muted"><p class="stars">⭐2</p></a>
+	<a href="https://github.com/TechnicJelle/DoomGame/stargazers" class="stealth-link"><p class="stars">⭐2</p></a>
 
 </section>
 
@@ -240,7 +265,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/Phurey"><h4>Phurey</h4></a>
 	<p>2d slasher game made for the subject Game Design</p>
 	<p class="JavaScript">Language: JavaScript</p>
-	<a href="https://github.com/TechnicJelle/Phurey/stargazers" class="muted"><p class="stars">⭐1</p></a>
+	<a href="https://github.com/TechnicJelle/Phurey/stargazers" class="stealth-link"><p class="stars">⭐1</p></a>
 
 </section>
 
@@ -249,7 +274,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/GitDroid"><h4>GitDroid</h4></a>
 	<p>A third party Android app manager for apps uploaded to GitHub releases</p>
 	<p class="Dart">Language: Dart</p>
-	<a href="https://github.com/TechnicJelle/GitDroid/stargazers" class="muted"><p class="stars">⭐2</p></a>
+	<a href="https://github.com/TechnicJelle/GitDroid/stargazers" class="stealth-link"><p class="stars">⭐2</p></a>
 
 </section>
 
@@ -272,7 +297,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/TechnicJelle"><h4>TechnicJelle</h4></a>
 	<p>My GitHub profile's About Me page, and at the same time also my personal website</p>
 	<p class="Python">Language: Python</p>
-	<a href="https://github.com/TechnicJelle/TechnicJelle/stargazers" class="muted"><p class="stars">⭐2</p></a>
+	<a href="https://github.com/TechnicJelle/TechnicJelle/stargazers" class="stealth-link"><p class="stars">⭐2</p></a>
 
 </section>
 
@@ -288,7 +313,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/My-AutoHotKey-Scripts"><h4>My AutoHotKey Scripts</h4></a>
 	<p>This is a collection of all of my AHK Scripts</p>
 	<p class="AutoHotkey">Language: AutoHotkey</p>
-	<a href="https://github.com/TechnicJelle/My-AutoHotKey-Scripts/stargazers" class="muted"><p class="stars">⭐1</p></a>
+	<a href="https://github.com/TechnicJelle/My-AutoHotKey-Scripts/stargazers" class="stealth-link"><p class="stars">⭐1</p></a>
 
 </section>
 
@@ -320,7 +345,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/SolarSystem"><h4>Solar System</h4></a>
 	<p>A solar system simulation environment where you can play around with planets, suns, gravity and orbits</p>
 	<p class="Processing">Language: Processing</p>
-	<a href="https://github.com/TechnicJelle/SolarSystem/stargazers" class="muted"><p class="stars">⭐1</p></a>
+	<a href="https://github.com/TechnicJelle/SolarSystem/stargazers" class="stealth-link"><p class="stars">⭐1</p></a>
 
 </section>
 
@@ -343,7 +368,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/DiscordInviter"><h4>Discord Inviter</h4></a>
 	<p>A Minecraft Paper plugin that invites players to your Discord server if they haven't done so yet</p>
 	<p class="Java">Language: Java</p>
-	<a href="https://github.com/TechnicJelle/DiscordInviter/stargazers" class="muted"><p class="stars">⭐1</p></a>
+	<a href="https://github.com/TechnicJelle/DiscordInviter/stargazers" class="stealth-link"><p class="stars">⭐1</p></a>
 
 </section>
 
@@ -351,7 +376,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/RightClickCommand"><h4>Right Click Command</h4></a>
 	<p>A Minecraft Paper plugin that allows server owners to assign commands that get run when a block is clicked</p>
 	<p class="Java">Language: Java</p>
-	<a href="https://github.com/TechnicJelle/RightClickCommand/stargazers" class="muted"><p class="stars">⭐1</p></a>
+	<a href="https://github.com/TechnicJelle/RightClickCommand/stargazers" class="stealth-link"><p class="stars">⭐1</p></a>
 
 </section>
 
@@ -360,7 +385,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/BlueMapOfflinePlayerMarkers"><h4>BlueMap Offline Player Markers</h4></a>
 	<p>A Minecraft Paper plugin and BlueMap addon that adds markers where players have logged off</p>
 	<p class="Java">Language: Java</p>
-	<a href="https://github.com/TechnicJelle/BlueMapOfflinePlayerMarkers/stargazers" class="muted"><p class="stars">⭐7</p></a>
+	<a href="https://github.com/TechnicJelle/BlueMapOfflinePlayerMarkers/stargazers" class="stealth-link"><p class="stars">⭐7</p></a>
 
 </section>
 
@@ -368,7 +393,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/BlueMapChatMarkers"><h4>BlueMap Chat Markers</h4></a>
 	<p>A Minecraft Paper plugin and BlueMap addon that adds chat messages to BlueMap</p>
 	<p class="Java">Language: Java</p>
-	<a href="https://github.com/TechnicJelle/BlueMapChatMarkers/stargazers" class="muted"><p class="stars">⭐1</p></a>
+	<a href="https://github.com/TechnicJelle/BlueMapChatMarkers/stargazers" class="stealth-link"><p class="stars">⭐1</p></a>
 
 </section>
 
@@ -376,7 +401,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/BlueMapFloodgate"><h4>BlueMap Floodgate</h4></a>
 	<p>A Minecraft Paper plugin and BlueMap addon that adds GeyserMC/floodgate support</p>
 	<p class="Java">Language: Java</p>
-	<a href="https://github.com/TechnicJelle/BlueMapFloodgate/stargazers" class="muted"><p class="stars">⭐4</p></a>
+	<a href="https://github.com/TechnicJelle/BlueMapFloodgate/stargazers" class="stealth-link"><p class="stars">⭐4</p></a>
 
 </section>
 
@@ -391,14 +416,14 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 	<a href="https://github.com/TechnicJelle/BlueMapPlayerControl"><h4>BlueMap Player Control</h4></a>
 	<p>Minecraft Paper plugin that adds player hiding functionality to BlueMap</p>
 	<p class="Java">Language: Java</p>
-	<a href="https://github.com/TechnicJelle/BlueMapPlayerControl/stargazers" class="muted"><p class="stars">⭐2</p></a>
+	<a href="https://github.com/TechnicJelle/BlueMapPlayerControl/stargazers" class="stealth-link"><p class="stars">⭐2</p></a>
 
 </section>
 		<p></p>
 		</main>
 
 		<footer>
-			<p>Last updated on 2023-03-17 01:59:45+00:00</p>
+			<p>Last updated on 2023-03-18 00:52:43+00:00</p>
 			<address>
 				<p style="margin-bottom: 0;">Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a></p>
 			</address>
