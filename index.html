@@ -30,7 +30,7 @@ body {
 	background: #151515;
 	color: var(--main-text-colour);
 
-	font-family: "Segoe UI", "Roboto", "Helvetica", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-family: "Segoe UI", "Roboto", "Helvetica", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
 	font-size: 16px;
 }
 
@@ -97,7 +97,7 @@ summary {
 body {
 	max-width: 900px;
 	margin: auto;
-	padding: 0 24px;
+	padding: 0 2px;
 
 	/* Push footer to bottom */
 	min-height: 100%;
@@ -187,17 +187,10 @@ aside li {
 .card {
 	border: 1px solid;
 	padding: 8px;
-	margin: 2px 0;
-	width: 47%;
-	display: inline-block;
 	position: relative;
-}
 
-@media screen and (max-width: 800px) {
-	.card {
-		box-sizing: border-box;
-		width: 100%;
-	}
+	display: flex;
+	flex-direction: column;
 }
 
 .card .stars {
@@ -206,18 +199,35 @@ aside li {
 	right: 8px;
 }
 
+.card h4 {
+	margin-bottom: 2px;
+}
+
+@media screen and (min-width: 700px) {
+	.two-col {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4px;
+	}
+}
+
+.lang {
+	padding-top: 4px;
+	margin-top: auto;
+}
+
 /* Language colours */
-.card .AutoHotkey {color: #6594B9;}
-.card .C {color: #555555;}
-.card .Cpp {color: #F34B7D;}
-.card .Cs {color: #178600;}
-.card .Dart {color: #00B4AB;}
-.card .Java {color: #B07219;}
-.card .JavaScript {color: #F1E05A;}
-.card .Processing {color: #0096D8;}
-.card .Python {color: #3572A5;}
-.card .Stylus {color: #FF6347;}
-.card .None {color: rgba(255, 255, 255, 0.5);}
+.lang.AutoHotkey {color: #6594B9;}
+.lang.C {color: #555555;}
+.lang.Cpp {color: #F34B7D;}
+.lang.Cs {color: #178600;}
+.lang.Dart {color: #00B4AB;}
+.lang.Java {color: #B07219;}
+.lang.JavaScript {color: #F1E05A;}
+.lang.Processing {color: #0096D8;}
+.lang.Python {color: #3572A5;}
+.lang.Stylus {color: #FF6347;}
+.lang.None {color: rgba(255, 255, 255, 0.5);}
 
 		</style>
 	</head>
@@ -298,7 +308,7 @@ Some examples of things I made for other people are <a href="https://github.com/
 <a href="https://github.com/TechnicJelle/DiscordHydr8Bot">Hydr8</a>, and <a href="https://github.com/TechnicJelle/SimpleBlockCommands">Simple Block Commands</a>.
 Hardly a week goes by where I don't automate some part of my own or someone else's life.</p>
 <p>My logo was made by myself with Blender.
-Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">ArtStation</a></p><h2 id="find-me-on-other-platforms">Find me on other platforms<a href="#find-me-on-other-platforms" class="link"> 🔗</a></h2>
+Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">ArtStation</a>.</p><h2 id="find-me-on-other-platforms">Find me on other platforms<a href="#find-me-on-other-platforms" class="link"> 🔗</a></h2>
 <p><a href="mailto:technicjelleplay@gmail.com"><img alt="E-Mail" src="https://img.shields.io/badge/EMail-EA4335?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" /></a>
 <a href="https://technicjelle.tumblr.com/"><img alt="Blog" src="https://img.shields.io/badge/Blog-36465D?style=for-the-badge&amp;logo=tumblr&amp;logoColor=white" /></a>
 <a href="https://twitter.com/TechnicJelle/"><img alt="Twitter" src="https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&amp;logo=twitter&amp;logoColor=white" /></a>
@@ -354,385 +364,401 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 
 	</nav>
 </aside>
-<h2 id="games"><span id="🎮-games"></span>🎮 Games<a href="#games" class="link"> 🔗</a></h2>
+
+<h2 id="games"><span id="🎮-games"></span>🎮 Games<a href="#games" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="space-combat-3dx"><a href="https://github.com/TechnicJelle/SpaceCombat3DX">Space Combat 3DX</a><a href="#space-combat-3dx" class="link"> 🔗</a></h4>
 	<p>A combat flight sim game in space made in Unity</p>
-	<p class="Cs">Language: C#</p>
+	<p class="lang Cs">Language: C#</p>
 </section>
 
 <section class="card">
 	<h4 id="digiswamp-ag"><a href="https://github.com/Unrealitix/Project-Showoff">DigiSwamp AG</a><a href="#digiswamp-ag" class="link"> 🔗</a></h4>
 	<p>An Anti-Gravity Racing game set in a Digital Swamp</p>
-	<p class="Cs">Language: C#</p>
+	<p class="lang Cs">Language: C#</p>
 	<p class="stars"><a href="https://github.com/Unrealitix/Project-Showoff/stargazers" class="stealth-link">⭐1</a></p>
 </section>
 
 <section class="card">
 	<h4 id="sea-spelunking"><a href="https://github.com/TechnicJelle/CMGT-Project-Innovation">Sea Spelunking</a><a href="#sea-spelunking" class="link"> 🔗</a></h4>
 	<p>Multiplayer couch party game with innovative controls where you play as pirates looking for treasure!</p>
-	<p class="Cs">Language: C#</p>
+	<p class="lang Cs">Language: C#</p>
 </section>
 
 <section class="card">
 	<h4 id="geodesic"><a href="https://github.com/TechnicJelle/TEA_TEB">Geodesic</a><a href="#geodesic" class="link"> 🔗</a></h4>
 	<p>2D top-down space traversal game. Entry for the XP Study Association's 2025 GameJam </p>
-	<p class="Processing">Language: Processing</p>
+	<p class="lang Processing">Language: Processing</p>
 </section>
 
 <section class="card">
 	<h4 id="cmgt-intake"><a href="https://github.com/TechnicJelle/CMGT_Intake">CMGT Intake</a><a href="#cmgt-intake" class="link"> 🔗</a></h4>
 	<p>The game I have made for the intake for the study Creative Media and Game Technologies at Saxion University of Applied Sciences</p>
-	<p class="Processing">Language: Processing</p>
+	<p class="lang Processing">Language: Processing</p>
 </section>
 
 <section class="card">
 	<h4 id="afterparty"><a href="https://github.com/TechnicJelle/CMGT_PointAndClick">Afterparty</a><a href="#afterparty" class="link"> 🔗</a></h4>
 	<p>Afterparty is a hectic and fast-paced game in which you must clean up the house after a party, before your parents arrive home in five minutes.</p>
-	<p class="Processing">Language: Processing</p>
+	<p class="lang Processing">Language: Processing</p>
 </section>
 
 <section class="card">
 	<h4 id="chthonic-metal"><a href="https://github.com/TechnicJelle/Chthonic_Metal">Chthonic Metal</a><a href="#chthonic-metal" class="link"> 🔗</a></h4>
 	<p>A very basic turn-based fighting game in SFML, made for my uni's C++ course</p>
-	<p class="Cpp">Language: C++</p>
+	<p class="lang Cpp">Language: C++</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/Chthonic_Metal/stargazers" class="stealth-link">⭐1</a></p>
 </section>
 
 <section class="card">
 	<h4 id="phurey"><a href="https://github.com/TechnicJelle/Phurey">Phurey</a><a href="#phurey" class="link"> 🔗</a></h4>
 	<p>2D Slasher & Bullet Hell Game made for the subject Game Design</p>
-	<p class="JavaScript">Language: JavaScript</p>
+	<p class="lang JavaScript">Language: JavaScript</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/Phurey/stargazers" class="stealth-link">⭐1</a></p>
 </section>
 
 <section class="card">
 	<h4 id="doom-game"><a href="https://github.com/TechnicJelle/DoomGame">Doom Game</a><a href="#doom-game" class="link"> 🔗</a></h4>
 	<p>Doom-ish clone made in the Saxion GXP Engine</p>
-	<p class="Cs">Language: C#</p>
+	<p class="lang Cs">Language: C#</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/DoomGame/stargazers" class="stealth-link">⭐3</a></p>
 </section>
 
 <section class="card">
 	<h4 id="flappy-pong"><a href="https://github.com/TechnicJelle/FlappyPong">Flappy Pong</a><a href="#flappy-pong" class="link"> 🔗</a></h4>
 	<p>Pong, but with flappy bird controls for extra agony</p>
-	<p class="Cpp">Language: C++</p>
+	<p class="lang Cpp">Language: C++</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/FlappyPong/stargazers" class="stealth-link">⭐1</a></p>
 </section>
 
 <section class="card">
 	<h4 id="leadleg-2069"><a href="https://github.com/ameijboom/GGJ2024">LEADLEG 2069</a><a href="#leadleg-2069" class="link"> 🔗</a></h4>
 	<p>The project for the Global Game Jam 2024 @ Saxion University of Applied Sciences</p>
-	<p class="Cs">Language: C#</p>
+	<p class="lang Cs">Language: C#</p>
 </section>
 
 <section class="card">
 	<h4 id="catoms"><a href="https://github.com/TechnicJelle/Project-Final-Approach">Catoms</a><a href="#catoms" class="link"> 🔗</a></h4>
 	<p>Connect multiple atoms together to create the required molecule! [CMGT Y1Q4 Game: Catoms.]</p>
-	<p class="Cs">Language: C#</p>
+	<p class="lang Cs">Language: C#</p>
 </section>
 
 <section class="card">
 	<h4 id="she-can-vr"><a href="https://github.com/Unrealitix/Project-Customer">She Can VR</a><a href="#she-can-vr" class="link"> 🔗</a></h4>
 	<p>Currently most people working in STEM fields are men, but She Can VR exists to show you that women can have an equally big impact on the world of science!</p>
-	<p class="Cs">Language: C#</p>
+	<p class="lang Cs">Language: C#</p>
 </section>
 
 <section class="card">
 	<h4 id="tetsaw"><a href="https://github.com/TechnicJelle/Tetsaw">Tetsaw</a><a href="#tetsaw" class="link"> 🔗</a></h4>
 	<p>Small blocky Jigsaw game in Processing :)</p>
-	<p class="Processing">Language: Processing</p>
+	<p class="lang Processing">Language: Processing</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/Tetsaw/stargazers" class="stealth-link">⭐1</a></p>
 </section>
+</div>
 
-<h2 id="game-engines"><span id="⚙️-game-engines"></span>⚙️ Game Engines<a href="#game-engines" class="link"> 🔗</a></h2>
+<h2 id="game-engines"><span id="⚙️-game-engines"></span>⚙️ Game Engines<a href="#game-engines" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="neogxp"><a href="https://github.com/NeoGXP/NeoGXP">NeoGXP</a><a href="#neogxp" class="link"> 🔗</a></h4>
 	<p>A simple cross-platform 2D C# game engine. Initially used for education at Saxion CMGT, but after its deprecation as a learning tool, revived as full, public open source project!</p>
-	<p class="Cs">Language: C#</p>
+	<p class="lang Cs">Language: C#</p>
 	<p class="stars"><a href="https://github.com/NeoGXP/NeoGXP/stargazers" class="stealth-link">⭐2</a></p>
 </section>
 
 <section class="card">
 	<h4 id="llri2-experiments"><a href="https://github.com/Rythe-Interactive/LLRI2-Experiments">LLRI2 Experiments</a><a href="#llri2-experiments" class="link"> 🔗</a></h4>
 	<p>Collection of experiments with various GPU APIs, for evaluating which one to use for the Rythe Engine rewrite</p>
-	<p class="Cpp">Language: C++</p>
+	<p class="lang Cpp">Language: C++</p>
 </section>
+</div>
 
-<h2 id="tech-demos"><span id="💡-tech-demos"></span>💡 Tech Demos<a href="#tech-demos" class="link"> 🔗</a></h2>
+<h2 id="tech-demos"><span id="💡-tech-demos"></span>💡 Tech Demos<a href="#tech-demos" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="unreal-engine-5-github-actions-vr-template"><a href="https://github.com/TechnicJelle/UE5_GHActions_VRTemplate">Unreal Engine 5 GitHub Actions VR Template</a><a href="#unreal-engine-5-github-actions-vr-template" class="link"> 🔗</a></h4>
 	<p>A repository that shows a working GitHub Actions workflow for the default UE5 VR Game Template</p>
-	<p class="None">Language: n/a</p>
+	<p class="lang None">Language: n/a</p>
 </section>
 
 <section class="card">
 	<h4 id="flutter-user-fonts-demo"><a href="https://github.com/TechnicJelle/FlutterUserFontsDemo">Flutter User Fonts Demo</a><a href="#flutter-user-fonts-demo" class="link"> 🔗</a></h4>
 	<p>A Flutter tech demo that allows users to upload any font they wish to use for the whole app to use</p>
-	<p class="Dart">Language: Dart</p>
+	<p class="lang Dart">Language: Dart</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/FlutterUserFontsDemo/stargazers" class="stealth-link">⭐1</a></p>
 </section>
 
 <section class="card">
 	<h4 id="vulkan-psychedelic-cloths"><a href="https://github.com/TechnicJelle/VulkanPsychedelicCloths">Vulkan Psychedelic Cloths</a><a href="#vulkan-psychedelic-cloths" class="link"> 🔗</a></h4>
 	<p>A recreation of my uni's OpenGL assignment in Vulkan</p>
-	<p class="Cpp">Language: C++</p>
+	<p class="lang Cpp">Language: C++</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/VulkanPsychedelicCloths/stargazers" class="stealth-link">⭐1</a></p>
 </section>
+</div>
 
-<h2 id="desktop-software-tools"><span id="🖥️-desktop-software-tools"></span>🖥️ Desktop Software Tools<a href="#desktop-software-tools" class="link"> 🔗</a></h2>
+<h2 id="desktop-software-tools"><span id="🖥️-desktop-software-tools"></span>🖥️ Desktop Software Tools<a href="#desktop-software-tools" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="bluemap-gui"><a href="https://github.com/TechnicJelle/BlueMapGUI">BlueMap GUI</a><a href="#bluemap-gui" class="link"> 🔗</a></h4>
 	<p>A GUI wrapper around the BlueMap CLI, mainly to make using BlueMap easier to use on single player worlds. </p>
-	<p class="Dart">Language: Dart</p>
+	<p class="lang Dart">Language: Dart</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapGUI/stargazers" class="stealth-link">⭐8</a></p>
 </section>
+</div>
 
-<h2 id="apps"><span id="📱-apps"></span>📱 Apps<a href="#apps" class="link"> 🔗</a></h2>
+<h2 id="apps"><span id="📱-apps"></span>📱 Apps<a href="#apps" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="gitdroid"><a href="https://github.com/TechnicJelle/GitDroid">GitDroid</a><a href="#gitdroid" class="link"> 🔗</a></h4>
 	<p>A third party Android app manager for apps uploaded to GitHub releases</p>
-	<p class="Dart">Language: Dart</p>
+	<p class="lang Dart">Language: Dart</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/GitDroid/stargazers" class="stealth-link">⭐117</a></p>
 </section>
 
 <section class="card">
 	<h4 id="wesley-chess"><a href="https://github.com/TechnicJelle/WesleyChess">Wesley Chess</a><a href="#wesley-chess" class="link"> 🔗</a></h4>
 	<p>Simple Android chess app without any rules or restrictions. Useful for trying different rulesets</p>
-	<p class="Processing">Language: Processing</p>
+	<p class="lang Processing">Language: Processing</p>
 </section>
 
 <section class="card">
 	<h4 id="twitdirect"><a href="https://github.com/TechnicJelle/TwitDirect">TwitDirect</a><a href="#twitdirect" class="link"> 🔗</a></h4>
 	<p>Android app to redirect embed-fixer links to their respective official apps, instead of going through the browser</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/TwitDirect/stargazers" class="stealth-link">⭐1</a></p>
 </section>
 
 <section class="card">
 	<h4 id="vanir-uims"><span id="vanir-(uims)"></span><a href="https://github.com/Unrealitix/UIMS.App">Vanir (UIMS)</a><a href="#vanir-uims" class="link"> 🔗</a></h4>
 	<p>A Flutter app for Android and iOS to scan products to add to UIMS (Unrealitix Inventory management System)</p>
-	<p class="Dart">Language: Dart</p>
+	<p class="lang Dart">Language: Dart</p>
 </section>
 
 <section class="card">
 	<h4 id="life-wrench"><a href="https://github.com/TechnicJelle/LifeWrench">Life Wrench</a><a href="#life-wrench" class="link"> 🔗</a></h4>
 	<p>Magic: The Gathering helper app for Android</p>
-	<p class="Processing">Language: Processing</p>
+	<p class="lang Processing">Language: Processing</p>
 </section>
+</div>
 
-<h2 id="websites"><span id="🌐-websites"></span>🌐 Websites<a href="#websites" class="link"> 🔗</a></h2>
+<h2 id="websites"><span id="🌐-websites"></span>🌐 Websites<a href="#websites" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="technicjelle"><a href="https://github.com/TechnicJelle/TechnicJelle">TechnicJelle</a><a href="#technicjelle" class="link"> 🔗</a></h4>
 	<p>My GitHub profile's About Me page, and at the same time also my personal website</p>
-	<p class="Python">Language: Python</p>
+	<p class="lang Python">Language: Python</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/TechnicJelle/stargazers" class="stealth-link">⭐2</a></p>
 </section>
 
 <section class="card">
 	<h4 id="cmgtwitch"><a href="https://github.com/TechnicJelle/CMGTwitch">CMGTwitch</a><a href="#cmgtwitch" class="link"> 🔗</a></h4>
 	<p>An app concept that lets you easily (re)watch Saxion CMGT lectures</p>
-	<p class="Dart">Language: Dart</p>
+	<p class="lang Dart">Language: Dart</p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-marker-generator"><a href="https://github.com/TechnicJelle/BlueMapMarkerGenerator">BlueMap Marker Generator</a><a href="#bluemap-marker-generator" class="link"> 🔗</a></h4>
 	<p>A webapp that helps generate BlueMap markers</p>
-	<p class="Dart">Language: Dart</p>
+	<p class="lang Dart">Language: Dart</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapMarkerGenerator/stargazers" class="stealth-link">⭐4</a></p>
 </section>
+</div>
 
-<h2 id="server-software"><span id="🔌-server-software"></span>🔌 Server Software<a href="#server-software" class="link"> 🔗</a></h2>
+<h2 id="server-software"><span id="🔌-server-software"></span>🔌 Server Software<a href="#server-software" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="post-to-websocket-broadcaster-dart"><span id="post-to-websocket-broadcaster-(dart)"></span><a href="https://github.com/TechnicJelle/PostToWebsocketBroadcasterDart">Post To Websocket Broadcaster (Dart)</a><a href="#post-to-websocket-broadcaster-dart" class="link"> 🔗</a></h4>
 	<p>A server application that listens for HTTP POST requests and broadcasts the body of the request to all connected websockets.</p>
-	<p class="Dart">Language: Dart</p>
+	<p class="lang Dart">Language: Dart</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/PostToWebsocketBroadcasterDart/stargazers" class="stealth-link">⭐1</a></p>
 </section>
+</div>
 
-<h2 id="scripts"><span id="📝-scripts"></span>📝 Scripts<a href="#scripts" class="link"> 🔗</a></h2>
+<h2 id="scripts"><span id="📝-scripts"></span>📝 Scripts<a href="#scripts" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="my-autohotkey-scripts"><a href="https://github.com/TechnicJelle/My-AutoHotKey-Scripts">My AutoHotKey Scripts</a><a href="#my-autohotkey-scripts" class="link"> 🔗</a></h4>
 	<p>This is a collection of all of my AHK Scripts</p>
-	<p class="AutoHotkey">Language: AutoHotkey</p>
+	<p class="lang AutoHotkey">Language: AutoHotkey</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/My-AutoHotKey-Scripts/stargazers" class="stealth-link">⭐3</a></p>
 </section>
 
 <section class="card">
 	<h4 id="discord-reactor"><a href="https://github.com/TechnicJelle/DiscordReactor">Discord Reactor</a><a href="#discord-reactor" class="link"> 🔗</a></h4>
 	<p>Turns a sentence into Discord reaction messages!</p>
-	<p class="Python">Language: Python</p>
+	<p class="lang Python">Language: Python</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/DiscordReactor/stargazers" class="stealth-link">⭐1</a></p>
 </section>
+</div>
 
-<h2 id="discord-bots"><span id="🤖-discord-bots"></span>🤖 Discord Bots<a href="#discord-bots" class="link"> 🔗</a></h2>
+<h2 id="discord-bots"><span id="🤖-discord-bots"></span>🤖 Discord Bots<a href="#discord-bots" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="hydr8"><a href="https://github.com/TechnicJelle/DiscordHydr8Bot">Hydr8</a><a href="#hydr8" class="link"> 🔗</a></h4>
 	<p>A simple Discord bot that reminds you to drink water</p>
-	<p class="Python">Language: Python</p>
+	<p class="lang Python">Language: Python</p>
 </section>
+</div>
 
-<h2 id="skins"><span id="🎨-skins"></span>🎨 Skins<a href="#skins" class="link"> 🔗</a></h2>
+<h2 id="skins"><span id="🎨-skins"></span>🎨 Skins<a href="#skins" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="wikipedia-fix"><a href="https://github.com/TechnicJelle/WikipediaFix">Wikipedia Fix</a><a href="#wikipedia-fix" class="link"> 🔗</a></h4>
 	<p>A userstyle that allows you to customise the new Wikipedia look to be a bit more like the old one</p>
-	<p class="Stylus">Language: Stylus</p>
+	<p class="lang Stylus">Language: Stylus</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/WikipediaFix/stargazers" class="stealth-link">⭐1</a></p>
 </section>
+</div>
 
-<h2 id="simulations"><span id="🌌-simulations"></span>🌌 Simulations<a href="#simulations" class="link"> 🔗</a></h2>
+<h2 id="simulations"><span id="🌌-simulations"></span>🌌 Simulations<a href="#simulations" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="solar-system"><a href="https://github.com/TechnicJelle/SolarSystem">Solar System</a><a href="#solar-system" class="link"> 🔗</a></h4>
 	<p>A solar system simulation environment where you can play around with planets, suns, gravity and orbits</p>
-	<p class="Processing">Language: Processing</p>
+	<p class="lang Processing">Language: Processing</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/SolarSystem/stargazers" class="stealth-link">⭐2</a></p>
 </section>
 
 <section class="card">
 	<h4 id="fireworks-display-in-pge"><a href="https://github.com/TechnicJelle/FireworksPGE">Fireworks Display in PGE</a><a href="#fireworks-display-in-pge" class="link"> 🔗</a></h4>
 	<p>A simple, yet pretty fireworks show, coded in C++ with the OLC Pixel Game Engine</p>
-	<p class="Cpp">Language: C++</p>
+	<p class="lang Cpp">Language: C++</p>
 </section>
+</div>
 
-<h2 id="libraries"><span id="📚-libraries"></span>📚 Libraries<a href="#libraries" class="link"> 🔗</a></h2>
+<h2 id="libraries"><span id="📚-libraries"></span>📚 Libraries<a href="#libraries" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="update-checker-java"><a href="https://github.com/TechnicJelle/UpdateCheckerJava">Update Checker Java</a><a href="#update-checker-java" class="link"> 🔗</a></h4>
 	<p>A simple Java library that checks for updates from a GitHub repo's releases</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/UpdateCheckerJava/stargazers" class="stealth-link">⭐3</a></p>
 </section>
+</div>
 
-<h2 id="minecraft-plugins"><span id="⛏️-minecraft-plugins"></span>⛏️ Minecraft Plugins<a href="#minecraft-plugins" class="link"> 🔗</a></h2>
+<h2 id="minecraft-plugins"><span id="⛏️-minecraft-plugins"></span>⛏️ Minecraft Plugins<a href="#minecraft-plugins" class="link"> 🔗</a></h2><div class="two-col">
 <section class="card">
 	<h4 id="mcutils"><a href="https://github.com/TechnicJelle/MCUtils">MCUtils</a><a href="#mcutils" class="link"> 🔗</a></h4>
 	<p>A small library with a collection of useful functions for Minecraft paper plugins</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 </section>
 
 <section class="card">
 	<h4 id="simple-block-commands"><a href="https://github.com/TechnicJelle/SimpleBlockCommands">Simple Block Commands</a><a href="#simple-block-commands" class="link"> 🔗</a></h4>
 	<p>A Minecraft Paper plugin that allows server owners to assign commands that get run when a block is clicked</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/SimpleBlockCommands/stargazers" class="stealth-link">⭐1</a></p>
 </section>
 
 <section class="card">
 	<h4 id="discord-inviter"><a href="https://github.com/TechnicJelle/DiscordInviter">Discord Inviter</a><a href="#discord-inviter" class="link"> 🔗</a></h4>
 	<p>A Minecraft Paper plugin that invites players to your Discord server if they haven't done so yet</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/DiscordInviter/stargazers" class="stealth-link">⭐1</a></p>
 </section>
+</div>
 
-<h3 id="bluemap-addons"><span id="🌐-bluemap-addons"></span>🌐 <a href="https://github.com/BlueMap-Minecraft/BlueMap#readme">BlueMap</a> Addons<a href="#bluemap-addons" class="link"> 🔗</a></h3>
+<h3 id="bluemap-addons"><span id="🌐-bluemap-addons"></span>🌐 <a href="https://github.com/BlueMap-Minecraft/BlueMap#readme">BlueMap</a> Addons<a href="#bluemap-addons" class="link"> 🔗</a></h3><div class="two-col">
 <section class="card">
 	<h4 id="bmutils"><a href="https://github.com/TechnicJelle/BMUtils">BMUtils</a><a href="#bmutils" class="link"> 🔗</a></h4>
 	<p>A small library with a collection of useful functions for BlueMap addons</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-offline-player-markers"><a href="https://github.com/TechnicJelle/BlueMapOfflinePlayerMarkers">BlueMap Offline Player Markers</a><a href="#bluemap-offline-player-markers" class="link"> 🔗</a></h4>
 	<p>Minecraft Paper plugin and BlueMap addon that adds markers where players have logged off</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapOfflinePlayerMarkers/stargazers" class="stealth-link">⭐15</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-sign-extractor"><a href="https://github.com/TechnicJelle/BlueMapSignExtractor">BlueMap Sign Extractor</a><a href="#bluemap-sign-extractor" class="link"> 🔗</a></h4>
 	<p>Minecraft Paper plugin and BlueMap addon that adds markers for all signs</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapSignExtractor/stargazers" class="stealth-link">⭐8</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-chat-markers"><a href="https://github.com/TechnicJelle/BlueMapChatMarkers">BlueMap Chat Markers</a><a href="#bluemap-chat-markers" class="link"> 🔗</a></h4>
 	<p>Minecraft Paper plugin and BlueMap addon that adds chat messages to the map</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapChatMarkers/stargazers" class="stealth-link">⭐8</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-filtered-entities"><a href="https://github.com/TechnicJelle/BlueMapFilteredEntities">BlueMap Filtered Entities</a><a href="#bluemap-filtered-entities" class="link"> 🔗</a></h4>
 	<p>Minecraft Paper plugin and BlueMap addon that allows you to track entities on your map, with lots of filtering options</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapFilteredEntities/stargazers" class="stealth-link">⭐5</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-mc-map-sync"><a href="https://github.com/TechnicJelle/BlueMapMCMapSync">BlueMap MC Map Sync</a><a href="#bluemap-mc-map-sync" class="link"> 🔗</a></h4>
 	<p>Allow your players to discover your BlueMap more immersively, by syncing with in-game maps!</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapMCMapSync/stargazers" class="stealth-link">⭐2</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-floodgate"><a href="https://github.com/TechnicJelle/BlueMapFloodgate">BlueMap Floodgate</a><a href="#bluemap-floodgate" class="link"> 🔗</a></h4>
 	<p>Minecraft Paper plugin and BlueMap addon that adds GeyserMC/floodgate support</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapFloodgate/stargazers" class="stealth-link">⭐15</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-spawn-marker"><a href="https://github.com/TechnicJelle/BlueMapSpawnMarker">BlueMap Spawn Marker</a><a href="#bluemap-spawn-marker" class="link"> 🔗</a></h4>
 	<p>BlueMap Native addon that adds a customisable marker at the world spawn</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapSpawnMarker/stargazers" class="stealth-link">⭐1</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-native-addon-template"><a href="https://github.com/TechnicJelle/BlueMapNativeAddonTemplate">BlueMap Native Addon Template</a><a href="#bluemap-native-addon-template" class="link"> 🔗</a></h4>
 	<p>A template project you can use as a base for your own BlueMap Native Addon</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapNativeAddonTemplate/stargazers" class="stealth-link">⭐3</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-structures"><a href="https://github.com/TechnicJelle/BlueMapStructures">BlueMap Structures</a><a href="#bluemap-structures" class="link"> 🔗</a></h4>
 	<p>Minecraft Paper plugin and BlueMap addon that adds markers for all structures </p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapStructures/stargazers" class="stealth-link">⭐5</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-death-markers"><a href="https://github.com/TechnicJelle/BlueMapDeathMarkers">BlueMap Death Markers</a><a href="#bluemap-death-markers" class="link"> 🔗</a></h4>
 	<p>Minecraft Paper plugin and BlueMap addon that adds markers where players have died</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapDeathMarkers/stargazers" class="stealth-link">⭐5</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-bluemap-area-control"><a href="https://github.com/TechnicJelle/BlueMapAreaControl">BlueMap BlueMap Area Control</a><a href="#bluemap-bluemap-area-control" class="link"> 🔗</a></h4>
 	<p>Minecraft Paper plugin and BlueMap addon for greater control over which areas get rendered</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapAreaControl/stargazers" class="stealth-link">⭐3</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-player-control"><a href="https://github.com/TechnicJelle/BlueMapPlayerControl">BlueMap Player Control</a><a href="#bluemap-player-control" class="link"> 🔗</a></h4>
 	<p>Minecraft Paper plugin and BlueMap addon that adds player hiding functionality to BlueMap</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapPlayerControl/stargazers" class="stealth-link">⭐7</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-new-map"><a href="https://github.com/TechnicJelle/BlueMapNewMap">BlueMap New Map</a><a href="#bluemap-new-map" class="link"> 🔗</a></h4>
 	<p>Tiny Paper plugin addon for BlueMap to more easily create new maps</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-web-addons"><a href="https://github.com/TechnicJelle/BlueMapWebAddons">BlueMap Web Addons</a><a href="#bluemap-web-addons" class="link"> 🔗</a></h4>
 	<p>A repository of useful scripts and styles for the BlueMap Web App. Accepting PRs with addons from others</p>
-	<p class="JavaScript">Language: JavaScript</p>
+	<p class="lang JavaScript">Language: JavaScript</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapWebAddons/stargazers" class="stealth-link">⭐13</a></p>
 </section>
 
 <section class="card">
 	<h4 id="bluemap-custom-skin-provider"><a href="https://github.com/TechnicJelle/BlueMapCustomSkinProvider">BlueMap Custom Skin Provider</a><a href="#bluemap-custom-skin-provider" class="link"> 🔗</a></h4>
 	<p>Minecraft Paper plugin and BlueMap addon for using a custom skin server with BlueMap</p>
-	<p class="Java">Language: Java</p>
+	<p class="lang Java">Language: Java</p>
 	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapCustomSkinProvider/stargazers" class="stealth-link">⭐1</a></p>
 </section>
+</div>
+
 		<p></p>
 		</main>
 
@@ -754,7 +780,7 @@ Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">A
 				</div>
 			</section>
 
-			<p>Last updated on 2025-06-25 21:30:10+00:00</p>
+			<p>Last updated on 2025-06-26 00:53:07+00:00</p>
 			<address>
 				<p style="margin-bottom: 0;">Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a></p>
 			</address>
