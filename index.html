@@ -1,814 +1,1470 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>TechnicJelle</title>
+<head>
+<meta charset="UTF-8">
+<title>TechnicJelle</title>
 
-		<meta name="og:title" content="TechnicJelle">
-		<meta name="description" content="On this website you'll find info about me and my projects">
-		<meta name="og:description" content="On this website you'll find info about me and my projects">
-		<meta name="theme-color" content="#001FF1">
-		<meta name="og:image" content="https://raw.githubusercontent.com/TechnicJelle/TechnicJelle/main/Default(128)0001-0051.gif">
-		
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="og:title" content="TechnicJelle">
+<meta name="description" content="On this website you'll find info about me and my projects">
+<meta name="og:description" content="On this website you'll find info about me and my projects">
+<meta name="theme-color" content="#001FF1">
+<meta name="og:image" content="https://technicjelle.com/images/logo-128.gif">
+<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett">
 
-		<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+<link rel="icon" href="/favicon32.png" type=image/png sizes=32x32>
+<link rel="icon" href="/favicon16.png" type=image/png sizes=16x16>
+<link rel="preload" href="/styles/main.css" as=style>
+<link rel="stylesheet" href="/styles/main.css">
 
-		<style>
-/* Global styles */
-:root {
-	--main-text-colour: #EEEEEE;
-}
+<style>
+body { background: #151515; }
+</style>
+</head>
 
-html {
-	height: 100%;
-}
+<body>
+<header>
+<nav class="mono-font" style="display: flex; align-items: baseline;">
+<a href="/">TechnicJelle</a>
+<span class="small">/</span>
+<span>README</span>
+<span class="small">.md</span>
+</nav>
+</header>
 
-body {
-	background: #151515;
-	color: var(--main-text-colour);
+<main>
+<!--- region: title -->
 
-	font-family: "Segoe UI", "Roboto", "Helvetica", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
-	font-size: 16px;
-}
+<h1 id="hi-there">Hi there! 👋</h1>
 
-img {
-	max-width: 100%;
-}
+<!--- region: visual -->
 
-.mono-font {
-	font-family: "JetBrainsMono NF", "JetBrains Mono", "ui-monospace", "SFMono-Regular", "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	scroll-margin-top: 2em;
-}
-
-h1, h2 {
-	padding-bottom: 4px;
-	border-bottom: solid 1px;
-}
-
-h2 > a.link,
-h3 > a.link,
-h4 > a.link {
-	display: none;
-}
-
-/* Anchor point for the link emoji */
-h2, h3, h4 {
-	position: relative;
-}
-
-h2:hover > a.link,
-h3:hover > a.link,
-h4:hover > a.link {
-	display: inline;
-	font-size: 0.7em;
-	margin-left: 0.3em;
-	position: absolute; /*do not actually take up any space, to prevent layout shifts*/
-	top: 0.2em;
-}
-/* h2 needs a bit more offset */
-h2:hover > a.link {
-	top: 0.3em;
-}
-
-main, h1, h2, .card {
-	border-color: #1C2229 !important;
-}
-
-img, .card {
-	border-radius: 3px;
-}
-
-a, a:visited {
-	color: #58A6FF;
-	text-decoration: none;
-}
-.stealth-link {
-	color: var(--main-text-colour) !important;
-}
-
-summary {
-	cursor: pointer;
-	color: #aaaaaa;
-}
-
-/* Specific styles */
-body {
-	max-width: 900px;
-	margin: auto;
-	padding: 0 2px;
-
-	/* Push footer to bottom */
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-header {
-	font-size: 14px;
-	padding-top: 6px;
-	padding-left: 4px;
-	margin-bottom: 12px;
-}
-
-span.small {
-	font-size: 12px;
-	color: #8B949E;
-	padding: 0 4px;
-}
-
-main {
-	flex-grow: 1; /* Push footer to bottom */
-
-	margin: auto;
-	padding: 0 24px;
-
-	border: solid 2px;
-	border-radius: 8px;
-}
-
-/* Haiku style */
-h1 + table tr>th:nth-child(2) {
-	padding-left: 16px;
-	font-style: italic;
-}
-
-footer {
-	text-align: right;
-	font-size: 14px;
-}
-
-footer #webrings-container {
-	text-align: center;
-	font-size: 1rem;
-}
-footer #webrings-container div {
-	font-size: 1.2rem;
-}
-
-footer #webrings-container h2 {
-	font-size: 1.3rem;
-}
-
-footer #webrings-container h2,
-footer #webrings-container h4 {
-	margin-block: 0.7em;
-}
-
-
-/* Table of Contents style */
-aside h2 {
-	margin-bottom: 0;
-}
-
-aside ul {
-	padding-left: 1em;
-}
-
-aside li {
-	list-style-type: none;
-}
-
-@media screen and (min-width: 1500px) {
-	aside {
-		position: fixed;
-		top: 0;
-		left: 2em;
-	}
-}
-
-/* Card styles */
-.card * {
-	padding: 0;
-	margin: 0;
-}
-
-.card {
-	border: 1px solid;
-	padding: 8px;
-	position: relative;
-
-	display: flex;
-	flex-direction: column;
-}
-
-.card .stars {
-	position: absolute;
-	top: 4px;
-	right: 8px;
-}
-
-.card h4 {
-	margin-bottom: 2px;
-}
-
-@media screen and (min-width: 700px) {
-	.two-col {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 4px;
-	}
-}
-
-.lang {
-	padding-top: 4px;
-	margin-top: auto;
-}
-
-/* Language colours */
-.lang.AutoHotkey {color: #6594B9;}
-.lang.C {color: #555555;}
-.lang.Cpp {color: #F34B7D;}
-.lang.Cs {color: #178600;}
-.lang.Dart {color: #00B4AB;}
-.lang.Java {color: #B07219;}
-.lang.JavaScript {color: #F1E05A;}
-.lang.Processing {color: #0096D8;}
-.lang.Python {color: #3572A5;}
-.lang.Stylus {color: #FF6347;}
-.lang.None {color: rgba(255, 255, 255, 0.5);}
-
-		</style>
-	</head>
-	<body>
-		<header class="mono-font">
-			<a href="https://github.com/TechnicJelle?tab=repositories&type=source">TechnicJelle</a><span class="small">/</span><a href="https://github.com/TechnicJelle/TechnicJelle"><span class="stealth-link">README</span><span class="small">.md</span></a>
-		</header>
-		
-		<main>
-<h1>Hi there! 👋</h1>
 <table>
-	<thead>
-	<tr>
-		<th><img src="https://raw.githubusercontent.com/TechnicJelle/TechnicJelle/badges/Default(128)0001-0051.gif" alt="animated version of my logo"></th>
-		<th style="text-align: left;">Programming's my art<br>Empty files are my canvas<br>And code is my brush</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-		<td></td>
-		<td></td>
-	</tr>
-	</tbody>
+<thead>
+<tr>
+<th style="text-align: left;"> <img src="images/logo-128.gif" alt="animated version of my logo" width=128 height=128> </th>
+<th style="text-align: left;"> Programming's my art<br/>Empty files are my canvas<br/>And code is my brush </th>
+</tr>
+</thead>
+<tbody>
+
+</tbody>
 </table>
-<p>My name is Jelle (<a href="https://en.wikipedia.org/wiki/Help:IPA/Dutch">IPA</a>: /ˈjɛ.lə/), and I like creating stuff!<br />
-I am currently looking for a Game Graphics Programming job.<br />
+
+<!--- region: intro -->
+
+<p>
+My name is Jelle (<a href="https://en.wikipedia.org/wiki/Help:IPA/Dutch">IPA</a>: /ˈjɛ.lə/), and I like creating stuff!  <br/>
+I am currently looking for a Game Graphics Programming job.  <br/>
 In July 2025, I graduated <a href="https://en.wikipedia.org/wiki/Latin_honors#Netherlands">Cum Laude (With Honours)</a>
-the study <em>Creative Media and Game Technologies</em> at <em>Saxion University of Applied Sciences</em>.</p>
-<p>I love learning fun things and having fun learning things!</p>
-<details>
-<summary>Click here to read about my full journey as a developer</summary>
-<p>My first start with programming was GameMaker 8.1 Lite when I was eight.
+the study <em>Creative Media and Game Technologies</em> at <em>Saxion University of Applied Sciences</em>.
+</p>
+
+
+<p>
+I love learning fun things and having fun learning things!
+</p>
+
+
+<details markdown="1">
+
+<summary>
+
+Click here to read about my full journey as a developer</summary>
+
+<p>
+My first start with programming was GameMaker 8.1 Lite when I was eight.
 I started off only using the visual programming, and I never really got into GML.
-Sadly, most of the games I made back then have been lost to time.</p>
-<p>A year or two later I discovered Minecraft with its redstone, and I was sold.
+Sadly, most of the games I made back then have been lost to time.
+</p>
+
+
+<p>
+A year or two later I discovered Minecraft with its redstone, and I was sold.
 When command blocks were added a little later, I was even more hooked.
 I spent years playing with it, learning and getting better.
-I also loved the big tech modpacks, though my computer back then couldn't really run them well.</p>
-<p>When I was around eleven, my primary school installed Scratch on their computers.
+I also loved the big tech modpacks, though my computer back then couldn't really run them well.
+</p>
+
+
+<p>
+When I was around eleven, my primary school installed Scratch on their computers.
 Me being the curious type and seeing that a new icon had appeared on the desktop,
 I clicked it and almost immediately recognized it as being a similar thing to GameMaker.
-I quickly became quite good at it, though sadly most of those projects have also been lost.</p>
-<p>Around thirteen, I tried my hand at making Android Apps with Android Studio, which was my first usage of a "real" IDE.
+I quickly became quite good at it, though sadly most of those projects have also been lost.
+</p>
+
+
+<p>
+Around thirteen, I tried my hand at making Android Apps with Android Studio, which was my first usage of a "real" IDE.
 It was difficult to suddenly use such a huge, complicated program, but ultimately,
 I did succeed in making an app that my parents still use to this day.
 I enjoyed learning Java during the process of making these apps, though I probably should have learned Java first,
-and only then started making apps with it.</p>
-<p>Around 2017, I played a lot of the game Scrap Mechanic, and when they released the mod tool,
+and only then started making apps with it.
+</p>
+
+
+<p>
+Around 2017, I played a lot of the game Scrap Mechanic, and when they released the mod tool,
 I was one of the first people to release a mod onto the Steam Workshop.
-<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=876955273">My most popular mod</a> has been downloaded almost 50 000 times!</p>
-<p>For the second half of secondary school, I had to buy a TI 84 CE-T calculator
-and I almost immediately started making useful programs and fun games in TI-Basic.</p>
-<p>Then I discovered The Coding Train on YouTube and I started using Processing a lot.
+<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=876955273">My most popular mod</a> has been downloaded almost 50 000 times!
+</p>
+
+
+<p>
+For the second half of secondary school, I had to buy a TI 84 CE-T calculator
+and I almost immediately started making useful programs and fun games in TI-Basic.
+</p>
+
+
+<p>
+Then I discovered The Coding Train on YouTube and I started using Processing a lot.
 So for the next four or five years I used that for basically all of my programming.
-I don't use it that much anymore these days, but I still really like it.</p>
-<p>I have also made a few Minecraft plugins in Java, scripts in Python, websites with raw HTML and CSS,
-and C++ and C programs, among many other things. I like to experiment with a lot of things and learn a lot.</p>
-<p>During my first year at Saxion I have learnt C# with their GXP Engine, which I'm working on overhauling with a couple of fellow students.
-I also learnt Unity, which I have since made a couple game (prototypes) with.</p>
-<p>In the holiday after that first year, I worked a lot on a project that I felt needed to exist: GitDroid.
+I don't use it that much anymore these days, but I still really like it.
+</p>
+
+
+<p>
+I have also made a few Minecraft plugins in Java, scripts in Python, websites with raw HTML and CSS,
+and C++ and C programs, among many other things. I like to experiment with a lot of things and learn a lot.
+</p>
+
+
+<p>
+During my first year at Saxion I have learnt C# with their GXP Engine, which I'm working on overhauling with a couple of fellow students.
+I also learnt Unity, which I have since made a couple game (prototypes) with.
+</p>
+
+
+<p>
+In the holiday after that first year, I worked a lot on a project that I felt needed to exist: GitDroid.
 It's an Android app, made with Flutter, that allows you to easily install and update other Android apps from GitHub.
-It's still in development, but it's already quite usable.</p>
-<p>During my second year at Saxion, I officially learnt C++ (I'd been tinkering with it off and on for a couple of years prior)
-and I'm also learning Unreal Engine. Learning Rust also seems like fun!</p>
-<p>I've also been continuing my use of Flutter, and I've been making some other things with it as well, such as CMGTwitch.
-During my usage of Flutter, I've naturally been using Dart, which I've grown to like quite a lot.</p>
-<p>During my third year at Saxion, I had my first internship at a company that develops XR trainings for other businesses.
-It was a lot of fun to work there, with such friendly and knowledgeable colleagues. I learnt a lot there.</p>
-<p>In the first half of my fourth and last year at Saxion, I was a part of a ten-person team,
+It's still in development, but it's already quite usable.
+</p>
+
+
+<p>
+During my second year at Saxion, I officially learnt C++ (I'd been tinkering with it off and on for a couple of years prior)
+and I'm also learning Unreal Engine. Learning Rust also seems like fun!
+</p>
+
+
+<p>
+I've also been continuing my use of Flutter, and I've been making some other things with it as well, such as CMGTwitch.
+During my usage of Flutter, I've naturally been using Dart, which I've grown to like quite a lot.
+</p>
+
+
+<p>
+During my third year at Saxion, I had my first internship at a company that develops XR trainings for other businesses.
+It was a lot of fun to work there, with such friendly and knowledgeable colleagues. I learnt a lot there.
+</p>
+
+
+<p>
+In the first half of my fourth and last year at Saxion, I was a part of a ten-person team,
 where we worked on an <a href="https://technicjelle.tumblr.com/tagged/Weaving%20Factory">Unreal Engine VR Experience</a> together.
 My role in the project was of Infrastructure Engineer, and as part of that, I set up Perforce Helix Core as Version Control System for us all to use.
-In addition to that, I set up automated builds with Jenkins, to keep track of build-breaking bugs that might slip in.<br />
-In that same time, I also worked as a Teacher's Assistant for Saxion, helping with the C++ and 3D Rendering courses.</p>
-<p>In the second half, I did a Graduation Internship at <a href="https://github.com/Rythe-Interactive">Rythe Interactive</a>, as a Graphics Programmer.
+In addition to that, I set up automated builds with Jenkins, to keep track of build-breaking bugs that might slip in.  <br/>
+In that same time, I also worked as a Teacher's Assistant for Saxion, helping with the C++ and 3D Rendering courses.
+</p>
+
+
+<p>
+In the second half, I did a Graduation Internship at <a href="https://github.com/Rythe-Interactive">Rythe Interactive</a>, as a Graphics Programmer.
 I was tasked with creating prototypes for the new Low Level Rendering Interface for the next rewrite of the engine.
 During this project, I solidified my knowledge of the basics of modern GPU Programming with Vulkan, but also SDL3's GPU API.
-You can read the graduation thesis I wrote for this <a href="https://github.com/TechnicJelle/CMGT_GraduationReport">here</a>!</p>
-<p>In July 2025, I graduated <a href="https://en.wikipedia.org/wiki/Latin_honors#Netherlands">Cum Laude (With Honours)</a>
+You can read the graduation thesis I wrote for this <a href="https://github.com/TechnicJelle/CMGT_GraduationReport">here</a>!
+</p>
+
+
+<p>
+In July 2025, I graduated <a href="https://en.wikipedia.org/wiki/Latin_honors#Netherlands">Cum Laude (With Honours)</a>
 the study <em>Creative Media and Game Technologies</em> at <em>Saxion University of Applied Sciences</em>.
-<img alt="A photo of a Saxion diploma, showing the study name &quot;Creative Media and Game Technologies&quot;, the personal name &quot;Jelle&quot;, and the degree type &quot;Bachelor of Science&quot;" src="images/cmgt_diploma.webp" /></p>
+<img src="images/cmgt_diploma.webp" alt="A photo of a Saxion diploma, showing the study name &quot;Creative Media and Game Technologies&quot;, the personal name &quot;Jelle&quot;, and the degree type &quot;Bachelor of Science&quot;" width=3472 height=3689 style="max-width: 100%; height: auto; max-height: 3689px;">
+</p>
+
+
 </details>
-<p>Not only do I really like making games, I also really enjoy making tools for people to make their lives easier in some way.
+
+<p>
+Not only do I really like making games, I also really enjoy making tools for people to make their lives easier in some way.
 Some examples of things I made for other people are <a href="https://github.com/TechnicJelle/WesleyChess">WesleyChess</a>, <a href="https://github.com/TechnicJelle/LifeWrench">LifeWrench</a>,
 <a href="https://github.com/TechnicJelle/DiscordHydr8Bot">Hydr8</a>, and <a href="https://github.com/TechnicJelle/SimpleBlockCommands">Simple Block Commands</a>.
-Hardly a week goes by where I don't automate some part of my own or someone else's life.</p>
-<p>My logo was made by myself with Blender.
-Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">ArtStation</a>.</p><h2 id="find-me-on-other-platforms">Find me on other platforms<a href="#find-me-on-other-platforms" class="link"> 🔗</a></h2>
-<p><a href="mailto:technicjelleplay@gmail.com"><img alt="E-Mail" src="https://img.shields.io/badge/EMail-EA4335?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" /></a>
-<a href="https://technicjelle.tumblr.com/"><img alt="Blog" src="https://img.shields.io/badge/Blog-36465D?style=for-the-badge&amp;logo=tumblr&amp;logoColor=white" /></a>
-<a href="https://www.linkedin.com/in/technicjelle/"><img alt="Linkedin" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" /></a>
-<a href="https://www.artstation.com/TechnicJelle"><img alt="ArtStation" src="https://img.shields.io/badge/ArtStation-13AFF0?style=for-the-badge&amp;logo=artstation&amp;logoColor=white" /></a>
-<a href="https://www.youtube.com/@TechnicJelle"><img alt="YouTube" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&amp;logo=youtube&amp;logoColor=white" /></a>
-<a href="https://ko-fi.com/technicjelle"><img alt="Ko-fi" src="https://img.shields.io/badge/Ko--fi-FF5E5B?style=for-the-badge&amp;logo=kofi&amp;logoColor=white" /></a></p><h2 id="experiences">Experiences<a href="#experiences" class="link"> 🔗</a></h2>
-<p><img alt="C#" src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&amp;logo=csharp&amp;logoColor=white" />
-<img alt="Unity" src="https://img.shields.io/badge/Unity-303030?style=for-the-badge&amp;logo=unity&amp;logoColor=white" />
-<img alt="C++" src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&amp;logo=c%2B%2B&amp;logoColor=white" />
-<img alt="Java" src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&amp;logo=openjdk&amp;logoColor=white" />
-<img alt="Flutter" src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&amp;logo=flutter&amp;logoColor=white" />
-<img alt="Python" src="https://img.shields.io/badge/Python-D1BB27?style=for-the-badge&amp;logo=python&amp;logoColor=white" />
-<img alt="Unreal Engine" src="https://img.shields.io/badge/Unreal-0E1128?style=for-the-badge&amp;logo=unrealengine&amp;logoColor=white" /></p>
-<p><img alt="Git" src="https://img.shields.io/badge/git-F05033?style=for-the-badge&amp;logo=git&amp;logoColor=white" />
-<a href="https://github.com/TechnicJelle"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-303030?style=for-the-badge&amp;logo=github&amp;logoColor=white" /></a>
-<img alt="GitHub Actions" src="https://img.shields.io/badge/github%20actions-2671E5?style=for-the-badge&amp;logo=githubactions&amp;logoColor=white" />
-<img alt="Subversion" src="https://img.shields.io/badge/subversion-304870?style=for-the-badge&amp;logo=subversion&amp;logoColor=white" />
-<img alt="Docker" src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&amp;logo=docker&amp;logoColor=white" />
-<img alt="Jenkins" src="https://img.shields.io/badge/jenkins-D24939?style=for-the-badge&amp;logo=jenkins&amp;logoColor=white" /></p>
-<p><img alt="IntelliJ IDEA" src="https://img.shields.io/badge/IntelliJ%20IDEA-303030?style=for-the-badge&amp;logo=intellijidea&amp;logoColor=white" />
-<img alt="Rider" src="https://img.shields.io/badge/Rider-DC143C?style=for-the-badge&amp;logo=rider&amp;logoColor=white" />
-<img alt="CLion" src="https://img.shields.io/badge/CLion-35AB3F?style=for-the-badge&amp;logo=clion&amp;logoColor=white" />
-<img alt="Visual Studio" src="https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&amp;logo=visual-studio&amp;logoColor=white" /></p>
-<p><img alt="Blender" src="https://img.shields.io/badge/Blender-F5792A?style=for-the-badge&amp;logo=blender&amp;logoColor=white" />
-<img alt="Krita" src="https://img.shields.io/badge/Krita-3BABFF?style=for-the-badge&amp;logo=krita&amp;logoColor=white" /></p>
-<aside>
-	<nav>
-		<h2 id="toc">Table of Contents<a href="#toc" class="link"> 🔗</a></h2>
-<ul>
-	<li><a href="#find-me-on-other-platforms">Find me on other platforms</a></li>
-	<li><a href="#experiences">Experiences</a></li>
-	<li><a href="#games">🎮 Games</a></li>
-	<li><a href="#game-engines">⚙️ Game Engines</a></li>
-	<li><a href="#tech-demos">💡 Tech Demos</a></li>
-	<li><a href="#desktop-software-tools">🖥️ Desktop Software Tools</a></li>
-	<li><a href="#apps">📱 Apps</a></li>
-	<li><a href="#websites">🌐 Websites</a></li>
-	<li><a href="#server-software">🔌 Server Software</a></li>
-	<li><a href="#scripts">📝 Scripts</a></li>
-	<li><a href="#discord-bots">🤖 Discord Bots</a></li>
-	<li><a href="#skins">🎨 Skins</a></li>
-	<li><a href="#simulations">🌌 Simulations</a></li>
-	<li><a href="#libraries">📚 Libraries</a></li>
-	<li><a href="#minecraft-plugins">⛏️ Minecraft Plugins</a></li>
-<li>
-<ul>
-	<li><a href="#bluemap-addons">🌐 BlueMap Addons</a></li>
-</ul>
-</li>
-	<li><a href="#webrings">Webrings</a></li>
-</ul>
+Hardly a week goes by where I don't automate some part of my own or someone else's life.
+</p>
 
-	</nav>
+
+<p>
+My logo was made by myself with Blender.
+Check out my other art on my <a href="https://www.artstation.com/TechnicJelle">ArtStation</a>.
+</p>
+
+
+<!--- region: connect -->
+
+<h2 id="find-me-on-other-platforms">Find me on other platforms
+<a href="#find-me-on-other-platforms" class="link">🔗</a></h2>
+
+<p>
+<a href="mailto:technicjelleplay@gmail.com"><img src="https://img.shields.io/badge/EMail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="E-Mail"></a>
+<a href="https://technicjelle.tumblr.com/"><img src="https://img.shields.io/badge/Blog-36465D?style=for-the-badge&logo=tumblr&logoColor=white" alt="Blog"></a>
+<a href="https://www.linkedin.com/in/technicjelle/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Linkedin"></a>
+<a href="https://www.artstation.com/TechnicJelle"><img src="https://img.shields.io/badge/ArtStation-13AFF0?style=for-the-badge&logo=artstation&logoColor=white" alt="ArtStation"></a>
+<a href="https://www.youtube.com/@TechnicJelle"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube"></a>
+<a href="https://ko-fi.com/technicjelle"><img src="https://img.shields.io/badge/Ko--fi-FF5E5B?style=for-the-badge&logo=kofi&logoColor=white" alt="Ko-fi"></a>
+</p>
+
+
+<!--- region: experiences -->
+
+<h2 id="experiences">Experiences
+<a href="#experiences" class="link">🔗</a></h2>
+
+<p>
+<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white" alt="C#">
+<img src="https://img.shields.io/badge/Unity-303030?style=for-the-badge&logo=unity&logoColor=white" alt="Unity">
+<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++">
+<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
+<img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter">
+<img src="https://img.shields.io/badge/Python-D1BB27?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/Unreal-0E1128?style=for-the-badge&logo=unrealengine&logoColor=white" alt="Unreal Engine">
+</p>
+
+
+<p>
+<img src="https://img.shields.io/badge/git-F05033?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+<a href="https://github.com/TechnicJelle"><img src="https://img.shields.io/badge/GitHub-303030?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+<img src="https://img.shields.io/badge/github%20actions-2671E5?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions">
+<img src="https://img.shields.io/badge/subversion-304870?style=for-the-badge&logo=subversion&logoColor=white" alt="Subversion">
+<img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+<img src="https://img.shields.io/badge/jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white" alt="Jenkins">
+</p>
+
+
+<p>
+<img src="https://img.shields.io/badge/IntelliJ%20IDEA-303030?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA">
+<img src="https://img.shields.io/badge/Rider-DC143C?style=for-the-badge&logo=rider&logoColor=white" alt="Rider">
+<img src="https://img.shields.io/badge/CLion-35AB3F?style=for-the-badge&logo=clion&logoColor=white" alt="CLion">
+<img src="https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visual-studio&logoColor=white" alt="Visual Studio">
+</p>
+
+
+<p>
+<img src="https://img.shields.io/badge/Blender-F5792A?style=for-the-badge&logo=blender&logoColor=white" alt="Blender">
+<img src="https://img.shields.io/badge/Krita-3BABFF?style=for-the-badge&logo=krita&logoColor=white" alt="Krita">
+
+</p>
+
+
+<aside>
+<nav>
+<h2 id="toc">Table of Contents
+<a href="#toc" class="link">🔗</a></h2>
+<ol>
+<li><a href="#find-me-on-other-platforms">Find me on other platforms</a></li>
+<li><a href="#experiences">Experiences</a></li>
+<li><a href="#projects">Projects</a>
+<ol>
+<li><a href="#games">🎮 Games</a></li>
+<li><a href="#game-engines">⚙️ Game Engines</a></li>
+<li><a href="#tech-demos">💡 Tech Demos</a></li>
+<li><a href="#desktop-software-tools">🖥️ Desktop Software Tools</a></li>
+<li><a href="#mobile-apps">📱 Mobile Apps</a></li>
+<li><a href="#websites">🌐 Websites</a></li>
+<li><a href="#server-software">🔌  Server Software</a></li>
+<li><a href="#scripts">📝 Scripts</a></li>
+<li><a href="#discord-bots">🤖 Discord Bots</a></li>
+<li><a href="#simulations">🌌 Simulations</a></li>
+<li><a href="#libraries">📚 Libraries</a></li>
+<li><a href="#minecraft-plugins">⛏️ Minecraft Plugins</a></li>
+</ol></li>
+<li><a href="#webrings">Webrings</a></li>
+</ol>
+</nav>
 </aside>
 
-<h2 id="games"><span id="🎮-games"></span>🎮 Games<a href="#games" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="space-combat-3dx"><a href="https://github.com/TechnicJelle/SpaceCombat3DX">Space Combat 3DX</a><a href="#space-combat-3dx" class="link"> 🔗</a></h4>
-	<p>A combat flight sim game in space made in Unity</p>
-	<p class="lang Cs">Language: C#</p>
-</section>
+<h2 id="projects">Projects
+<a href="#projects" class="link">🔗</a></h2>
 
-<section class="card">
-	<h4 id="digiswamp-ag"><a href="https://github.com/Unrealitix/Project-Showoff">DigiSwamp AG</a><a href="#digiswamp-ag" class="link"> 🔗</a></h4>
-	<p>An Anti-Gravity Racing game set in a Digital Swamp</p>
-	<p class="lang Cs">Language: C#</p>
-	<p class="stars"><a href="https://github.com/Unrealitix/Project-Showoff/stargazers" class="stealth-link">⭐1</a></p>
-</section>
+<ul class="tags">
+<li class="Android"><a href="/tags/Android">Android(7)</a></li>
+<li class="App"><a href="/tags/App">App(5)</a></li>
+<li class="AutoHotKey"><a href="/tags/AutoHotKey">AutoHotKey(1)</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap(17)</a></li>
+<li class="Cs"><a href="/tags/Cs">C#(10)</a></li>
+<li class="Cpp"><a href="/tags/Cpp">C++(5)</a></li>
+<li class="CI_CD"><a href="/tags/CI_CD">CI/CD(2)</a></li>
+<li class="CSS"><a href="/tags/CSS">CSS(1)</a></li>
+<li class="Dart"><a href="/tags/Dart">Dart(9)</a></li>
+<li class="Desktop-Software-Tool"><a href="/tags/Desktop-Software-Tool">Desktop Software Tool(1)</a></li>
+<li class="Discord"><a href="/tags/Discord">Discord(3)</a></li>
+<li class="Flutter"><a href="/tags/Flutter">Flutter(6)</a></li>
+<li class="Fonts"><a href="/tags/Fonts">Fonts(1)</a></li>
+<li class="Game"><a href="/tags/Game">Game(16)</a></li>
+<li class="Game-Design"><a href="/tags/Game-Design">Game Design(1)</a></li>
+<li class="Game-Engine"><a href="/tags/Game-Engine">Game Engine(2)</a></li>
+<li class="Game-Jam"><a href="/tags/Game-Jam">Game Jam(3)</a></li>
+<li class="GitHub"><a href="/tags/GitHub">GitHub(2)</a></li>
+<li class="Graphics-Programming"><a href="/tags/Graphics-Programming">Graphics Programming(3)</a></li>
+<li class="GXP-Engine"><a href="/tags/GXP-Engine">GXP Engine(2)</a></li>
+<li class="HTML"><a href="/tags/HTML">HTML(2)</a></li>
+<li class="Java"><a href="/tags/Java">Java(19)</a></li>
+<li class="JavaScript"><a href="/tags/JavaScript">JavaScript(2)</a></li>
+<li class="Level-Design"><a href="/tags/Level-Design">Level Design(1)</a></li>
+<li class="Library"><a href="/tags/Library">Library(4)</a></li>
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft(18)</a></li>
+<li class="olcPixelGameEngine"><a href="/tags/olcPixelGameEngine">olcPixelGameEngine(2)</a></li>
+<li class="p5js"><a href="/tags/p5js">p5js(1)</a></li>
+<li class="Physics"><a href="/tags/Physics">Physics(3)</a></li>
+<li class="Premake"><a href="/tags/Premake">Premake(1)</a></li>
+<li class="Prize"><a href="/tags/Prize">Prize(1)</a></li>
+<li class="Processing"><a href="/tags/Processing">Processing(8)</a></li>
+<li class="Python"><a href="/tags/Python">Python(2)</a></li>
+<li class="Script"><a href="/tags/Script">Script(2)</a></li>
+<li class="SDL_GPU"><a href="/tags/SDL_GPU">SDL_GPU(2)</a></li>
+<li class="Server-Software"><a href="/tags/Server-Software">Server Software(1)</a></li>
+<li class="SFML"><a href="/tags/SFML">SFML(1)</a></li>
+<li class="Simulations"><a href="/tags/Simulations">Simulations(2)</a></li>
+<li class="Static-Site-Generator"><a href="/tags/Static-Site-Generator">Static Site Generator(1)</a></li>
+<li class="Team"><a href="/tags/Team">Team(10)</a></li>
+<li class="Tech-Demo"><a href="/tags/Tech-Demo">Tech Demo(6)</a></li>
+<li class="Template"><a href="/tags/Template">Template(2)</a></li>
+<li class="Tutorial"><a href="/tags/Tutorial">Tutorial(1)</a></li>
+<li class="Unity"><a href="/tags/Unity">Unity(6)</a></li>
+<li class="Unreal-Engine"><a href="/tags/Unreal-Engine">Unreal Engine(2)</a></li>
+<li class="VCS"><a href="/tags/VCS">VCS(1)</a></li>
+<li class="VR"><a href="/tags/VR">VR(2)</a></li>
+<li class="Vulkan"><a href="/tags/Vulkan">Vulkan(2)</a></li>
+<li class="Website"><a href="/tags/Website">Website(4)</a></li>
+</ul>
 
-<section class="card">
-	<h4 id="sea-spelunking"><a href="https://github.com/TechnicJelle/CMGT-Project-Innovation">Sea Spelunking</a><a href="#sea-spelunking" class="link"> 🔗</a></h4>
-	<p>Multiplayer couch party game with innovative controls where you play as pirates looking for treasure!</p>
-	<p class="lang Cs">Language: C#</p>
-</section>
+<h3 id="games">🎮 Games
+<a href="#games" class="link">🔗</a></h3>
 
+<section class="two-col">
 <section class="card">
-	<h4 id="fox-hunt"><a href="https://github.com/TechnicJelle/DWM_WARLOCK">Fox Hunt</a><a href="#fox-hunt" class="link"> 🔗</a></h4>
-	<p>Your chickens have escaped, so you must catch them again! But watch out! There is a fox on the hunt for them as well! (Entry for the XP Study Association's 2024 GameJam)</p>
-	<p class="lang Processing">Language: Processing</p>
-</section>
-
-<section class="card">
-	<h4 id="geodesic"><a href="https://github.com/TechnicJelle/TEA_TEB">Geodesic</a><a href="#geodesic" class="link"> 🔗</a></h4>
-	<p>2D top-down space traversal game. Entry for the XP Study Association's 2025 GameJam </p>
-	<p class="lang Processing">Language: Processing</p>
-</section>
-
-<section class="card">
-	<h4 id="cmgt-intake"><a href="https://github.com/TechnicJelle/CMGT_Intake">CMGT Intake</a><a href="#cmgt-intake" class="link"> 🔗</a></h4>
-	<p>The game I have made for the intake for the study Creative Media and Game Technologies at Saxion University of Applied Sciences</p>
-	<p class="lang Processing">Language: Processing</p>
-</section>
-
-<section class="card">
-	<h4 id="afterparty"><a href="https://github.com/TechnicJelle/CMGT_PointAndClick">Afterparty</a><a href="#afterparty" class="link"> 🔗</a></h4>
-	<p>Afterparty is a hectic and fast-paced game in which you must clean up the house after a party, before your parents arrive home in five minutes.</p>
-	<p class="lang Processing">Language: Processing</p>
-</section>
-
-<section class="card">
-	<h4 id="chthonic-metal"><a href="https://github.com/TechnicJelle/Chthonic_Metal">Chthonic Metal</a><a href="#chthonic-metal" class="link"> 🔗</a></h4>
-	<p>A very basic turn-based fighting game in SFML, made for my uni's C++ course</p>
-	<p class="lang Cpp">Language: C++</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/Chthonic_Metal/stargazers" class="stealth-link">⭐1</a></p>
-</section>
-
-<section class="card">
-	<h4 id="phurey"><a href="https://github.com/TechnicJelle/Phurey">Phurey</a><a href="#phurey" class="link"> 🔗</a></h4>
-	<p>2D Slasher & Bullet Hell Game made for my Game Design uni course</p>
-	<p class="lang JavaScript">Language: JavaScript</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/Phurey/stargazers" class="stealth-link">⭐1</a></p>
-</section>
-
-<section class="card">
-	<h4 id="doom-game"><a href="https://github.com/TechnicJelle/DoomGame">Doom Game</a><a href="#doom-game" class="link"> 🔗</a></h4>
-	<p>Doom-ish clone made in the Saxion GXP Engine</p>
-	<p class="lang Cs">Language: C#</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/DoomGame/stargazers" class="stealth-link">⭐3</a></p>
-</section>
-
-<section class="card">
-	<h4 id="flappy-pong"><a href="https://github.com/TechnicJelle/FlappyPong">Flappy Pong</a><a href="#flappy-pong" class="link"> 🔗</a></h4>
-	<p>Pong, but with flappy bird controls for extra agony</p>
-	<p class="lang Cpp">Language: C++</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/FlappyPong/stargazers" class="stealth-link">⭐1</a></p>
-</section>
-
-<section class="card">
-	<h4 id="leadleg-2069"><a href="https://github.com/ameijboom/GGJ2024">LEADLEG 2069</a><a href="#leadleg-2069" class="link"> 🔗</a></h4>
-	<p>The project for the Global Game Jam 2024 @ Saxion University of Applied Sciences</p>
-	<p class="lang Cs">Language: C#</p>
-</section>
-
-<section class="card">
-	<h4 id="catoms"><a href="https://github.com/TechnicJelle/Project-Final-Approach">Catoms</a><a href="#catoms" class="link"> 🔗</a></h4>
-	<p>Connect multiple atoms together to create the required molecule! [CMGT Y1Q4 Game: Catoms.]</p>
-	<p class="lang Cs">Language: C#</p>
-</section>
-
-<section class="card">
-	<h4 id="she-can-vr"><a href="https://github.com/Unrealitix/Project-Customer">She Can VR</a><a href="#she-can-vr" class="link"> 🔗</a></h4>
-	<p>Currently most people working in STEM fields are men, but She Can VR exists to show you that women can have an equally big impact on the world of science!</p>
-	<p class="lang Cs">Language: C#</p>
-</section>
-
-<section class="card">
-	<h4 id="tetsaw"><a href="https://github.com/TechnicJelle/Tetsaw">Tetsaw</a><a href="#tetsaw" class="link"> 🔗</a></h4>
-	<p>Small blocky Jigsaw game in Processing :)</p>
-	<p class="lang Processing">Language: Processing</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/Tetsaw/stargazers" class="stealth-link">⭐1</a></p>
-</section>
+<div class="visuals">
+<img src="https://64.media.tumblr.com/f334422220d28a4eaa61c5346f74449a/c843dc2fc5ca71c3-df/s2048x3072/c1a014c578ca1dd436ea71e8a4c28a125f9d599c.png" alt="">
+<img src="https://64.media.tumblr.com/cf5ee609b7977daa40acccddd4eb1654/c8cc5ff305aea9e4-05/s2048x3072/a529d42899127cbb9948db7d0cedd34cee83adcc.png" alt="">
+<img src="https://64.media.tumblr.com/44757343cce8cf4201bea4a7892644e3/c843dc2fc5ca71c3-7d/s2048x3072/b3e6d9e561263ab25e60f82a9332eb278ba9c729.png" alt="">
 </div>
+<h4 id="space-combat-3dx"><a href="https://github.com/TechnicJelle/SpaceCombat3DX">Space Combat 3DX</a>
+<a href="#space-combat-3dx" class="link">🔗</a></h4>
+<p>
+A combat flight sim game in space made in Unity
+</p>
 
-<h2 id="game-engines"><span id="⚙️-game-engines"></span>⚙️ Game Engines<a href="#game-engines" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="neogxp"><a href="https://github.com/NeoGXP/NeoGXP">NeoGXP</a><a href="#neogxp" class="link"> 🔗</a></h4>
-	<p>A simple cross-platform 2D C# game engine. Initially used for education at Saxion CMGT, but after its deprecation as a learning tool, revived as full, public open source project!</p>
-	<p class="lang Cs">Language: C#</p>
-	<p class="stars"><a href="https://github.com/NeoGXP/NeoGXP/stargazers" class="stealth-link">⭐2</a></p>
+<a href="https://technicjelle.tumblr.com/tagged/Space%20Game%203DX" class="blog-link">Read about this project on my blog →</a>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Cs"><a href="/tags/Cs">C#</a></li>
+<li class="Unity"><a href="/tags/Unity">Unity</a></li>
+</ul>
 </section>
-
 <section class="card">
-	<h4 id="llri2-experiments"><a href="https://github.com/Rythe-Interactive/LLRI2-Experiments">LLRI2 Experiments</a><a href="#llri2-experiments" class="link"> 🔗</a></h4>
-	<p>Collection of experiments with various GPU APIs, for evaluating which one to use for the Rythe Engine rewrite</p>
-	<p class="lang Cpp">Language: C++</p>
-</section>
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Project-Showoff/refs/heads/main/.github/readme_assets/Screenshot_2025-11-07_02-19-36.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Project-Showoff/refs/heads/main/.github/readme_assets/Screenshot_2025-11-07_02-21-58.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Project-Showoff/refs/heads/main/.github/readme_assets/splitscreen.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Project-Showoff/refs/heads/main/.github/readme_assets/wip.png" alt="">
 </div>
+<h4 id="digiswamp-ag1"><a href="https://github.com/Unrealitix/Project-Showoff">DigiSwamp AG</a>
+<p class="stars">
+<a href="https://github.com/Unrealitix/Project-Showoff/stargazers" class="stealth-link">⭐1</a>
+</p>
 
-<h2 id="tech-demos"><span id="💡-tech-demos"></span>💡 Tech Demos<a href="#tech-demos" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="unreal-engine-5-github-actions-vr-template"><a href="https://github.com/TechnicJelle/UE5_GHActions_VRTemplate">Unreal Engine 5 GitHub Actions VR Template</a><a href="#unreal-engine-5-github-actions-vr-template" class="link"> 🔗</a></h4>
-	<p>A repository that shows a working GitHub Actions workflow for the default UE5 VR Game Template</p>
-	<p class="lang None">Language: n/a</p>
-</section>
+<a href="#digiswamp-ag1" class="link">🔗</a></h4>
+<p>
+An Anti-Gravity Racing game set in a Digital Swamp
+</p>
 
-<section class="card">
-	<h4 id="flutter-user-fonts-demo"><a href="https://github.com/TechnicJelle/FlutterUserFontsDemo">Flutter User Fonts Demo</a><a href="#flutter-user-fonts-demo" class="link"> 🔗</a></h4>
-	<p>A Flutter tech demo that allows users to upload any font they wish to use for the whole app to use</p>
-	<p class="lang Dart">Language: Dart</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/FlutterUserFontsDemo/stargazers" class="stealth-link">⭐1</a></p>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Cs"><a href="/tags/Cs">C#</a></li>
+<li class="Unity"><a href="/tags/Unity">Unity</a></li>
+<li class="Team"><a href="/tags/Team">Team</a></li>
+</ul>
 </section>
-
 <section class="card">
-	<h4 id="vulkan-psychedelic-cloths"><a href="https://github.com/TechnicJelle/VulkanPsychedelicCloths">Vulkan Psychedelic Cloths</a><a href="#vulkan-psychedelic-cloths" class="link"> 🔗</a></h4>
-	<p>A recreation of my uni's OpenGL assignment in Vulkan</p>
-	<p class="lang Cpp">Language: C++</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/VulkanPsychedelicCloths/stargazers" class="stealth-link">⭐1</a></p>
-</section>
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT-Project-Innovation/refs/heads/main/.github/readme_assets/vlcsnap-2025-11-07-02h48m10s142.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT-Project-Innovation/refs/heads/main/.github/readme_assets/vlcsnap-2025-11-07-02h49m28s243.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT-Project-Innovation/refs/heads/main/.github/readme_assets/vlcsnap-2025-11-07-02h50m26s447.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT-Project-Innovation/refs/heads/main/.github/readme_assets/vlcsnap-2025-11-07-02h50m26s447.png" alt="">
 </div>
+<h4 id="sea-spelunking"><a href="https://github.com/TechnicJelle/CMGT-Project-Innovation">Sea Spelunking</a>
+<a href="#sea-spelunking" class="link">🔗</a></h4>
+<p>
+Multiplayer couch party game with innovative controls where you play as pirates looking for treasure!
+</p>
 
-<h2 id="desktop-software-tools"><span id="🖥️-desktop-software-tools"></span>🖥️ Desktop Software Tools<a href="#desktop-software-tools" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="bluemap-gui"><a href="https://github.com/TechnicJelle/BlueMapGUI">BlueMap GUI</a><a href="#bluemap-gui" class="link"> 🔗</a></h4>
-	<p>A GUI wrapper around the BlueMap CLI, mainly to make using BlueMap easier to use on single player worlds. </p>
-	<p class="lang Dart">Language: Dart</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapGUI/stargazers" class="stealth-link">⭐9</a></p>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Cs"><a href="/tags/Cs">C#</a></li>
+<li class="Unity"><a href="/tags/Unity">Unity</a></li>
+<li class="Team"><a href="/tags/Team">Team</a></li>
+</ul>
 </section>
+<section class="card">
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/MEGAHARD-Games/DWM_WARLOCK/refs/heads/main/.github/readme_assets/Screenshot_2025-11-07_02-55-26_all.png" alt="">
 </div>
+<h4 id="fox-hunt"><a href="https://github.com/TechnicJelle/DWM_WARLOCK">Fox Hunt</a>
+<a href="#fox-hunt" class="link">🔗</a></h4>
+<p>
+Your chickens have escaped, so you must catch them again! But watch out! There is a fox on the hunt for them as well! (Entry for the XP Study Association's 2024 GameJam)
+</p>
 
-<h2 id="apps"><span id="📱-apps"></span>📱 Apps<a href="#apps" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="gitdroid"><a href="https://github.com/TechnicJelle/GitDroid">GitDroid</a><a href="#gitdroid" class="link"> 🔗</a></h4>
-	<p>A third party Android app manager for apps uploaded to GitHub releases</p>
-	<p class="lang Dart">Language: Dart</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/GitDroid/stargazers" class="stealth-link">⭐116</a></p>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Processing"><a href="/tags/Processing">Processing</a></li>
+<li class="Team"><a href="/tags/Team">Team</a></li>
+<li class="Game-Jam"><a href="/tags/Game-Jam">Game Jam</a></li>
+</ul>
 </section>
-
 <section class="card">
-	<h4 id="wesley-chess"><a href="https://github.com/TechnicJelle/WesleyChess">Wesley Chess</a><a href="#wesley-chess" class="link"> 🔗</a></h4>
-	<p>Simple Android chess app without any rules or restrictions. Useful for trying different rulesets</p>
-	<p class="lang Processing">Language: Processing</p>
-</section>
-
-<section class="card">
-	<h4 id="twitdirect"><a href="https://github.com/TechnicJelle/TwitDirect">TwitDirect</a><a href="#twitdirect" class="link"> 🔗</a></h4>
-	<p>Android app to redirect embed-fixer links to their respective official apps, instead of going through the browser</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/TwitDirect/stargazers" class="stealth-link">⭐1</a></p>
-</section>
-
-<section class="card">
-	<h4 id="vanir-uims"><span id="vanir-(uims)"></span><a href="https://github.com/Unrealitix/UIMS.App">Vanir (UIMS)</a><a href="#vanir-uims" class="link"> 🔗</a></h4>
-	<p>A Flutter app for Android and iOS to scan products to add to UIMS (Unrealitix Inventory management System)</p>
-	<p class="lang Dart">Language: Dart</p>
-</section>
-
-<section class="card">
-	<h4 id="life-wrench"><a href="https://github.com/TechnicJelle/LifeWrench">Life Wrench</a><a href="#life-wrench" class="link"> 🔗</a></h4>
-	<p>Magic: The Gathering helper app for Android</p>
-	<p class="lang Processing">Language: Processing</p>
-</section>
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/TechnicJelle/TEA_TEB/main/.github/readme_assets/in_game.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/TEA_TEB/main/.github/readme_assets/main_menu.png" alt="">
 </div>
+<h4 id="geodesic"><a href="https://github.com/TechnicJelle/TEA_TEB">Geodesic</a>
+<a href="#geodesic" class="link">🔗</a></h4>
+<p>
+2D top-down space traversal game. Entry for the XP Study Association's 2025 GameJam 
+</p>
 
-<h2 id="websites"><span id="🌐-websites"></span>🌐 Websites<a href="#websites" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="technicjelle"><a href="https://github.com/TechnicJelle/TechnicJelle">TechnicJelle</a><a href="#technicjelle" class="link"> 🔗</a></h4>
-	<p>My GitHub profile's About Me page, and at the same time also my personal website</p>
-	<p class="lang Python">Language: Python</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/TechnicJelle/stargazers" class="stealth-link">⭐2</a></p>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Processing"><a href="/tags/Processing">Processing</a></li>
+<li class="Team"><a href="/tags/Team">Team</a></li>
+<li class="Game-Jam"><a href="/tags/Game-Jam">Game Jam</a></li>
+</ul>
 </section>
-
 <section class="card">
-	<h4 id="cmgtwitch"><a href="https://github.com/TechnicJelle/CMGTwitch">CMGTwitch</a><a href="#cmgtwitch" class="link"> 🔗</a></h4>
-	<p>An app concept that lets you easily (re)watch Saxion CMGT lectures</p>
-	<p class="lang Dart">Language: Dart</p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-marker-generator"><a href="https://github.com/TechnicJelle/BlueMapMarkerGenerator">BlueMap Marker Generator</a><a href="#bluemap-marker-generator" class="link"> 🔗</a></h4>
-	<p>A webapp that helps generate BlueMap markers</p>
-	<p class="lang Dart">Language: Dart</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapMarkerGenerator/stargazers" class="stealth-link">⭐5</a></p>
-</section>
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT_Intake/refs/heads/main/.github/images/Screenshot_2025-11-07_03-15-44.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT_Intake/refs/heads/main/.github/images/Screenshot_2025-11-07_03-16-24.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT_Intake/refs/heads/main/.github/images/Screenshot_2025-11-07_03-16-40.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT_Intake/refs/heads/main/.github/images/Screenshot_2025-11-07_03-16-49.png" alt="">
 </div>
+<h4 id="cmgt-intake"><a href="https://github.com/TechnicJelle/CMGT_Intake">CMGT Intake</a>
+<a href="#cmgt-intake" class="link">🔗</a></h4>
+<p>
+The game I have made for the intake for the study Creative Media and Game Technologies at Saxion University of Applied Sciences
+</p>
 
-<h2 id="server-software"><span id="🔌-server-software"></span>🔌 Server Software<a href="#server-software" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="post-to-websocket-broadcaster-dart"><span id="post-to-websocket-broadcaster-(dart)"></span><a href="https://github.com/TechnicJelle/PostToWebsocketBroadcasterDart">Post To Websocket Broadcaster (Dart)</a><a href="#post-to-websocket-broadcaster-dart" class="link"> 🔗</a></h4>
-	<p>A server application that listens for HTTP POST requests and broadcasts the body of the request to all connected websockets.</p>
-	<p class="lang Dart">Language: Dart</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/PostToWebsocketBroadcasterDart/stargazers" class="stealth-link">⭐1</a></p>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Processing"><a href="/tags/Processing">Processing</a></li>
+<li class="Physics"><a href="/tags/Physics">Physics</a></li>
+</ul>
 </section>
+<section class="card">
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT_PointAndClick/refs/heads/main/.github/readme_assets/vlcsnap-2025-11-07-03h21m08s592.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT_PointAndClick/refs/heads/main/.github/readme_assets/vlcsnap-2025-11-07-03h21m45s375.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT_PointAndClick/refs/heads/main/.github/readme_assets/vlcsnap-2025-11-07-03h22m22s118.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/CMGT_PointAndClick/refs/heads/main/.github/readme_assets/vlcsnap-2025-11-07-03h21m27s679.png" alt="">
 </div>
+<h4 id="afterparty"><a href="https://github.com/TechnicJelle/CMGT_PointAndClick">Afterparty</a>
+<a href="#afterparty" class="link">🔗</a></h4>
+<p>
+Afterparty is a hectic and fast-paced game in which you must clean up the house after a party, before your parents arrive home in five minutes.
+</p>
 
-<h2 id="scripts"><span id="📝-scripts"></span>📝 Scripts<a href="#scripts" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="my-autohotkey-scripts"><a href="https://github.com/TechnicJelle/My-AutoHotKey-Scripts">My AutoHotKey Scripts</a><a href="#my-autohotkey-scripts" class="link"> 🔗</a></h4>
-	<p>This is a collection of all of my AHK Scripts</p>
-	<p class="lang AutoHotkey">Language: AutoHotkey</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/My-AutoHotKey-Scripts/stargazers" class="stealth-link">⭐3</a></p>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Processing"><a href="/tags/Processing">Processing</a></li>
+<li class="Team"><a href="/tags/Team">Team</a></li>
+<li class="Prize"><a href="/tags/Prize">Prize</a></li>
+</ul>
 </section>
-
 <section class="card">
-	<h4 id="discord-reactor"><a href="https://github.com/TechnicJelle/DiscordReactor">Discord Reactor</a><a href="#discord-reactor" class="link"> 🔗</a></h4>
-	<p>Turns a sentence into Discord reaction messages!</p>
-	<p class="lang Python">Language: Python</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/DiscordReactor/stargazers" class="stealth-link">⭐2</a></p>
-</section>
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Chthonic_Metal/main/.github/readme_assets/MainMenuScreen.gif" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Chthonic_Metal/main/.github/readme_assets/CharacterSelectionScreen.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Chthonic_Metal/main/.github/readme_assets/FightScreen.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Chthonic_Metal/main/.github/readme_assets/FightScreenDeath.png" alt="">
 </div>
+<h4 id="chthonic-metal1"><a href="https://github.com/TechnicJelle/Chthonic_Metal">Chthonic Metal</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/Chthonic_Metal/stargazers" class="stealth-link">⭐1</a>
+</p>
 
-<h2 id="discord-bots"><span id="🤖-discord-bots"></span>🤖 Discord Bots<a href="#discord-bots" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="hydr8"><a href="https://github.com/TechnicJelle/DiscordHydr8Bot">Hydr8</a><a href="#hydr8" class="link"> 🔗</a></h4>
-	<p>A simple Discord bot that reminds you to drink water</p>
-	<p class="lang Python">Language: Python</p>
-</section>
+<a href="#chthonic-metal1" class="link">🔗</a></h4>
+<p>
+A very basic turn-based fighting game in SFML, made for my uni's C++ course
+</p>
 
-<section class="card">
-	<h4 id="glyfi"><a href="https://github.com/glyphs-fi/GlyfiBot">Glyfi</a><a href="#glyfi" class="link"> 🔗</a></h4>
-	<p>Discord bot for the Glyphs & Alphabets server.</p>
-	<p class="lang Cs">Language: C#</p>
-	<p class="stars"><a href="https://github.com/glyphs-fi/GlyfiBot/stargazers" class="stealth-link">⭐1</a></p>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Cpp"><a href="/tags/Cpp">C++</a></li>
+<li class="SFML"><a href="/tags/SFML">SFML</a></li>
+</ul>
 </section>
+<section class="card">
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Phurey/refs/heads/main/.github/readme_assets/1.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Phurey/refs/heads/main/.github/readme_assets/2.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Phurey/refs/heads/main/.github/readme_assets/3.png" alt="">
 </div>
+<h4 id="phurey1"><a href="https://github.com/TechnicJelle/Phurey">Phurey</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/Phurey/stargazers" class="stealth-link">⭐1</a>
+</p>
 
-<h2 id="skins"><span id="🎨-skins"></span>🎨 Skins<a href="#skins" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="wikipedia-fix"><a href="https://github.com/TechnicJelle/WikipediaFix">Wikipedia Fix</a><a href="#wikipedia-fix" class="link"> 🔗</a></h4>
-	<p>A userstyle that allows you to customise the new Wikipedia look to be a bit more like the old one</p>
-	<p class="lang Stylus">Language: Stylus</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/WikipediaFix/stargazers" class="stealth-link">⭐1</a></p>
+<a href="#phurey1" class="link">🔗</a></h4>
+<p>
+2D Slasher & Bullet Hell Game made for my Game Design uni course
+</p>
+
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="JavaScript"><a href="/tags/JavaScript">JavaScript</a></li>
+<li class="p5js"><a href="/tags/p5js">p5js</a></li>
+<li class="Game-Design"><a href="/tags/Game-Design">Game Design</a></li>
+<li class="Level-Design"><a href="/tags/Level-Design">Level Design</a></li>
+<li class="Physics"><a href="/tags/Physics">Physics</a></li>
+</ul>
 </section>
+<section class="card">
+<div class="visuals">
+<video src="https://raw.githubusercontent.com/TechnicJelle/DoomGameGXP/refs/heads/main/.github/texture-warping-fix.webm" autoplay disablepictureinpicture disableremoteplayback loop muted playsinline></video>
 </div>
+<h4 id="doom-game-gxp3"><a href="https://github.com/TechnicJelle/DoomGame">Doom Game (GXP)</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/DoomGame/stargazers" class="stealth-link">⭐3</a>
+</p>
 
-<h2 id="simulations"><span id="🌌-simulations"></span>🌌 Simulations<a href="#simulations" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="solar-system"><a href="https://github.com/TechnicJelle/SolarSystem">Solar System</a><a href="#solar-system" class="link"> 🔗</a></h4>
-	<p>A solar system simulation environment where you can play around with planets, suns, gravity and orbits</p>
-	<p class="lang Processing">Language: Processing</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/SolarSystem/stargazers" class="stealth-link">⭐2</a></p>
-</section>
+<a href="#doom-game-gxp3" class="link">🔗</a></h4>
+<p>
+Doom-ish clone made in the Saxion GXP Engine
+</p>
 
-<section class="card">
-	<h4 id="fireworks-display-in-pge"><a href="https://github.com/TechnicJelle/FireworksPGE">Fireworks Display in PGE</a><a href="#fireworks-display-in-pge" class="link"> 🔗</a></h4>
-	<p>A simple, yet pretty fireworks show, coded in C++ with the OLC Pixel Game Engine</p>
-	<p class="lang C">Language: C</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/FireworksPGE/stargazers" class="stealth-link">⭐1</a></p>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Cs"><a href="/tags/Cs">C#</a></li>
+<li class="GXP-Engine"><a href="/tags/GXP-Engine">GXP Engine</a></li>
+</ul>
 </section>
+<section class="card">
+<div class="visuals">
+<video src="https://raw.githubusercontent.com/TechnicJelle/FlappyPong/refs/heads/main/.github/readme_assets/Peek%202025-11-07%2003-55.mp4" autoplay disablepictureinpicture disableremoteplayback loop muted playsinline></video>
 </div>
+<h4 id="flappy-pong1"><a href="https://github.com/TechnicJelle/FlappyPong">Flappy Pong</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/FlappyPong/stargazers" class="stealth-link">⭐1</a>
+</p>
 
-<h2 id="libraries"><span id="📚-libraries"></span>📚 Libraries<a href="#libraries" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="update-checker-java"><a href="https://github.com/TechnicJelle/UpdateCheckerJava">Update Checker Java</a><a href="#update-checker-java" class="link"> 🔗</a></h4>
-	<p>A simple Java library that checks for updates from a GitHub repo's releases</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/UpdateCheckerJava/stargazers" class="stealth-link">⭐3</a></p>
+<a href="#flappy-pong1" class="link">🔗</a></h4>
+<p>
+Pong, but with flappy bird controls for extra agony
+</p>
+
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Cpp"><a href="/tags/Cpp">C++</a></li>
+<li class="olcPixelGameEngine"><a href="/tags/olcPixelGameEngine">olcPixelGameEngine</a></li>
+<li class="Premake"><a href="/tags/Premake">Premake</a></li>
+</ul>
 </section>
+<section class="card">
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/TechnicJelle/GGJ2024/refs/heads/main/.github/readme_assets/Screenshot_2025-11-15_01-26-16.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/GGJ2024/refs/heads/main/.github/readme_assets/Screenshot_2025-11-15_01-26-29.png" alt="">
 </div>
+<h4 id="leadleg-2069"><a href="https://github.com/TechnicJelle/GGJ2024">LEADLEG 2069</a>
+<a href="#leadleg-2069" class="link">🔗</a></h4>
+<p>
+The project for the Global Game Jam 2024 @ Saxion University of Applied Sciences
+</p>
 
-<h2 id="minecraft-plugins"><span id="⛏️-minecraft-plugins"></span>⛏️ Minecraft Plugins<a href="#minecraft-plugins" class="link"> 🔗</a></h2><div class="two-col">
-<section class="card">
-	<h4 id="mcutils"><a href="https://github.com/TechnicJelle/MCUtils">MCUtils</a><a href="#mcutils" class="link"> 🔗</a></h4>
-	<p>A small library with a collection of useful functions for Minecraft paper plugins</p>
-	<p class="lang Java">Language: Java</p>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Unity"><a href="/tags/Unity">Unity</a></li>
+<li class="Cs"><a href="/tags/Cs">C#</a></li>
+<li class="Team"><a href="/tags/Team">Team</a></li>
+<li class="Game-Jam"><a href="/tags/Game-Jam">Game Jam</a></li>
+</ul>
 </section>
-
 <section class="card">
-	<h4 id="simple-block-commands"><a href="https://github.com/TechnicJelle/SimpleBlockCommands">Simple Block Commands</a><a href="#simple-block-commands" class="link"> 🔗</a></h4>
-	<p>A Minecraft Paper plugin that allows server owners to assign commands that get run when a block is clicked</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/SimpleBlockCommands/stargazers" class="stealth-link">⭐1</a></p>
-</section>
-
-<section class="card">
-	<h4 id="discord-inviter"><a href="https://github.com/TechnicJelle/DiscordInviter">Discord Inviter</a><a href="#discord-inviter" class="link"> 🔗</a></h4>
-	<p>A Minecraft Paper plugin that invites players to your Discord server if they haven't done so yet</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/DiscordInviter/stargazers" class="stealth-link">⭐1</a></p>
-</section>
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Project-Final-Approach/refs/heads/main/.github/readme_assets/demo.gif" alt="">
 </div>
+<h4 id="catoms"><a href="https://github.com/TechnicJelle/Project-Final-Approach">Catoms</a>
+<a href="#catoms" class="link">🔗</a></h4>
+<p>
+Connect multiple atoms together to create the required molecule! [CMGT Y1Q4 Game: Catoms.]
+</p>
 
-<h3 id="bluemap-addons"><span id="🌐-bluemap-addons"></span>🌐 <a href="https://github.com/BlueMap-Minecraft/BlueMap#readme">BlueMap</a> Addons<a href="#bluemap-addons" class="link"> 🔗</a></h3><div class="two-col">
-<section class="card">
-	<h4 id="bmutils"><a href="https://github.com/TechnicJelle/BMUtils">BMUtils</a><a href="#bmutils" class="link"> 🔗</a></h4>
-	<p>A small library with a collection of useful functions for BlueMap addons</p>
-	<p class="lang Java">Language: Java</p>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Cs"><a href="/tags/Cs">C#</a></li>
+<li class="GXP-Engine"><a href="/tags/GXP-Engine">GXP Engine</a></li>
+<li class="Physics"><a href="/tags/Physics">Physics</a></li>
+</ul>
 </section>
-
 <section class="card">
-	<h4 id="bluemap-offline-player-markers"><a href="https://github.com/TechnicJelle/BlueMapOfflinePlayerMarkers">BlueMap Offline Player Markers</a><a href="#bluemap-offline-player-markers" class="link"> 🔗</a></h4>
-	<p>Minecraft Paper plugin and BlueMap addon that adds markers where players have logged off</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapOfflinePlayerMarkers/stargazers" class="stealth-link">⭐16</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-sign-extractor"><a href="https://github.com/TechnicJelle/BlueMapSignExtractor">BlueMap Sign Extractor</a><a href="#bluemap-sign-extractor" class="link"> 🔗</a></h4>
-	<p>BlueMap Native addon that displays signs on your map</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapSignExtractor/stargazers" class="stealth-link">⭐9</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-chat-markers"><a href="https://github.com/TechnicJelle/BlueMapChatMarkers">BlueMap Chat Markers</a><a href="#bluemap-chat-markers" class="link"> 🔗</a></h4>
-	<p>Minecraft Paper plugin and BlueMap addon that adds chat messages to the map</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapChatMarkers/stargazers" class="stealth-link">⭐8</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-filtered-entities"><a href="https://github.com/TechnicJelle/BlueMapFilteredEntities">BlueMap Filtered Entities</a><a href="#bluemap-filtered-entities" class="link"> 🔗</a></h4>
-	<p>Minecraft Paper plugin and BlueMap addon that allows you to track entities on your map, with lots of filtering options</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapFilteredEntities/stargazers" class="stealth-link">⭐6</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-mc-map-sync"><a href="https://github.com/TechnicJelle/BlueMapMCMapSync">BlueMap MC Map Sync</a><a href="#bluemap-mc-map-sync" class="link"> 🔗</a></h4>
-	<p>Allow your players to discover your BlueMap more immersively, by syncing with in-game maps!</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapMCMapSync/stargazers" class="stealth-link">⭐3</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-floodgate"><a href="https://github.com/TechnicJelle/BlueMapFloodgate">BlueMap Floodgate</a><a href="#bluemap-floodgate" class="link"> 🔗</a></h4>
-	<p>Minecraft Paper plugin and BlueMap addon that adds GeyserMC/floodgate support</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapFloodgate/stargazers" class="stealth-link">⭐15</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-spawn-marker"><a href="https://github.com/TechnicJelle/BlueMapSpawnMarker">BlueMap Spawn Marker</a><a href="#bluemap-spawn-marker" class="link"> 🔗</a></h4>
-	<p>BlueMap Native addon that adds a customisable marker at the world spawn</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapSpawnMarker/stargazers" class="stealth-link">⭐1</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-native-addon-template"><a href="https://github.com/TechnicJelle/BlueMapNativeAddonTemplate">BlueMap Native Addon Template</a><a href="#bluemap-native-addon-template" class="link"> 🔗</a></h4>
-	<p>A template project you can use as a base for your own BlueMap Native Addon</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapNativeAddonTemplate/stargazers" class="stealth-link">⭐4</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-structures"><a href="https://github.com/TechnicJelle/BlueMapStructures">BlueMap Structures</a><a href="#bluemap-structures" class="link"> 🔗</a></h4>
-	<p>Minecraft Paper plugin and BlueMap addon that adds markers for all structures </p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapStructures/stargazers" class="stealth-link">⭐5</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-death-markers"><a href="https://github.com/TechnicJelle/BlueMapDeathMarkers">BlueMap Death Markers</a><a href="#bluemap-death-markers" class="link"> 🔗</a></h4>
-	<p>Minecraft Paper plugin and BlueMap addon that adds markers where players have died</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapDeathMarkers/stargazers" class="stealth-link">⭐5</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-bluemap-area-control"><a href="https://github.com/TechnicJelle/BlueMapAreaControl">BlueMap BlueMap Area Control</a><a href="#bluemap-bluemap-area-control" class="link"> 🔗</a></h4>
-	<p>[This functionality was added in BlueMap v5.11, so this addon is now redundant!] Minecraft Paper plugin and BlueMap addon for greater control over which areas get rendered</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapAreaControl/stargazers" class="stealth-link">⭐3</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-player-control"><a href="https://github.com/TechnicJelle/BlueMapPlayerControl">BlueMap Player Control</a><a href="#bluemap-player-control" class="link"> 🔗</a></h4>
-	<p>Minecraft Paper plugin and BlueMap addon that adds player hiding functionality to BlueMap</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapPlayerControl/stargazers" class="stealth-link">⭐6</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-new-map"><a href="https://github.com/TechnicJelle/BlueMapNewMap">BlueMap New Map</a><a href="#bluemap-new-map" class="link"> 🔗</a></h4>
-	<p>Tiny Paper plugin addon for BlueMap to more easily create new maps</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapNewMap/stargazers" class="stealth-link">⭐1</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-web-addons"><a href="https://github.com/TechnicJelle/BlueMapWebAddons">BlueMap Web Addons</a><a href="#bluemap-web-addons" class="link"> 🔗</a></h4>
-	<p>A repository of useful scripts and styles for the BlueMap Web App. Accepting PRs with addons from others</p>
-	<p class="lang JavaScript">Language: JavaScript</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapWebAddons/stargazers" class="stealth-link">⭐13</a></p>
-</section>
-
-<section class="card">
-	<h4 id="bluemap-custom-skin-provider"><a href="https://github.com/TechnicJelle/BlueMapCustomSkinProvider">BlueMap Custom Skin Provider</a><a href="#bluemap-custom-skin-provider" class="link"> 🔗</a></h4>
-	<p>Minecraft Paper plugin and BlueMap addon for using a custom skin server with BlueMap</p>
-	<p class="lang Java">Language: Java</p>
-	<p class="stars"><a href="https://github.com/TechnicJelle/BlueMapCustomSkinProvider/stargazers" class="stealth-link">⭐1</a></p>
-</section>
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Project-Customer/refs/heads/main/.github/readme-assets/vlcsnap-2025-11-15-01h40m21s348.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Project-Customer/refs/heads/main/.github/readme-assets/vlcsnap-2025-11-15-01h40m39s498.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Project-Customer/refs/heads/main/.github/readme-assets/vlcsnap-2025-11-15-01h41m07s627.png" alt="">
 </div>
+<h4 id="she-can-vr"><a href="https://github.com/TechnicJelle/Project-Customer">She Can VR</a>
+<a href="#she-can-vr" class="link">🔗</a></h4>
+<p>
+Currently most people working in STEM fields are men, but She Can VR exists to show you that women can have an equally big impact on the world of science!
+</p>
 
-		<p></p>
-		</main>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Cs"><a href="/tags/Cs">C#</a></li>
+<li class="Unity"><a href="/tags/Unity">Unity</a></li>
+<li class="VR"><a href="/tags/VR">VR</a></li>
+<li class="Team"><a href="/tags/Team">Team</a></li>
+</ul>
+</section>
+<section class="card">
+<div class="visuals">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Tetsaw/main/.github/readme_assets/in-game.png" alt="">
+<img src="https://raw.githubusercontent.com/TechnicJelle/Tetsaw/main/.github/readme_assets/main_menu.png" alt="">
+<video src="https://raw.githubusercontent.com/TechnicJelle/Tetsaw/refs/heads/main/.github/readme_assets/algorithm.mp4" autoplay disablepictureinpicture disableremoteplayback loop muted playsinline></video>
+</div>
+<h4 id="tetsaw1"><a href="https://github.com/TechnicJelle/Tetsaw">Tetsaw</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/Tetsaw/stargazers" class="stealth-link">⭐1</a>
+</p>
 
-		<footer>
-			<section id="webrings-container">
-				<h2 id="webrings">Webrings<a href="#webrings" class="link"> 🔗</a></h2>
+<a href="#tetsaw1" class="link">🔗</a></h4>
+<p>
+Small blocky Jigsaw game in Processing :)
+</p>
 
-				<h4 id="graphics-programming">Graphics Programming<a href="#graphics-programming" class="link"> 🔗</a></h4>
-				<div style="display: flex; gap: 0.25rem; justify-content: center; align-items: center;">
-					<a href="https://graphics-programming.org/webring/frogs/technicjelle/prev">⬅️</a>
-					<a href="https://graphics-programming.org/webring/" style="height: 1.5em">
-						<img
-								src="https://graphics-programming.org/img/froge.webp"
-								alt="a friendly froge"
-								style="object-fit: contain; height: 1.5em"
-						/>
-					</a>
-					<a href="https://graphics-programming.org/webring/frogs/technicjelle/next">➡️</a>
-				</div>
-			</section>
+<ul class="tags">
+<li class="Game"><a href="/tags/Game">Game</a></li>
+<li class="Processing"><a href="/tags/Processing">Processing</a></li>
+<li class="Android"><a href="/tags/Android">Android</a></li>
+</ul>
+</section>
+</section>
 
-			<p>Last updated on 2025-10-19 19:47:17+00:00</p>
-			<address>
-				<p style="margin-bottom: 0;">Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a></p>
-			</address>
-			<p style="margin-top: 0;">&copy;Copyright 2025 by TechnicJelle. All rights reserved.</p>
-		</footer>
-	</body>
+<h3 id="game-engines">⚙️ Game Engines
+<a href="#game-engines" class="link">🔗</a></h3>
+
+<section class="two-col">
+<section class="card">
+<h4 id="neogxp2"><a href="https://github.com/NeoGXP/NeoGXP/">NeoGXP</a>
+<p class="stars">
+<a href="https://github.com/NeoGXP/NeoGXP//stargazers" class="stealth-link">⭐2</a>
+</p>
+
+<a href="#neogxp2" class="link">🔗</a></h4>
+<p>
+A simple cross-platform 2D C# game engine. Initially used for education at Saxion CMGT, but after its deprecation as a learning tool, revived as full, public open source project!
+</p>
+
+<ul class="tags">
+<li class="Game-Engine"><a href="/tags/Game-Engine">Game Engine</a></li>
+<li class="Cs"><a href="/tags/Cs">C#</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="llri2-experiments"><a href="https://github.com/Rythe-Interactive/LLRI2-Experiments">LLRI2 Experiments</a>
+<a href="#llri2-experiments" class="link">🔗</a></h4>
+<p>
+Collection of experiments with various GPU APIs, for evaluating which one to use for the Rythe Engine rewrite
+</p>
+
+<ul class="tags">
+<li class="Game-Engine"><a href="/tags/Game-Engine">Game Engine</a></li>
+<li class="Cpp"><a href="/tags/Cpp">C++</a></li>
+<li class="Graphics-Programming"><a href="/tags/Graphics-Programming">Graphics Programming</a></li>
+<li class="Vulkan"><a href="/tags/Vulkan">Vulkan</a></li>
+<li class="SDL_GPU"><a href="/tags/SDL_GPU">SDL_GPU</a></li>
+</ul>
+</section>
+</section>
+
+<h3 id="tech-demos">💡 Tech Demos
+<a href="#tech-demos" class="link">🔗</a></h3>
+
+<section class="two-col">
+<section class="card">
+<h4 id="flutter-user-fonts-demo1"><a href="https://github.com/TechnicJelle/FlutterUserFontsDemo">Flutter User Fonts Demo</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/FlutterUserFontsDemo/stargazers" class="stealth-link">⭐1</a>
+</p>
+
+<a href="#flutter-user-fonts-demo1" class="link">🔗</a></h4>
+<p>
+A Flutter tech demo that allows users to upload any font they wish to use for the whole app to use
+</p>
+
+<ul class="tags">
+<li class="Tech-Demo"><a href="/tags/Tech-Demo">Tech Demo</a></li>
+<li class="Dart"><a href="/tags/Dart">Dart</a></li>
+<li class="Flutter"><a href="/tags/Flutter">Flutter</a></li>
+<li class="Android"><a href="/tags/Android">Android</a></li>
+<li class="Fonts"><a href="/tags/Fonts">Fonts</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="vulkan-psychedelic-cloths1"><a href="https://github.com/TechnicJelle/VulkanPsychedelicCloths">Vulkan Psychedelic Cloths</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/VulkanPsychedelicCloths/stargazers" class="stealth-link">⭐1</a>
+</p>
+
+<a href="#vulkan-psychedelic-cloths1" class="link">🔗</a></h4>
+<p>
+A recreation of my uni's OpenGL assignment in Vulkan
+</p>
+
+<ul class="tags">
+<li class="Tech-Demo"><a href="/tags/Tech-Demo">Tech Demo</a></li>
+<li class="Cpp"><a href="/tags/Cpp">C++</a></li>
+<li class="Graphics-Programming"><a href="/tags/Graphics-Programming">Graphics Programming</a></li>
+<li class="Vulkan"><a href="/tags/Vulkan">Vulkan</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="planes-tower-defence"><a href="https://github.com/TechnicJelle/PlanesTowerDefence">Planes Tower Defence</a>
+<a href="#planes-tower-defence" class="link">🔗</a></h4>
+<p>
+A tower defence game, made for my Software Architecture class
+</p>
+
+<a href="https://technicjelle.tumblr.com/tagged/Planes%20Tower%20Defence" class="blog-link">Read about this project on my blog →</a>
+<ul class="tags">
+<li class="Tech-Demo"><a href="/tags/Tech-Demo">Tech Demo</a></li>
+<li class="Cs"><a href="/tags/Cs">C#</a></li>
+<li class="Unity"><a href="/tags/Unity">Unity</a></li>
+<li class="Game"><a href="/tags/Game">Game</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="unreal-engine-5-github-actions-vr-template"><a href="https://github.com/TechnicJelle/UE5_GHActions_VRTemplate">Unreal Engine 5 GitHub Actions VR Template</a>
+<a href="#unreal-engine-5-github-actions-vr-template" class="link">🔗</a></h4>
+<p>
+A repository that shows a working GitHub Actions workflow for the default UE5 VR Game Template
+</p>
+
+<ul class="tags">
+<li class="Tech-Demo"><a href="/tags/Tech-Demo">Tech Demo</a></li>
+<li class="Unreal-Engine"><a href="/tags/Unreal-Engine">Unreal Engine</a></li>
+<li class="CI_CD"><a href="/tags/CI_CD">CI/CD</a></li>
+<li class="Template"><a href="/tags/Template">Template</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="weaving-factory"><a href="https://technicjelle.tumblr.com/tagged/Weaving%20Factory">Weaving Factory</a>
+<a href="#weaving-factory" class="link">🔗</a></h4>
+<p>
+Not on GitHub, because this was locally hosted with Perforce, managed by me
+</p>
+
+<a href="https://technicjelle.tumblr.com/tagged/Weaving%20Factory" class="blog-link">Read about this project on my blog →</a>
+<ul class="tags">
+<li class="Tech-Demo"><a href="/tags/Tech-Demo">Tech Demo</a></li>
+<li class="Unreal-Engine"><a href="/tags/Unreal-Engine">Unreal Engine</a></li>
+<li class="Team"><a href="/tags/Team">Team</a></li>
+<li class="CI_CD"><a href="/tags/CI_CD">CI/CD</a></li>
+<li class="VCS"><a href="/tags/VCS">VCS</a></li>
+<li class="VR"><a href="/tags/VR">VR</a></li>
+</ul>
+</section>
+</section>
+
+<h3 id="desktop-software-tools">🖥️ Desktop Software Tools
+<a href="#desktop-software-tools" class="link">🔗</a></h3>
+
+<section class="two-col">
+<section class="card">
+<h4 id="bluemap-gui9"><a href="https://github.com/TechnicJelle/BlueMapGUI">BlueMap GUI</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapGUI/stargazers" class="stealth-link">⭐9</a>
+</p>
+
+<a href="#bluemap-gui9" class="link">🔗</a></h4>
+<p>
+A GUI wrapper around the BlueMap CLI, mainly to make using BlueMap easier to use on single player worlds. 
+</p>
+
+<ul class="tags">
+<li class="Desktop-Software-Tool"><a href="/tags/Desktop-Software-Tool">Desktop Software Tool</a></li>
+<li class="Dart"><a href="/tags/Dart">Dart</a></li>
+<li class="Flutter"><a href="/tags/Flutter">Flutter</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+</section>
+
+<h3 id="mobile-apps">📱 Mobile Apps
+<a href="#mobile-apps" class="link">🔗</a></h3>
+
+<section class="two-col">
+<section class="card">
+<h4 id="gitdroid116"><a href="https://github.com/TechnicJelle/GitDroid">GitDroid</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/GitDroid/stargazers" class="stealth-link">⭐116</a>
+</p>
+
+<a href="#gitdroid116" class="link">🔗</a></h4>
+<p>
+A third party Android app manager for apps uploaded to GitHub releases
+</p>
+
+<ul class="tags">
+<li class="App"><a href="/tags/App">App</a></li>
+<li class="Dart"><a href="/tags/Dart">Dart</a></li>
+<li class="Flutter"><a href="/tags/Flutter">Flutter</a></li>
+<li class="Android"><a href="/tags/Android">Android</a></li>
+<li class="GitHub"><a href="/tags/GitHub">GitHub</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="wesley-chess"><a href="https://github.com/TechnicJelle/WesleyChess">Wesley Chess</a>
+<a href="#wesley-chess" class="link">🔗</a></h4>
+<p>
+Simple Android chess app without any rules or restrictions. Useful for trying different rulesets
+</p>
+
+<ul class="tags">
+<li class="App"><a href="/tags/App">App</a></li>
+<li class="Processing"><a href="/tags/Processing">Processing</a></li>
+<li class="Android"><a href="/tags/Android">Android</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="twitdirect1"><a href="https://github.com/TechnicJelle/TwitDirect">TwitDirect</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/TwitDirect/stargazers" class="stealth-link">⭐1</a>
+</p>
+
+<a href="#twitdirect1" class="link">🔗</a></h4>
+<p>
+Android app to redirect embed-fixer links to their respective official apps, instead of going through the browser
+</p>
+
+<ul class="tags">
+<li class="App"><a href="/tags/App">App</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="Android"><a href="/tags/Android">Android</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="vanir-uims"><a href="https://github.com/TechnicJelle/UIMS.App">Vanir (UIMS)</a>
+<a href="#vanir-uims" class="link">🔗</a></h4>
+<p>
+A Flutter app for Android and iOS to scan products to add to UIMS (Unrealitix Inventory management System)
+</p>
+
+<ul class="tags">
+<li class="App"><a href="/tags/App">App</a></li>
+<li class="Dart"><a href="/tags/Dart">Dart</a></li>
+<li class="Flutter"><a href="/tags/Flutter">Flutter</a></li>
+<li class="Android"><a href="/tags/Android">Android</a></li>
+<li class="Team"><a href="/tags/Team">Team</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="life-wrench"><a href="https://github.com/TechnicJelle/LifeWrench">Life Wrench</a>
+<a href="#life-wrench" class="link">🔗</a></h4>
+<p>
+Magic: The Gathering helper app for Android
+</p>
+
+<ul class="tags">
+<li class="App"><a href="/tags/App">App</a></li>
+<li class="Processing"><a href="/tags/Processing">Processing</a></li>
+<li class="Android"><a href="/tags/Android">Android</a></li>
+</ul>
+</section>
+</section>
+
+<h3 id="websites">🌐 Websites
+<a href="#websites" class="link">🔗</a></h3>
+
+<section class="two-col">
+<section class="card">
+<h4 id="technicjelle2"><a href="https://github.com/TechnicJelle/TechnicJelle">TechnicJelle</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/TechnicJelle/stargazers" class="stealth-link">⭐2</a>
+</p>
+
+<a href="#technicjelle2" class="link">🔗</a></h4>
+<p>
+My GitHub profile's About Me page, and at the same time also my personal website
+</p>
+
+<ul class="tags">
+<li class="Website"><a href="/tags/Website">Website</a></li>
+<li class="Dart"><a href="/tags/Dart">Dart</a></li>
+<li class="HTML"><a href="/tags/HTML">HTML</a></li>
+<li class="CSS"><a href="/tags/CSS">CSS</a></li>
+<li class="Static-Site-Generator"><a href="/tags/Static-Site-Generator">Static Site Generator</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="cmgtwitch"><a href="https://github.com/TechnicJelle/CMGTwitch">CMGTwitch</a>
+<a href="#cmgtwitch" class="link">🔗</a></h4>
+<p>
+An app concept that lets you easily (re)watch Saxion CMGT lectures
+</p>
+
+<ul class="tags">
+<li class="Website"><a href="/tags/Website">Website</a></li>
+<li class="Dart"><a href="/tags/Dart">Dart</a></li>
+<li class="Flutter"><a href="/tags/Flutter">Flutter</a></li>
+<li class="Tech-Demo"><a href="/tags/Tech-Demo">Tech Demo</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-marker-generator5"><a href="https://github.com/TechnicJelle/BlueMapMarkerGenerator">BlueMap Marker Generator</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapMarkerGenerator/stargazers" class="stealth-link">⭐5</a>
+</p>
+
+<a href="#bluemap-marker-generator5" class="link">🔗</a></h4>
+<p>
+A webapp that helps generate BlueMap markers
+</p>
+
+<ul class="tags">
+<li class="Website"><a href="/tags/Website">Website</a></li>
+<li class="Dart"><a href="/tags/Dart">Dart</a></li>
+<li class="Flutter"><a href="/tags/Flutter">Flutter</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="gpu-for-beginners3"><a href="https://github.com/TechnicJelle/GPUForBeginners/">GPU For Beginners</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/GPUForBeginners//stargazers" class="stealth-link">⭐3</a>
+</p>
+
+<a href="#gpu-for-beginners3" class="link">🔗</a></h4>
+<p>
+Guide on how to get started with GPU Programming for beginners, with SDL3's GPU API
+</p>
+
+<ul class="tags">
+<li class="Website"><a href="/tags/Website">Website</a></li>
+<li class="Graphics-Programming"><a href="/tags/Graphics-Programming">Graphics Programming</a></li>
+<li class="SDL_GPU"><a href="/tags/SDL_GPU">SDL_GPU</a></li>
+<li class="Tutorial"><a href="/tags/Tutorial">Tutorial</a></li>
+</ul>
+</section>
+</section>
+
+<h3 id="server-software">🔌  Server Software
+<a href="#server-software" class="link">🔗</a></h3>
+
+<section class="two-col">
+<section class="card">
+<h4 id="post-to-websocket-broadcaster-dart1"><a href="https://github.com/TechnicJelle/PostToWebsocketBroadcasterDart">Post To Websocket Broadcaster (Dart)</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/PostToWebsocketBroadcasterDart/stargazers" class="stealth-link">⭐1</a>
+</p>
+
+<a href="#post-to-websocket-broadcaster-dart1" class="link">🔗</a></h4>
+<p>
+A server application that listens for HTTP POST requests and broadcasts the body of the request to all connected websockets.
+</p>
+
+<ul class="tags">
+<li class="Server-Software"><a href="/tags/Server-Software">Server Software</a></li>
+<li class="Dart"><a href="/tags/Dart">Dart</a></li>
+</ul>
+</section>
+</section>
+
+<h3 id="scripts">📝 Scripts
+<a href="#scripts" class="link">🔗</a></h3>
+
+<section class="two-col">
+<section class="card">
+<h4 id="my-autohotkey-scripts3"><a href="https://github.com/TechnicJelle/My-AutoHotKey-Scripts">My AutoHotKey Scripts</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/My-AutoHotKey-Scripts/stargazers" class="stealth-link">⭐3</a>
+</p>
+
+<a href="#my-autohotkey-scripts3" class="link">🔗</a></h4>
+<p>
+This is a collection of all of my AHK Scripts
+</p>
+
+<ul class="tags">
+<li class="Script"><a href="/tags/Script">Script</a></li>
+<li class="AutoHotKey"><a href="/tags/AutoHotKey">AutoHotKey</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="discord-reactor2"><a href="https://github.com/TechnicJelle/DiscordReactor">Discord Reactor</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/DiscordReactor/stargazers" class="stealth-link">⭐2</a>
+</p>
+
+<a href="#discord-reactor2" class="link">🔗</a></h4>
+<p>
+Turns a sentence into Discord reaction messages!
+</p>
+
+<ul class="tags">
+<li class="Script"><a href="/tags/Script">Script</a></li>
+<li class="Python"><a href="/tags/Python">Python</a></li>
+<li class="Discord"><a href="/tags/Discord">Discord</a></li>
+</ul>
+</section>
+</section>
+
+<h3 id="discord-bots">🤖 Discord Bots
+<a href="#discord-bots" class="link">🔗</a></h3>
+
+<section class="two-col">
+<section class="card">
+<h4 id="glyfi1"><a href="https://github.com/glyphs-fi/GlyfiBot">Glyfi</a>
+<p class="stars">
+<a href="https://github.com/glyphs-fi/GlyfiBot/stargazers" class="stealth-link">⭐1</a>
+</p>
+
+<a href="#glyfi1" class="link">🔗</a></h4>
+<p>
+Discord bot for the Glyphs & Alphabets server.
+</p>
+
+<ul class="tags">
+<li class="Discord"><a href="/tags/Discord">Discord</a></li>
+<li class="Cs"><a href="/tags/Cs">C#</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="hydr8"><a href="https://github.com/TechnicJelle/DiscordHydr8Bot">Hydr8</a>
+<a href="#hydr8" class="link">🔗</a></h4>
+<p>
+A simple Discord bot that reminds you to drink water
+</p>
+
+<ul class="tags">
+<li class="Discord"><a href="/tags/Discord">Discord</a></li>
+<li class="Python"><a href="/tags/Python">Python</a></li>
+</ul>
+</section>
+</section>
+
+<h3 id="simulations">🌌 Simulations
+<a href="#simulations" class="link">🔗</a></h3>
+
+<section class="two-col">
+<section class="card">
+<h4 id="solar-system2"><a href="https://github.com/TechnicJelle/SolarSystem">Solar System</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/SolarSystem/stargazers" class="stealth-link">⭐2</a>
+</p>
+
+<a href="#solar-system2" class="link">🔗</a></h4>
+<p>
+A solar system simulation environment where you can play around with planets, suns, gravity and orbits
+</p>
+
+<ul class="tags">
+<li class="Simulations"><a href="/tags/Simulations">Simulations</a></li>
+<li class="Processing"><a href="/tags/Processing">Processing</a></li>
+<li class="Team"><a href="/tags/Team">Team</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="fireworks-display-pge1"><a href="https://github.com/TechnicJelle/FireworksPGE">Fireworks Display (PGE)</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/FireworksPGE/stargazers" class="stealth-link">⭐1</a>
+</p>
+
+<a href="#fireworks-display-pge1" class="link">🔗</a></h4>
+<p>
+A simple, yet pretty fireworks show, coded in C++ with the OLC Pixel Game Engine
+</p>
+
+<ul class="tags">
+<li class="Simulations"><a href="/tags/Simulations">Simulations</a></li>
+<li class="Cpp"><a href="/tags/Cpp">C++</a></li>
+<li class="olcPixelGameEngine"><a href="/tags/olcPixelGameEngine">olcPixelGameEngine</a></li>
+</ul>
+</section>
+</section>
+
+<h3 id="libraries">📚 Libraries
+<a href="#libraries" class="link">🔗</a></h3>
+
+<section class="two-col">
+<section class="card">
+<h4 id="html-bindings-dart1"><a href="https://github.com/TechnicJelle/techs_html_bindings">HTML Bindings (Dart)</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/techs_html_bindings/stargazers" class="stealth-link">⭐1</a>
+</p>
+
+<a href="#html-bindings-dart1" class="link">🔗</a></h4>
+<p>
+Very opinionated HTML bindings, for personal use in generating websites.
+</p>
+
+<ul class="tags">
+<li class="Library"><a href="/tags/Library">Library</a></li>
+<li class="Dart"><a href="/tags/Dart">Dart</a></li>
+<li class="HTML"><a href="/tags/HTML">HTML</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="update-checker-java3"><a href="https://github.com/TechnicJelle/UpdateCheckerJava">Update Checker (Java)</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/UpdateCheckerJava/stargazers" class="stealth-link">⭐3</a>
+</p>
+
+<a href="#update-checker-java3" class="link">🔗</a></h4>
+<p>
+A simple Java library that checks for updates from a GitHub repo's releases
+</p>
+
+<ul class="tags">
+<li class="Library"><a href="/tags/Library">Library</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="GitHub"><a href="/tags/GitHub">GitHub</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="mcutils"><a href="https://github.com/TechnicJelle/MCUtils">MCUtils</a>
+<a href="#mcutils" class="link">🔗</a></h4>
+<p>
+A small library with a collection of useful functions for Minecraft paper plugins
+</p>
+
+<ul class="tags">
+<li class="Library"><a href="/tags/Library">Library</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bmutils"><a href="https://github.com/TechnicJelle/BMUtils">BMUtils</a>
+<a href="#bmutils" class="link">🔗</a></h4>
+<p>
+A small library with a collection of useful functions for BlueMap addons
+</p>
+
+<ul class="tags">
+<li class="Library"><a href="/tags/Library">Library</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+</section>
+
+<h3 id="minecraft-plugins">⛏️ Minecraft Plugins
+<a href="#minecraft-plugins" class="link">🔗</a></h3>
+
+<section class="two-col">
+<section class="card">
+<h4 id="simple-block-commands1"><a href="https://github.com/TechnicJelle/SimpleBlockCommands">Simple Block Commands</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/SimpleBlockCommands/stargazers" class="stealth-link">⭐1</a>
+</p>
+
+<a href="#simple-block-commands1" class="link">🔗</a></h4>
+<p>
+A Minecraft Paper plugin that allows server owners to assign commands that get run when a block is clicked
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="discord-inviter1"><a href="https://github.com/TechnicJelle/DiscordInviter">Discord Inviter</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/DiscordInviter/stargazers" class="stealth-link">⭐1</a>
+</p>
+
+<a href="#discord-inviter1" class="link">🔗</a></h4>
+<p>
+A Minecraft Paper plugin that invites players to your Discord server if they haven't done so yet
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-offline-player-markers16"><a href="https://github.com/TechnicJelle/BlueMapOfflinePlayerMarkers">BlueMap Offline Player Markers</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapOfflinePlayerMarkers/stargazers" class="stealth-link">⭐16</a>
+</p>
+
+<a href="#bluemap-offline-player-markers16" class="link">🔗</a></h4>
+<p>
+Minecraft Paper plugin and BlueMap addon that adds markers where players have logged off
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-sign-extractor10"><a href="https://github.com/TechnicJelle/BlueMapSignExtractor">BlueMap Sign Extractor</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapSignExtractor/stargazers" class="stealth-link">⭐10</a>
+</p>
+
+<a href="#bluemap-sign-extractor10" class="link">🔗</a></h4>
+<p>
+BlueMap Native addon that displays signs on your map
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-chat-markers8"><a href="https://github.com/TechnicJelle/BlueMapChatMarkers">BlueMap Chat Markers</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapChatMarkers/stargazers" class="stealth-link">⭐8</a>
+</p>
+
+<a href="#bluemap-chat-markers8" class="link">🔗</a></h4>
+<p>
+Minecraft Paper plugin and BlueMap addon that adds chat messages to the map
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-filtered-entities6"><a href="https://github.com/TechnicJelle/BlueMapFilteredEntities">BlueMap Filtered Entities</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapFilteredEntities/stargazers" class="stealth-link">⭐6</a>
+</p>
+
+<a href="#bluemap-filtered-entities6" class="link">🔗</a></h4>
+<p>
+Minecraft Paper plugin and BlueMap addon that allows you to track entities on your map, with lots of filtering options
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-mc-map-sync3"><a href="https://github.com/TechnicJelle/BlueMapMCMapSync">BlueMap MC Map Sync</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapMCMapSync/stargazers" class="stealth-link">⭐3</a>
+</p>
+
+<a href="#bluemap-mc-map-sync3" class="link">🔗</a></h4>
+<p>
+Allow your players to discover your BlueMap more immersively, by syncing with in-game maps!
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-floodgate15"><a href="https://github.com/TechnicJelle/BlueMapFloodgate">BlueMap Floodgate</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapFloodgate/stargazers" class="stealth-link">⭐15</a>
+</p>
+
+<a href="#bluemap-floodgate15" class="link">🔗</a></h4>
+<p>
+Minecraft Paper plugin and BlueMap addon that adds GeyserMC/floodgate support
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-spawn-marker2"><a href="https://github.com/TechnicJelle/BlueMapSpawnMarker">BlueMap Spawn Marker</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapSpawnMarker/stargazers" class="stealth-link">⭐2</a>
+</p>
+
+<a href="#bluemap-spawn-marker2" class="link">🔗</a></h4>
+<p>
+BlueMap Native addon that adds a customisable marker at the world spawn
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-native-addon-template4"><a href="https://github.com/TechnicJelle/BlueMapNativeAddonTemplate">BlueMap Native Addon Template</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapNativeAddonTemplate/stargazers" class="stealth-link">⭐4</a>
+</p>
+
+<a href="#bluemap-native-addon-template4" class="link">🔗</a></h4>
+<p>
+A template project you can use as a base for your own BlueMap Native Addon
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+<li class="Template"><a href="/tags/Template">Template</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-structures5"><a href="https://github.com/TechnicJelle/BlueMapStructures">BlueMap Structures</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapStructures/stargazers" class="stealth-link">⭐5</a>
+</p>
+
+<a href="#bluemap-structures5" class="link">🔗</a></h4>
+<p>
+Minecraft Paper plugin and BlueMap addon that adds markers for all structures 
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-death-markers5"><a href="https://github.com/TechnicJelle/BlueMapDeathMarkers">BlueMap Death Markers</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapDeathMarkers/stargazers" class="stealth-link">⭐5</a>
+</p>
+
+<a href="#bluemap-death-markers5" class="link">🔗</a></h4>
+<p>
+Minecraft Paper plugin and BlueMap addon that adds markers where players have died
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-player-control7"><a href="https://github.com/TechnicJelle/BlueMapPlayerControl">BlueMap Player Control</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapPlayerControl/stargazers" class="stealth-link">⭐7</a>
+</p>
+
+<a href="#bluemap-player-control7" class="link">🔗</a></h4>
+<p>
+Minecraft Paper plugin and BlueMap addon that adds player hiding functionality to BlueMap
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-new-map1"><a href="https://github.com/TechnicJelle/BlueMapNewMap">BlueMap New Map</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapNewMap/stargazers" class="stealth-link">⭐1</a>
+</p>
+
+<a href="#bluemap-new-map1" class="link">🔗</a></h4>
+<p>
+Tiny Paper plugin addon for BlueMap to more easily create new maps
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-web-addons13"><a href="https://github.com/TechnicJelle/BlueMapWebAddons">BlueMap Web Addons</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapWebAddons/stargazers" class="stealth-link">⭐13</a>
+</p>
+
+<a href="#bluemap-web-addons13" class="link">🔗</a></h4>
+<p>
+A repository of useful scripts and styles for the BlueMap Web App. Accepting PRs with addons from others
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="JavaScript"><a href="/tags/JavaScript">JavaScript</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+<section class="card">
+<h4 id="bluemap-custom-skin-provider1"><a href="https://github.com/TechnicJelle/BlueMapCustomSkinProvider">BlueMap Custom Skin Provider</a>
+<p class="stars">
+<a href="https://github.com/TechnicJelle/BlueMapCustomSkinProvider/stargazers" class="stealth-link">⭐1</a>
+</p>
+
+<a href="#bluemap-custom-skin-provider1" class="link">🔗</a></h4>
+<p>
+Minecraft Paper plugin and BlueMap addon for using a custom skin server with BlueMap
+</p>
+
+<ul class="tags">
+<li class="Minecraft"><a href="/tags/Minecraft">Minecraft</a></li>
+<li class="Java"><a href="/tags/Java">Java</a></li>
+<li class="BlueMap"><a href="/tags/BlueMap">BlueMap</a></li>
+</ul>
+</section>
+</section>
+
+<section class="webrings">
+<h2 id="webrings">Webrings
+<a href="#webrings" class="link">🔗</a></h2>
+<h3 id="graphics-programming">Graphics Programming
+<a href="#graphics-programming" class="link">🔗</a></h3>
+<div class="webring">
+<a href="https://graphics-programming.org/webring/frogs/technicjelle/prev">⬅️</a>
+<a href="https://graphics-programming.org/webring/"><img src="https://graphics-programming.org/img/froge.webp" alt="a friendly froge"></a>
+<a href="https://graphics-programming.org/webring/frogs/technicjelle/next">➡️</a>
+</div>
+</section>
+</main>
+
+<footer>
+<p>
+Website last updated on<time datetime="2025-11-15T01:05:06.192162">2025-11-15 01:05:06.192</time>
+</p>
+
+
+<address><p style="margin-bottom: 0;">
+Website made by<a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a>
+</p>
+
+</address>
+
+<p style="margin-top: 0;">
+©Copyright 2025 by TechnicJelle. All rights reserved.
+</p>
+
+</footer>
+</body>
 </html>
