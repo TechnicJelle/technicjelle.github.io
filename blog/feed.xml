@@ -5,7 +5,7 @@
   <link href="https://technicjelle.com/blog/feed.xml" rel="self" />
   <link href="https://technicjelle.com/blog" rel="alternate" />
   <link href="https://technicjelle.com" rel="related" />
-  <updated>2026-05-05T21:38:27.499Z</updated>
+  <updated>2026-05-05T22:25:11.784Z</updated>
   <author>
     <name>TechnicJelle</name>
   </author>
@@ -33,6 +33,13 @@
           (Especially the Atom feed...)
         </p>
         <p>Once I've resolved all the major bugs that I have no doubt I'll find, my next milestone will be to add tagging functionality.</p>
+        <p>
+          The third milestone will be syntax highlighting for code blocks.
+          <br />
+          I've done some research already, and I think I'll use tree-sitter for this.
+          <br />
+          But more research and experimentation will need to be done. Later, though.
+        </p>
         <nav class="center">
           <p>
             <a href="/blog/2026/04/18/new-blog-site">← Previous Post</a>
