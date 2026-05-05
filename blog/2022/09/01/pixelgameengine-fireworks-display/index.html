@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fireworks Display in C++ with the PixelGameEngine | TechnicJelle</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Fireworks Display in C++ with the PixelGameEngine | TechnicJelle" />
+<meta name="description" content="On this website you'll find info about me and my projects" />
+<meta property="og:description" content="On this website you'll find info about me and my projects" />
+<meta name="theme-color" content="#001FF1" />
+<meta property="og:image" content="https://technicjelle.com/images/logo-128.gif" />
+<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+
+<link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+<link rel="preload" href="/styles/main.css" as="style" />
+<link rel="stylesheet" href="/styles/main.css" />
+<link rel="preload" href="/styles/blog-post.css" as="style" />
+<link rel="stylesheet" href="/styles/blog-post.css" />
+<link rel="alternate" href="/blog/feed.xml" type="application/atom+xml" title="Blog Atom Feed" />
+
+<style>
+body { background: #151515; }
+</style>
+</head>
+
+<body>
+<header class="mono-font">
+<nav>
+<a href="/">TechnicJelle</a>
+<span class="small">/</span>
+<a href="/blog">Blog</a>
+<span class="small">/</span>
+<a href="/blog/2022">2022</a>
+<span class="small">/</span>
+<a href="/blog/2022/09">09</a>
+<span class="small">/</span>
+<a href="/blog/2022/09/01">01</a>
+<span class="small">/</span>
+<span>pixelgameengine-fireworks-display</span>
+<span class="small">.md</span>
+</nav>
+</header>
+
+<main>
+<h1 id="fireworks-display-in-c-with-the-pixelgameengine">Fireworks Display in C++ with the PixelGameEngine</h1>
+
+<p>
+Over the last couple of days, I've made a simple, little fireworks display:
+</p>
+
+
+<p>
+<video src="fireworks.mp4" autoplay loop muted playsinline></video>
+</p>
+
+
+<p>
+It was supposed to be a quick project, but the physics were a little different than I usually do,
+so it took a little longer.
+</p>
+
+
+<p>
+In the past, I've always made my simulations like these in <a href="https://processing.org/">Processing</a>,
+which is a very, very great tool for learning stuff like this.
+</p>
+
+
+<p>
+Though now I feel like I'm ready for something more advanced,
+so I'm starting to use the PixelGameEngine for stuff like this,
+which is a something similar to Processing, but you use C++, instead.
+</p>
+
+
+<p>
+C++ is a programming language just like Processing is, but it's a lot more difficult.
+The performance advantages of it, however, often outweigh the extra complexity.
+</p>
+
+
+<p>
+So switching to C++ allows me much greater <strong>performance</strong>
+and also much more <strong>control</strong> about what exactly happens everywhere.
+</p>
+
+
+<p>
+In Processing, the simulations typically run at a set frame rate, 60 fps by default.
+</p>
+
+
+<p>
+In the PixelGameEngine, the frame rate is unlocked, meaning that it'll go as fast as possible.
+</p>
+
+
+<p>
+Movement on computers usually goes by displacing a thing by a little bit every amount of time.
+When that amount of time is constant, like in Processing, this is easy:
+if we want to move a circle 60 pixels a second, we simply have to move it by 1 pixel per frame.
+</p>
+
+
+<p>
+In the PixelGameEngine this would not work, as the frame rate is not constant: sometimes it's 1000 fps,
+and at other times it is 3000 fps! (Told you the performance was better ;D )
+</p>
+
+
+<p>
+If we were to move the circle by one pixel every frame, the circle would sometimes move faster than at other times,
+which is not what we want.
+</p>
+
+
+<p>
+As such, a different way of movement has to be used, and luckily for us,
+the PixelGameEngine provides the perfect solution for this: <em>delta time</em>!
+</p>
+
+
+<p>
+Delta time is the amount of time that has passed since the last frame was displayed,
+and we can use this to multiply the speed of the circle with to make the speed constant!
+</p>
+
+
+<p>
+To move something in a way like one would move something in real life, we need a <em>physics system</em>.
+This is used, so we can apply forces to objects to move them,
+instead of just saying "the circle moves at 100 pixels per second".
+</p>
+
+
+<p>
+Writing a physics system that takes the delta time into account correctly was surprisingly
+more difficult than I had anticipated at the start of this project.
+</p>
+
+
+<p>
+I started by implementing a physics system like I was always used to from Processing,
+learnt from the book The nature of Code, while now trying to always account for the delta time in my calculations:<br /><em>(<code>fElapsedTime</code> is the delta time)</em>
+</p>
+
+
+<pre><code class="language-cpp">void Particle::Update(float fElapsedTime)
+{
+	velocity += acceleration;
+	position += velocity * fElapsedTime;
+	acceleration = { 0.0f, 0.0f };
+</code></pre>
+
+<p>
+But in the end, I had to give up on that and go for a different way of calculating the delta time into my code...
+</p>
+
+
+<p>
+I was helpfully given a link to
+<a href="https://code.tutsplus.com/how-to-create-a-custom-2d-physics-engine-the-core-engine--gamedev-7493t#timestepping">this blog</a>
+that explains a new (to me) way of handling cases like exactly these!
+</p>
+
+
+<pre><code class="language-cpp">const float fps = 100
+const float dt = 1 / fps
+float accumulator = 0
+
+// In units of seconds 
+float frameStart = GetCurrentTime( )
+
+// main loop 
+while(true)
+	const float currentTime = GetCurrentTime( )
+
+	// Store the time elapsed since the last frame began 
+	accumulator += currentTime - frameStart( )
+
+	// Record the starting of this frame 
+	frameStart = currentTime
+
+	while(accumulator > dt)
+		UpdatePhysics( dt )
+		accumulator -= dt
+
+	RenderGame( )
+</code></pre>
+
+<p>
+This method, simply put, keeps track of the delta time over a longer amount of time, and if a certain amount of time has
+passed, let's say a tenth of a second, a new physics calculation is done.
+</p>
+
+
+<p>
+This effectively decouples the rendering and the physics from each other, allowing the physics to run at its own pace,
+while letting the rendering go at its own breakneck speed.
+</p>
+
+
+<p>
+What that also gives me, is a way to choose how often I want to calculate the next physics step, resulting in a simple
+way to set how accurate I want the simulation to be!
+</p>
+
+
+<p>
+So I followed the tips from that blog post and implemented them into my simulation and after a bit of work, it all looks
+as great as it does now :)
+</p>
+
+
+<p>
+So that's it!
+</p>
+
+
+<p>
+<strong>You can find the source code for this project <a href="https://github.com/TechnicJelle/FireworksPGE">here</a></strong>
+</p>
+
+
+<hr />
+
+<p>
+<img src="always-bet-on-red.png" alt="" />
+</p>
+
+</main>
+
+<footer>
+<p>
+Website last updated on <time datetime="2026-05-05T21:38:27.429058">2026-05-05 21:38:27.429</time>
+</p>
+
+
+<address><p style="margin-bottom: 0;">
+Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a>
+</p>
+
+</address>
+
+<p style="margin-top: 0;">
+©Copyright 2026 by TechnicJelle. All rights reserved.
+</p>
+
+</footer>
+</body>
+</html>

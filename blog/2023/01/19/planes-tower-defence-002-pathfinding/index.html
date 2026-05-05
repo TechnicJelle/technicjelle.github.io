@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Planes Tower Defence - "Pathfinding" | TechnicJelle</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Planes Tower Defence - "Pathfinding" | TechnicJelle" />
+<meta name="description" content="On this website you'll find info about me and my projects" />
+<meta property="og:description" content="On this website you'll find info about me and my projects" />
+<meta name="theme-color" content="#001FF1" />
+<meta property="og:image" content="https://technicjelle.com/images/logo-128.gif" />
+<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+
+<link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+<link rel="preload" href="/styles/main.css" as="style" />
+<link rel="stylesheet" href="/styles/main.css" />
+<link rel="preload" href="/styles/blog-post.css" as="style" />
+<link rel="stylesheet" href="/styles/blog-post.css" />
+<link rel="alternate" href="/blog/feed.xml" type="application/atom+xml" title="Blog Atom Feed" />
+
+<style>
+body { background: #151515; }
+</style>
+</head>
+
+<body>
+<header class="mono-font">
+<nav>
+<a href="/">TechnicJelle</a>
+<span class="small">/</span>
+<a href="/blog">Blog</a>
+<span class="small">/</span>
+<a href="/blog/2023">2023</a>
+<span class="small">/</span>
+<a href="/blog/2023/01">01</a>
+<span class="small">/</span>
+<a href="/blog/2023/01/19">19</a>
+<span class="small">/</span>
+<span>planes-tower-defence-002-pathfinding</span>
+<span class="small">.md</span>
+</nav>
+</header>
+
+<main>
+<h1 id="planes-tower-defence-pathfinding">Planes Tower Defence - "Pathfinding"</h1>
+
+<nav class="center">
+<p>
+<a href="/blog/2023/01/14/planes-tower-defence-001-level">← Previous Post</a> | <a href="/blog/2023/01/28/planes-tower-defence-003-the-rest">Next Post →</a>
+</p>
+
+</nav>
+
+<p>
+<img src="path-links.png" alt="" />
+</p>
+
+
+<p>
+In the last post, I wrote about the creation of the level, so now in this one,
+I'll be writing about how I prepared for the "pathfinding" for the enemies.
+</p>
+
+
+<p>
+On each corner and split in the road, I placed an Empty game object.
+This is an object that has no information about anything, except for its own position,
+so they're a very nice base to work off of.
+</p>
+
+
+<p>
+I placed all the Empty route points in a group called "Route" and named them:
+</p>
+
+
+<p>
+<img src="route-list.png" alt="" />
+</p>
+
+
+<p>
+Then I wrote a script for the Route, that draws a little sphere and a label for the name around each node,
+but only when I'm editing the level; when the game is exported, it doesn't do anything.
+</p>
+
+
+<pre><code class="language-cs">[ExecuteInEditMode]
+public class RouteNodeDrawer : MonoBehaviour
+{
+#if UNITY_EDITOR
+	[SerializeField] private float nodeSize = 0.1f;
+	[SerializeField] private int fontSize = 20;
+
+	private IEnumerable<Transform> _points;
+
+	private IEnumerable<Transform> GetRoutePoints() => GetComponentsInChildren<Transform>().Where(t => t != transform);
+
+	private void Awake()
+	{
+		_points = GetRoutePoints();
+	}
+
+	private void Update()
+	{
+		if (EditorApplication.isPlaying) return;
+		_points = GetRoutePoints();
+	}
+
+	private void OnDrawGizmos()
+	{
+		if (_points == null) return;
+		foreach (Transform point in _points)
+		{
+			if (point == null) continue;
+			Gizmos.color = Color.red;
+			Vector3 position = point.position;
+			Gizmos.DrawSphere(position, nodeSize);
+			Handles.Label(position, point.name, new GUIStyle{fontSize = fontSize});
+		}
+	}
+#endif
+}
+</code></pre>
+
+<p>
+To have a nice base to pathfind on, we need what is called a Node Tree, which is simply a network of linked nodes.
+So I had to link each node to the next one. There aren't too many nodes here, so I could totally have done this by hand.
+That wouldn't be any fun, though, so I wrote another script that automatically links nodes together!
+</p>
+
+
+<pre><code class="language-cs">public class RouteNodeSetup : MonoBehaviour
+{
+	private static bool IsAboutEqual(float a, float b) => Mathf.Abs(a - b) < 0.01f;
+
+	private void Awake()
+	{
+		RouteNode[] nodes = GetComponentsInChildren<RouteNode>().ToArray();
+
+		foreach (RouteNode node in nodes)
+		{
+			if (node.nextNodes.Count != 0) continue; //don't overwrite manually set connections
+
+			List<RouteNode> rightNodes = new();
+			List<RouteNode> bottomNodes = new();
+
+			foreach (RouteNode otherNode in nodes)
+			{
+				if (node == otherNode) continue; //don't connect to self
+
+				//if otherPoint is to the right of this point
+				if (IsAboutEqual(node.transform.position.y, otherNode.transform.position.y) && otherNode.transform.position.x > node.transform.position.x)
+				{
+					rightNodes.Add(otherNode);
+				}
+				//if otherPoint is to the bottom of this point
+				else if (IsAboutEqual(node.transform.position.x, otherNode.transform.position.x) && node.transform.position.y > otherNode.transform.position.y)
+				{
+					bottomNodes.Add(otherNode);
+				}
+			}
+
+			//sort by x position
+			rightNodes.Sort((a, b) => a.transform.position.x.CompareTo(b.transform.position.x));
+			//sort by y position
+			bottomNodes.Sort((a, b) => b.transform.position.y.CompareTo(a.transform.position.y));
+
+			if (rightNodes.Count > 0) node.nextNodes.Add(rightNodes[0]);
+			if (bottomNodes.Count > 0) node.nextNodes.Add(bottomNodes[0]);
+		}
+	}
+}
+</code></pre>
+
+<p>
+This script loops through all the Empties, and makes them check all other Empties.
+If there's an Empty to the right or to the bottom of this, we link that one as being a possible next node in the tree.
+</p>
+
+
+<p>
+Due to the way I laid out this level, there are a couple nodes in this network that either have dead ends (10 and 13),
+or neighbours that shouldn't actually be connected (5 and 16).
+So those nodes, I set up manually, but the other ones all connect themselves automatically!
+</p>
+
+
+<p>
+The Route Nodes then draw little debug arrows, so we can easily see which nodes point to which other nodes.
+</p>
+
+
+<p>
+Node trees usually don't have directional links, like I have here (as you can see by the arrows).
+Instead of having directional links, they just throw all nodes into one big, fully interconnected tree,
+and use a proper pathfinding algorithm like A* ("a star") to calculate the best route to get from one point to another.
+A* is used in many, many games, due to its versatility and relatively accurate and speedy performance.
+I've programmed A* before, but I didn't feel like doing it again
+<span class="small">(because it's kind of annoying)</span> so I went for something simpler for this game.
+</p>
+
+
+<p>
+The enemies in this game don't plan a route beforehand, but instead chooses where to go on the fly:
+When an enemy arrives at a Route Node, it can see which other Route Nodes this current one connects to,
+and then just choose one of those as its next destination.
+As long as all the nodes are connected properly (which you can check by following the arrows),
+this is a fine enough method in this case.
+</p>
+
+
+<p>
+The reason this works here, is precisely because my nodes aren't fully interconnected, but have a direction to them.
+If they weren't directional, the possibility for enemies to get stuck walking in circles would arise
+(which you can, in fact, sometimes see happening around nodes 10 and 13,
+where there are arrows one way and the other over the same road)
+</p>
+
+
+<p>
+The way enemies choose their next destination is by looking how often each potential next destination has been visited,
+and it'll choose the one with the least amount. This means the enemies in this game all choose the least trodden path.
+I found this a quite elegant solution and in fact I prefer it over just randomly choosing a next destination,
+as this is surer to evenly distribute enemies over each different route.
+</p>
+
+
+<p>
+So this is the reason why I wrote pathfinding with quotes;
+it doesn't actually find a path it wants to go along at the start with a proper pathfinding algorithm,
+but it just chooses between some predefined path segments.
+</p>
+
+
+<p>
+The next post will talk more about the enemies themselves.
+</p>
+
+
+<p>
+<strong>Source code available <a href="https://github.com/TechnicJelle/PlanesTowerDefence">here</a></strong>
+</p>
+
+
+<hr />
+
+<p>
+As a bonus, here's a video I recorded during this process, when the node linking didn't work all too well yet...
+</p>
+
+
+<p>
+<video src="Peek 2022-12-23 11-09.mp4" controls loop muted playsinline></video>
+</p>
+
+
+<nav class="center">
+<p>
+<a href="/blog/2023/01/14/planes-tower-defence-001-level">← Previous Post</a> | <a href="/blog/2023/01/28/planes-tower-defence-003-the-rest">Next Post →</a>
+</p>
+
+</nav>
+</main>
+
+<footer>
+<p>
+Website last updated on <time datetime="2026-05-05T21:38:27.400051">2026-05-05 21:38:27.400</time>
+</p>
+
+
+<address><p style="margin-bottom: 0;">
+Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a>
+</p>
+
+</address>
+
+<p style="margin-top: 0;">
+©Copyright 2026 by TechnicJelle. All rights reserved.
+</p>
+
+</footer>
+</body>
+</html>

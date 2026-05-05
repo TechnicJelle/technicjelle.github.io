@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Infrastructure for Teamwork, a.k.a. Version Control | TechnicJelle</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Infrastructure for Teamwork, a.k.a. Version Control | TechnicJelle" />
+<meta name="description" content="On this website you'll find info about me and my projects" />
+<meta property="og:description" content="On this website you'll find info about me and my projects" />
+<meta name="theme-color" content="#001FF1" />
+<meta property="og:image" content="https://technicjelle.com/images/logo-128.gif" />
+<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+
+<link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+<link rel="preload" href="/styles/main.css" as="style" />
+<link rel="stylesheet" href="/styles/main.css" />
+<link rel="preload" href="/styles/blog-post.css" as="style" />
+<link rel="stylesheet" href="/styles/blog-post.css" />
+<link rel="alternate" href="/blog/feed.xml" type="application/atom+xml" title="Blog Atom Feed" />
+
+<style>
+body { background: #151515; }
+</style>
+</head>
+
+<body>
+<header class="mono-font">
+<nav>
+<a href="/">TechnicJelle</a>
+<span class="small">/</span>
+<a href="/blog">Blog</a>
+<span class="small">/</span>
+<a href="/blog/2025">2025</a>
+<span class="small">/</span>
+<a href="/blog/2025/01">01</a>
+<span class="small">/</span>
+<a href="/blog/2025/01/18">18</a>
+<span class="small">/</span>
+<span>infrastructure-for-teamwork-aka-version-control</span>
+<span class="small">.md</span>
+</nav>
+</header>
+
+<main>
+<h1 id="infrastructure-for-teamwork-aka-version-control">Infrastructure for Teamwork, a.k.a. Version Control</h1>
+
+<nav class="center">
+<p>
+<a href="/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds">Next Post →</a>
+</p>
+
+</nav>
+
+<p>
+Working together on a game is quite difficult.<br />
+How do you make sure everyone is on the same page?
+</p>
+
+
+<p>
+You could send zips with assets and code between people, but that is slow, cumbersome, and <em>very</em> error-prone.
+</p>
+
+
+<p>
+This is why Source Control software was invented.<br />
+With Source Control, you can store the project files on a server,
+and everyone who wants to work on the project files, can download the project from the server.<br />
+Once they're done with their changes, they send them back to the server.<br />
+Then the other people can get those changes from the server again.
+</p>
+
+
+<p>
+There are many different Source Control softwares. Probably the best-known one is git.<br />
+(Source Control, Version Control, Revision Control all mean essentially the same thing.)
+</p>
+
+
+<p>
+Git is very good for working on projects that are all just plain-text code.<br />
+However, it kind of falls flat when it needs to deal with binary assets, like textures, models, and sounds.<br />
+There are solutions to this, like git-lfs and git-annex, but those are still not very nice to use.<br />
+git-lfs is quite expensive if you use GitHub, and it's not very simple to self-host either.<br />
+git-annex is much easier to self-host, but it's not as well-supported as git-lfs.
+</p>
+
+
+<p>
+In Unreal Engine, Scenes and Blueprints are also binary files.<br />
+So if you don't use C++ but only Blueprints, basically your entire project is binary files.
+</p>
+
+
+<p>
+This is why I went looking for a different Version Control Software that can handle this better.<br />
+At my internship, I used Subversion, which is said to work better with binary assets,
+but in my experience then, it still wasn't exactly great.<br />
+Though that might also have been due to the fact that they barely used any of its fancier features there.
+</p>
+
+
+<p>
+Unreal Engine itself recommends using Perforce Helix Core.<br />
+(Perforce is the company, Helix Core is the VCS, but the term "Perforce" is usually used to refer to the VCS itself,
+due to historical reasons. <a href="https://www.youtube.com/watch?v=jIQEjDiSe0g">Source</a>)<br />
+So I looked into it, and indeed, it seemed very suitable!
+</p>
+
+
+<p>
+We requested a computer from the XR Lab to use as server for this project,
+and I installed the Helix Core Server on it.
+</p>
+
+
+<p>
+<img src="IMG_20241106_150432066.jpg" alt="I point to the server computer" />
+</p>
+
+
+<p>
+<img src="Screenshot_2025-01-16_15-44-32-v3.png" alt="I point to the p4s.exe in Task Manager" />
+</p>
+
+
+<p>
+It was surprisingly easy to install!
+</p>
+
+
+<p>
+I then downloaded the Helix Core Client application on my laptop, and connected to the server.<br />
+The setup there took a while, because there was a lot to learn.<br />
+But in the end, I did it!
+</p>
+
+
+<p>
+Sadly, Perforce is not free, so we are forced to use the free version, which is limited to a maximum of five users.<br />
+We are with ten people, so we had to choose a few "representatives"
+who would actually put the things everyone made into the project.
+</p>
+
+
+<p>
+We requested an educational licence from Saxion, but got told to wait.
+Now that the project is over, we still don't have it...<br />
+We also requested an educational licence from Perforce itself, directly, but we have still not got a response either.<br />
+But we made do with the limitations we got.
+</p>
+
+
+<p>
+I wrote
+<a href="https://github.com/TechnicJelle/UE5_GHActions_VRTemplate/blob/main/docs/Perforce%20Setup%20Guide%20for%20Users/README.md">a guide</a>
+for my teammates on how to set up a workspace for the project with Perforce,
+and improved it multiple times based on user testing and feedback.<br />
+(I sat next to my teammates while they were following the guide and tried my best to not say anything;
+to let the guide speak for itself.
+I would then take note of what went wrong and improved that section of the guide for the next user test.)
+</p>
+
+
+<p>
+Over the months of this project, we all used P4V and Perforce to work together on the project.<br />
+Due to Perforce's locking system, we never had any merge conflicts!<br />
+Most of the team actually really enjoyed working with Perforce.<br />
+Personally, I do miss git, but I acknowledge that for an Unreal Engine project, Perforce is a lot better.
+</p>
+
+
+<p>
+And I also found it pretty nice to work with.<br />
+The documentation was pretty good, and they have a lot of tutorials, guide, and demonstration videos,
+which have been very helpful during the setup.<br />
+It's very useful to be able to follow along every single click.
+</p>
+
+
+<nav class="center">
+<p>
+<a href="/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds">Next Post →</a>
+</p>
+
+</nav>
+</main>
+
+<footer>
+<p>
+Website last updated on <time datetime="2026-05-05T21:38:27.362092">2026-05-05 21:38:27.362</time>
+</p>
+
+
+<address><p style="margin-bottom: 0;">
+Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a>
+</p>
+
+</address>
+
+<p style="margin-top: 0;">
+©Copyright 2026 by TechnicJelle. All rights reserved.
+</p>
+
+</footer>
+</body>
+</html>

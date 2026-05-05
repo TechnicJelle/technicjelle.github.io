@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Planes Tower Defence - Level | TechnicJelle</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Planes Tower Defence - Level | TechnicJelle" />
+<meta name="description" content="On this website you'll find info about me and my projects" />
+<meta property="og:description" content="On this website you'll find info about me and my projects" />
+<meta name="theme-color" content="#001FF1" />
+<meta property="og:image" content="https://technicjelle.com/images/logo-128.gif" />
+<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+
+<link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+<link rel="preload" href="/styles/main.css" as="style" />
+<link rel="stylesheet" href="/styles/main.css" />
+<link rel="preload" href="/styles/blog-post.css" as="style" />
+<link rel="stylesheet" href="/styles/blog-post.css" />
+<link rel="alternate" href="/blog/feed.xml" type="application/atom+xml" title="Blog Atom Feed" />
+
+<style>
+body { background: #151515; }
+</style>
+</head>
+
+<body>
+<header class="mono-font">
+<nav>
+<a href="/">TechnicJelle</a>
+<span class="small">/</span>
+<a href="/blog">Blog</a>
+<span class="small">/</span>
+<a href="/blog/2023">2023</a>
+<span class="small">/</span>
+<a href="/blog/2023/01">01</a>
+<span class="small">/</span>
+<a href="/blog/2023/01/14">14</a>
+<span class="small">/</span>
+<span>planes-tower-defence-001-level</span>
+<span class="small">.md</span>
+</nav>
+</header>
+
+<main>
+<h1 id="planes-tower-defence-level">Planes Tower Defence - Level</h1>
+
+<nav class="center">
+<p>
+<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">Next Post →</a>
+</p>
+
+</nav>
+
+<p>
+Over the last couple of weeks, I've been working on making a little tower defence game in Unity.
+Now that I've made quite some progress with the base of the game,
+I felt like it was time to write a bit about it, so let's go!
+</p>
+
+
+<p>
+In this post, I'll write about the creation of this level:
+</p>
+
+
+<p>
+<img src="level.png" alt="level" />
+</p>
+
+
+<h2 id="tiles">Tiles
+<a href="#tiles" class="link">🔗</a></h2>
+
+<p>
+I started off with finding a good tileset to use.
+For this game, I wanted to focus on the code and behaviours, instead of on the art.
+So I found <a href="https://kenney.nl/assets/pixel-shmup">this nice Kenney pack</a>:
+</p>
+
+
+<p>
+<img src="kenney.png" alt="kenney shmup" />
+</p>
+
+
+<p>
+So then I got to work importing this into Unity, to make a nice level with these tiles.
+This is the first time I'm making a 2D game in Unity, so I had to look up how to make tile grids work and found
+<a href="https://www.youtube.com/watch?v=g83_gwEO0kM">this great tutorial</a>.
+</p>
+
+
+<p>
+I made good use of the auto-tiling feature that Unity provides,
+so I could just simply draw where I wanted the roads to be,
+and Unity would then choose exactly which tile of the tileset to put where,
+so the roads would look nice and connected.
+</p>
+
+
+<p>
+<img src="tiling-rules.png" alt="tiling rules in unity" />
+</p>
+
+
+<h2 id="artifacting">Artifacting
+<a href="#artifacting" class="link">🔗</a></h2>
+
+<p>
+During the process of working with this grid of tiles, I found a strange problem, though.
+Sometimes there would be small lines where they shouldn't be, as you can see here:
+</p>
+
+
+<p>
+<img src="artifacts.png" alt="pixel artifacting" />
+</p>
+
+
+<p>
+There's just the tiniest line of darker pixels in the green grass.
+This had me, and my teacher, quite stumped for a while,
+until we finally figured out that it was due to the specific dimensions of the viewport!
+It wasn't an even amount of pixels wide by high, so at some rows and columns,
+the GPU chose wrong which pixels to sample from the tileset texture.
+So luckily this issue could be solved very easily by just never having a screen with an uneven numbered resolution,
+which never happens anyway! It just can happen inside the Unity editor.
+</p>
+
+
+<p>
+Next post will be about the "pathfinding" I did.
+(And you'll also understand then why I'm writing that with quotes ;) )
+</p>
+
+
+<p>
+<strong>Source code available <a href="https://github.com/TechnicJelle/PlanesTowerDefence">here</a></strong>
+</p>
+
+
+<nav class="center">
+<p>
+<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">Next Post →</a>
+</p>
+
+</nav>
+</main>
+
+<footer>
+<p>
+Website last updated on <time datetime="2026-05-05T21:38:27.409140">2026-05-05 21:38:27.409</time>
+</p>
+
+
+<address><p style="margin-bottom: 0;">
+Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a>
+</p>
+
+</address>
+
+<p style="margin-top: 0;">
+©Copyright 2026 by TechnicJelle. All rights reserved.
+</p>
+
+</footer>
+</body>
+</html>

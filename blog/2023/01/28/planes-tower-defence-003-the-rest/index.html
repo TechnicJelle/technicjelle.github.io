@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Planes Tower Defence - The Rest | TechnicJelle</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Planes Tower Defence - The Rest | TechnicJelle" />
+<meta name="description" content="On this website you'll find info about me and my projects" />
+<meta property="og:description" content="On this website you'll find info about me and my projects" />
+<meta name="theme-color" content="#001FF1" />
+<meta property="og:image" content="https://technicjelle.com/images/logo-128.gif" />
+<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+
+<link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+<link rel="preload" href="/styles/main.css" as="style" />
+<link rel="stylesheet" href="/styles/main.css" />
+<link rel="preload" href="/styles/blog-post.css" as="style" />
+<link rel="stylesheet" href="/styles/blog-post.css" />
+<link rel="alternate" href="/blog/feed.xml" type="application/atom+xml" title="Blog Atom Feed" />
+
+<style>
+body { background: #151515; }
+</style>
+</head>
+
+<body>
+<header class="mono-font">
+<nav>
+<a href="/">TechnicJelle</a>
+<span class="small">/</span>
+<a href="/blog">Blog</a>
+<span class="small">/</span>
+<a href="/blog/2023">2023</a>
+<span class="small">/</span>
+<a href="/blog/2023/01">01</a>
+<span class="small">/</span>
+<a href="/blog/2023/01/28">28</a>
+<span class="small">/</span>
+<span>planes-tower-defence-003-the-rest</span>
+<span class="small">.md</span>
+</nav>
+</header>
+
+<main>
+<h1 id="planes-tower-defence-the-rest">Planes Tower Defence - The Rest</h1>
+
+<nav class="center">
+<p>
+<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">← Previous Post</a>
+</p>
+
+</nav>
+
+<p>
+<em>(This post was written years later, because I found some more early footage)</em>
+</p>
+
+
+<h2 id="enemies">Enemies
+<a href="#enemies" class="link">🔗</a></h2>
+
+<p>
+The following video was recorded right after I added an enemy object,
+which can follow the paths I described in the previous post.
+</p>
+
+
+<p>
+<video src="Peek 2023-01-02 01-08.mp4" controls muted playsinline></video>
+</p>
+
+
+<p>
+I then also added a secondary, faster but weaker enemy, which is red.
+</p>
+
+
+<h2 id="waves">Waves
+<a href="#waves" class="link">🔗</a></h2>
+
+<p>
+The waves are defined through Unity ScriptableObjects.
+In the next video, you can see a countdown in the Console in the bottom left,
+and the ScriptableObjects in the Asset Browser in the bottom right.
+</p>
+
+
+<p>
+<video src="Peek 2023-01-11 20-51.mp4" controls muted playsinline></video>
+</p>
+
+
+<h2 id="ui-enemy-sprites">UI & Enemy sprites
+<a href="#ui-enemy-sprites" class="link">🔗</a></h2>
+
+<p>
+Enemies now are not just white/red squares anymore, but actual sprites.
+I chose the tanks for them.
+</p>
+
+
+<p>
+They now also have health and a health bar.
+</p>
+
+
+<p>
+I added UI in the top left corner that displays the current wave,
+and the countdown to the next wave.
+</p>
+
+
+<p>
+In the bottom right is the player's HP, which is not yet implemented in this video:
+</p>
+
+
+<p>
+<video src="Peek 2023-01-14 00-40.mp4" controls muted playsinline></video>
+</p>
+
+
+<h2 id="towers">Towers
+<a href="#towers" class="link">🔗</a></h2>
+
+<p>
+It was finally time to actually add the towers!
+</p>
+
+
+<p>
+I added some pre-defined spots where they can be placed in the level.
+Players can click on one, and a pop-up menu will appear around there, showing the four available towers types.
+</p>
+
+
+<p>
+The towers point to the nearest enemy, spawn bullets that travel forwards and hit the enemies, doing damage.
+</p>
+
+
+<p>
+Towers only have a limited range and fire rate, which differs per tower type.
+</p>
+
+
+<p>
+In this video, I haven't implemented the currency yet, so I could place towers anywhere and as much as I wanted.
+</p>
+
+
+<p>
+<video src="Peek 2023-01-28 00-22.mp4" controls muted playsinline></video>
+</p>
+
+
+<h2 id="final-result">Final Result
+<a href="#final-result" class="link">🔗</a></h2>
+
+<p>
+I don't have any more videos, but I implemented everything I set out to implement!
+</p>
+
+
+<p>
+There is one level with a few waves, two enemy types, four tower types, player HP and economy.
+</p>
+
+
+<p>
+(Balancing is probably not very good, but that wasn't the goal of this project anyway.)
+</p>
+
+
+<p>
+<strong>The game is freely playable <a href="https://technicjelle.com/PlanesTowerDefence/">here</a>, right in your browser!</strong>
+</p>
+
+
+<p>
+Source code available <a href="https://github.com/TechnicJelle/PlanesTowerDefence">here</a>
+</p>
+
+
+<nav class="center">
+<p>
+<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">← Previous Post</a>
+</p>
+
+</nav>
+</main>
+
+<footer>
+<p>
+Website last updated on <time datetime="2026-05-05T21:38:27.384620">2026-05-05 21:38:27.384</time>
+</p>
+
+
+<address><p style="margin-bottom: 0;">
+Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a>
+</p>
+
+</address>
+
+<p style="margin-top: 0;">
+©Copyright 2026 by TechnicJelle. All rights reserved.
+</p>
+
+</footer>
+</body>
+</html>

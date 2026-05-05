@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Space Combat 3DX Updates | TechnicJelle</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Space Combat 3DX Updates | TechnicJelle" />
+<meta name="description" content="On this website you'll find info about me and my projects" />
+<meta property="og:description" content="On this website you'll find info about me and my projects" />
+<meta name="theme-color" content="#001FF1" />
+<meta property="og:image" content="https://technicjelle.com/images/logo-128.gif" />
+<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+
+<link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+<link rel="preload" href="/styles/main.css" as="style" />
+<link rel="stylesheet" href="/styles/main.css" />
+<link rel="preload" href="/styles/blog-post.css" as="style" />
+<link rel="stylesheet" href="/styles/blog-post.css" />
+<link rel="alternate" href="/blog/feed.xml" type="application/atom+xml" title="Blog Atom Feed" />
+
+<style>
+body { background: #151515; }
+</style>
+</head>
+
+<body>
+<header class="mono-font">
+<nav>
+<a href="/">TechnicJelle</a>
+<span class="small">/</span>
+<a href="/blog">Blog</a>
+<span class="small">/</span>
+<a href="/blog/2022">2022</a>
+<span class="small">/</span>
+<a href="/blog/2022/07">07</a>
+<span class="small">/</span>
+<a href="/blog/2022/07/13">13</a>
+<span class="small">/</span>
+<span>space-combat-3dx-003-second-level-and-sounds</span>
+<span class="small">.md</span>
+</nav>
+</header>
+
+<main>
+<h1 id="space-combat-3dx-updates">Space Combat 3DX Updates</h1>
+
+<nav class="center">
+<p>
+<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">← Previous Post</a>
+</p>
+
+</nav>
+
+<iframe src="https://www.youtube-nocookie.com/embed/aCmfekB2mho" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
+
+<p>
+Since the last post, I've been hard at work adding more and more features! Mainly the second level and sounds,
+but there's a lot more that went into it all!
+</p>
+
+
+<h2 id="enemy-health">Enemy health
+<a href="#enemy-health" class="link">🔗</a></h2>
+
+<p>
+Enemies now have health and can be defeated by bumping into them.
+I'll add an actual shooting mechanic to both the player and the enemies later.
+For now, this slightly more crude solution will have to do.
+The enemies also now have thruster particles of their own, just like the player.
+</p>
+
+
+<h2 id="skybox">Skybox
+<a href="#skybox" class="link">🔗</a></h2>
+
+<p>
+I have added a second level with another completely custom skybox made in Blender!
+Those top two voronoi textures with the very wide colour ramps together are actually the first level's skybox.
+It just generates a ton of tiny white dots.
+There are two layers, because one makes tiny dots and the other makes even more and smaller dots.
+</p>
+
+
+<p>
+The bottom part is two layers of noise, distorting the UV space to generate a warped line going around the skybox.
+That line is then coloured in by the last colour ramp.
+</p>
+
+
+<p>
+<img src="blender-space-nodes.png" alt="" />
+</p>
+
+
+<p>
+This cube map has been rendered out using the excellent <a href="https://blendswap.com/blend/17087">Cube Map Creation Toolkit</a>.
+</p>
+
+
+<h2 id="portals">Portals
+<a href="#portals" class="link">🔗</a></h2>
+
+<p>
+You can go from one level to the other by travelling through a portal that appears once you've defeated all the enemies!
+</p>
+
+
+<p>
+<img src="Screenshot_(8).png" alt="" />
+</p>
+
+
+<h2 id="sound">Sound
+<a href="#sound" class="link">🔗</a></h2>
+
+<p>
+I also added sounds to the player's engine and also the enemies make buzzing sounds.
+</p>
+
+
+<p>
+And the game has some nice background music to fill up the empty space!
+</p>
+
+
+<p>
+Credits are listed in the repository's <a href="https://github.com/TechnicJelle/SpaceCombat3DX/tree/main#assets-used">README</a>.
+</p>
+
+
+<h2 id="menu">Menu
+<a href="#menu" class="link">🔗</a></h2>
+
+<p>
+There's now a pause menu with volume sliders for three different categories of sounds!
+There is now also a quit button there.
+That is useful, because before there was no other way to stop the game than to press Alt+F4!
+</p>
+
+
+<p>
+<img src="Screenshot_(9).png" alt="" />
+</p>
+
+
+<h2 id="tutorial">Tutorial
+<a href="#tutorial" class="link">🔗</a></h2>
+
+<p>
+There's now also a bit of a tutorial in the top left that explains what to do:
+</p>
+
+
+<div class="img-list">
+<p>
+<img src="tut1_rotate.png" alt="" /><img src="tut2_thrust.png" alt="" /><img src="tut3_goal.png" alt="" /><img src="tut4_result.png" alt="" />
+</p>
+
+</div>
+
+<p>
+This tutorial system will be improved later.
+</p>
+
+
+<hr />
+
+<p>
+I'll be putting this project on hold for a little bit while I work on other projects.
+Perhaps I'll write about those too! :D
+</p>
+
+
+<p>
+<strong>Download the game <a href="https://github.com/TechnicJelle/SpaceCombat3DX#readme">here</a>!</strong>
+</p>
+
+
+<nav class="center">
+<p>
+<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">← Previous Post</a>
+</p>
+
+</nav>
+</main>
+
+<footer>
+<p>
+Website last updated on <time datetime="2026-05-05T21:38:27.437928">2026-05-05 21:38:27.437</time>
+</p>
+
+
+<address><p style="margin-bottom: 0;">
+Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a>
+</p>
+
+</address>
+
+<p style="margin-top: 0;">
+©Copyright 2026 by TechnicJelle. All rights reserved.
+</p>
+
+</footer>
+</body>
+</html>

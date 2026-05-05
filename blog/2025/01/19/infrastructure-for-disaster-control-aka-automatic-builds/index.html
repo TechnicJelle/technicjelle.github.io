@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Infrastructure for Disaster Control, a.k.a. Automatic Builds | TechnicJelle</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Infrastructure for Disaster Control, a.k.a. Automatic Builds | TechnicJelle" />
+<meta name="description" content="On this website you'll find info about me and my projects" />
+<meta property="og:description" content="On this website you'll find info about me and my projects" />
+<meta name="theme-color" content="#001FF1" />
+<meta property="og:image" content="https://technicjelle.com/images/logo-128.gif" />
+<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+
+<link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+<link rel="preload" href="/styles/main.css" as="style" />
+<link rel="stylesheet" href="/styles/main.css" />
+<link rel="preload" href="/styles/blog-post.css" as="style" />
+<link rel="stylesheet" href="/styles/blog-post.css" />
+<link rel="alternate" href="/blog/feed.xml" type="application/atom+xml" title="Blog Atom Feed" />
+
+<style>
+body { background: #151515; }
+</style>
+</head>
+
+<body>
+<header class="mono-font">
+<nav>
+<a href="/">TechnicJelle</a>
+<span class="small">/</span>
+<a href="/blog">Blog</a>
+<span class="small">/</span>
+<a href="/blog/2025">2025</a>
+<span class="small">/</span>
+<a href="/blog/2025/01">01</a>
+<span class="small">/</span>
+<a href="/blog/2025/01/19">19</a>
+<span class="small">/</span>
+<span>infrastructure-for-disaster-control-aka-automatic-builds</span>
+<span class="small">.md</span>
+</nav>
+</header>
+
+<main>
+<h1 id="infrastructure-for-disaster-control-aka-automatic-builds">Infrastructure for Disaster Control, a.k.a. Automatic Builds</h1>
+
+<nav class="center">
+<p>
+<a href="/blog/2025/01/18/infrastructure-for-teamwork-aka-version-control">← Previous Post</a>
+</p>
+
+</nav>
+
+<p>
+We all know the feeling of pure and utter stress when, ten minutes before the deadline,
+you finally click the "Build And Export" button in your game engine, and then it fails to build for some reason.
+</p>
+
+
+<p>
+To prevent issues like this, people invented automated builds, also referred to as CI/CD
+(which stands for Continuous Integration and Continuous Deployment).
+</p>
+
+
+<p>
+This is a mechanism that tests the project every single time a change is made
+(a git commit is pushed, or a Perforce changelist is submitted).<br />
+Because of this, we very quickly know whenever a change broke the build, which means we can fix it immediately,
+instead of having to fix it at the end.
+</p>
+
+
+<p>
+It is also useful whenever a regression happens that doesn't break the build.<br />
+We can go back to a previous build, and see if the issue is there or not.<br />
+By checking a few builds by way of <a href="https://help.winternode.com/General-Utilities/Linear-Binary-Search">binary search</a>,
+we can very quickly pinpoint the exact change that caused the regression.<br />
+We have used this a few times, in fact.<br />
+Once, the weaving machines stopped showing up in the build, and with this method,
+we were able to pinpoint the exact change that caused it, and then we submitted a fix!
+</p>
+
+
+<p>
+It's very useful to have an archive of builds for every change we made to the project.
+</p>
+
+
+<p>
+There are multiple different softwares that do this kind of thing, but Jenkins is by and far the most used.
+Both by indies, but also large AAA studios!<br />
+So knowing how it works is very useful, so that's why I picked Jenkins for the job.<br />
+Again, like with Perforce, it was pretty easy to install!
+</p>
+
+
+<p>
+Here is a list of every build run that Jenkins did, including a neat little graph :)
+</p>
+
+
+<p>
+<img src="Screenshot_2025-01-16_at_16-42-45_Build_Weavery_Experience_Build_time_trend_Jenkins.png" alt="jenkins builds" />
+</p>
+
+
+<p>
+Configuring it was quite tricky, though.<br />
+I had to create a console terminal CLI command that makes Unreal Engine build project.<br /><span class="small">
+Resources used:
+( <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-automation-tool-overview-for-unreal-engine?application_version=5.4">one</a> )
+( <a href="https://github.com/botman99/ue4-unreal-automation-tool">two</a> )
+</span>
+</p>
+
+
+<p>
+It took many days of constant iteration, but in the end, I got it to work very well!
+</p>
+
+
+<p>
+I also wrote some explanations of what Jenkins is and how to use it on the Jenkins pages themselves,
+for my teammates to read:
+</p>
+
+
+<h2 id="dashboard-the-home-page">Dashboard (The Home Page):
+<a href="#dashboard-the-home-page" class="link">🔗</a></h2>
+
+<p>
+<img src="jenkins_dashboard.png" alt="dashboard" />
+</p>
+
+
+<h2 id="project-page">Project Page:
+<a href="#project-page" class="link">🔗</a></h2>
+
+<p>
+<img src="jenkins_bwe.png" alt="project" />
+</p>
+
+
+<h2 id="notifications">Notifications
+<a href="#notifications" class="link">🔗</a></h2>
+
+<p>
+Now, it is of course very useful to build the project and catch errors when they happen,
+but if no-one looks on the Jenkins page, then no-one will see the status!<br />
+Even if the website is accessible to everyone, people won't really look there very often.<br />
+Which kind of makes the whole thing useless...<br />
+So to solve that issue, I implemented Discord pings!<br />
+There is <a href="https://plugins.jenkins.io/discord-notifier/">a Jenkins plugin</a>
+that automatically sends messages to a specific Discord channel once the build is done.<br />
+This lets everyone know when the build succeeded or failed.
+</p>
+
+
+<p>
+<img src="Screenshot_2025-01-17_22-56-22.png" alt="discord" />
+</p>
+
+
+<p>
+We of course already had a discord server that we used to discuss everything in, and to hold our online meetings with.<br />
+So this <code>#build-status</code> channel fit in perfectly, and it was super helpful in catching and solving issues.
+</p>
+
+
+<p>
+Whenever a build failed, people could click on the link,
+and see the console output that Unreal Engine gave during the build,
+so we could instantly see where the issue was coming from.<br />
+And because it rebuilds for every change that is made,
+we know for certain that the issue can only have come from the change that was just made!<br />
+This meant that keeping every change small, made it easier to find and fix problems!
+</p>
+
+
+<h2 id="archive">Archive
+<a href="#archive" class="link">🔗</a></h2>
+
+<p>
+Whenever a build succeeds, it gets stored on the server, in the build archive.
+</p>
+
+
+<p>
+<img src="Screenshot_2025-01-17_23-02-45.png" alt="archive" />
+</p>
+
+
+<p>
+But storing it on the server alone is nice and all, but people can't really do anything with them there.<br />
+I could personally access them by remotely connecting to the server,
+but I cannot make my teammates go through all that.<br />
+So I needed to make them more accessible for the whole team, to download whenever they please.
+</p>
+
+
+<p>
+For this, I wanted to create a small website, from which they can download them.<br />
+Just by going to the link, they could scroll through every build and download it immediately.
+</p>
+
+
+<p>
+I already knew of multiple ways of easily doing this, so I tried out a few.
+</p>
+
+
+<p>
+The Python programming language actually ships with a built-in webserver module
+that can be used very easily with a single command.<br />
+But Python wasn't installed, and installing Python on Windows is kind of annoying,
+so I wanted something else. Something simpler.
+</p>
+
+
+<p>
+I often use the program "darkhttpd" whenever I want a simple webserver, so I tried to download that,
+but I couldn't get it to work on Windows. Seems like it only really supports Linux...
+</p>
+
+
+<p>
+So I went looking for other, single-executable, webserver programs that <em>do</em> support Windows.
+</p>
+
+
+<p>
+And so I stumbled on "caddy".<br />
+I'd actually heard of it before, but never used it, as I never had a need for it before then.
+For actual full websites, I've always used nginx.<br />
+After some time of looking at the official documentation of caddy's various configuration file formats
+and command-line arguments, and tweaking things, I had it working like I wanted!<br />
+It now even automatically starts when the computer boots up,
+which is something that Perforce and Jenkins set up automatically.<br /><span class="small">
+Resources used:
+( <a href="https://caddyserver.com/">one</a> )
+( <a href="https://caddyserver.com/docs/quick-starts/static-files">two</a> )
+( <a href="https://caddyserver.com/docs/caddyfile/directives/file_server">three</a> )
+( <a href="https://caddyserver.com/docs/running#windows-service">four</a> )
+</span>
+</p>
+
+
+<p>
+<img src="caddy.png" alt="list of files" />
+</p>
+
+
+<h2 id="network-map">Network map
+<a href="#network-map" class="link">🔗</a></h2>
+
+<p>
+Here's a summary of the setup, drawn as a network map:
+</p>
+
+
+<p>
+<img src="NetworkMap.excalidraw.png" alt="network map" />
+</p>
+
+
+<h2 id="future">Future
+<a href="#future" class="link">🔗</a></h2>
+
+<p>
+There is a concept called <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code">IAC, Infrastructure As Code</a>,
+which I would like to look into, in the future.<br />
+It seems very useful for these kinds of situations
+where other people have to be able to take over and reproduce the setups.
+</p>
+
+
+<h2 id="inheritance">Inheritance
+<a href="#inheritance" class="link">🔗</a></h2>
+
+<p>
+And I think that's it!
+Unfortunately, likely none of this will roll over to the next team that has to work on this project,
+because none of this is code that is inside our project folder.
+I requested that they inherit the server computer, but I'm not confident that they will accept it.
+</p>
+
+
+<nav class="center">
+<p>
+<a href="/blog/2025/01/18/infrastructure-for-teamwork-aka-version-control">← Previous Post</a>
+</p>
+
+</nav>
+</main>
+
+<footer>
+<p>
+Website last updated on <time datetime="2026-05-05T21:38:27.353107">2026-05-05 21:38:27.353</time>
+</p>
+
+
+<address><p style="margin-bottom: 0;">
+Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a>
+</p>
+
+</address>
+
+<p style="margin-top: 0;">
+©Copyright 2026 by TechnicJelle. All rights reserved.
+</p>
+
+</footer>
+</body>
+</html>

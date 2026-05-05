@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Enemy AI in my Space Shooter Game | TechnicJelle</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Enemy AI in my Space Shooter Game | TechnicJelle" />
+<meta name="description" content="On this website you'll find info about me and my projects" />
+<meta property="og:description" content="On this website you'll find info about me and my projects" />
+<meta name="theme-color" content="#001FF1" />
+<meta property="og:image" content="https://technicjelle.com/images/logo-128.gif" />
+<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+
+<link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+<link rel="preload" href="/styles/main.css" as="style" />
+<link rel="stylesheet" href="/styles/main.css" />
+<link rel="preload" href="/styles/blog-post.css" as="style" />
+<link rel="stylesheet" href="/styles/blog-post.css" />
+<link rel="alternate" href="/blog/feed.xml" type="application/atom+xml" title="Blog Atom Feed" />
+
+<style>
+body { background: #151515; }
+</style>
+</head>
+
+<body>
+<header class="mono-font">
+<nav>
+<a href="/">TechnicJelle</a>
+<span class="small">/</span>
+<a href="/blog">Blog</a>
+<span class="small">/</span>
+<a href="/blog/2022">2022</a>
+<span class="small">/</span>
+<a href="/blog/2022/07">07</a>
+<span class="small">/</span>
+<a href="/blog/2022/07/10">10</a>
+<span class="small">/</span>
+<span>space-combat-3dx-002-enemies</span>
+<span class="small">.md</span>
+</nav>
+</header>
+
+<main>
+<h1 id="enemy-ai-in-my-space-shooter-game">Enemy AI in my Space Shooter Game</h1>
+
+<nav class="center">
+<p>
+<a href="/blog/2022/06/30/space-compat-3dx-001-spaceflight">← Previous Post</a> | <a href="/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">Next Post →</a>
+</p>
+
+</nav>
+
+<iframe src="https://www.youtube-nocookie.com/embed/61txGXSI4q8" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
+
+<p>
+Today, I felt motivated to make the movement AI for the enemies in my in-development Space Shooter game in Unity.
+</p>
+
+
+<p>
+The last few days, I had already been thinking about how to best approach this,
+and ultimately I had thought up a system that would use a cone of raycasts as the "eyes" of the enemies.
+Those would detect the asteroids in front of them and by comparing the results from all the raycasts,
+it would choose the best direction for it to go.
+</p>
+
+
+<p>
+(Raycasts are basically a ray that you can shoot from one point to another point.
+That ray can collide with something on its way, and then it can give back information about the position of the hit,
+the thing it hit etc.)
+</p>
+
+
+<p>
+At first, I just had the enemy (at that point still just a capsule)
+simply gradually turn towards the player and accelerate forwards
+</p>
+
+
+<p>
+<video src="Video1.mp4" autoplay controls loop muted playsinline></video>
+</p>
+
+
+<p>
+Just simply this was already surprisingly effective at annoying the player, but my goal was something more than this.
+For one thing, this could very easily get stuck behind asteroids.
+</p>
+
+
+<p>
+So I started working on the raycast system! The enemy would shoot out a ray directly in front of where it's going
+and checks if it detected a game object that can't be bumped around, like an asteroid.
+(The Unity RigidBody property "kinematic".)
+So, if the enemy detected an asteroid in front of it, it would shoot out a cone of rays.
+</p>
+
+
+<p>
+<img src="Image1.png" alt="" />
+</p>
+
+
+<p>
+<img src="Image2.png" alt="" />
+</p>
+
+
+<p>
+You can see those rays being shot out from the capsule in these images. It's really scanning that asteroid!
+</p>
+
+
+<p>
+The problem with the system I have displayed here is that I hadn't actually thought out
+how exactly I wanted to make the AI choose which way to go.
+I had thus far only thought about the raycasting, but not the actual "thought" behind the choosing of the new direction.
+</p>
+
+
+<p>
+I tried a few different systems, but ultimately had to switch gears a bit,
+because this system still shot out one ray usually and if it hit an asteroid, it would shoot out more.
+This system proved to not be effective enough, so I had to make it so that it always shot out the whole cone.
+</p>
+
+
+<p>
+<video src="Video2.mp4" autoplay controls loop muted playsinline></video>
+</p>
+
+
+<p>
+As you can see here in this video, the rays all seem to get shot out fine.
+Except they don't.
+Which gets more apparent if the amount of rays it shoots out gets turned up:
+</p>
+
+
+<p>
+<video src="Video3.mp4" autoplay controls loop muted playsinline></video>
+</p>
+
+
+<p>
+This had to do with the way I calculated the direction in which to shoot the rays, which at first was this:
+</p>
+
+
+<pre><code class="language-cs">for (int x = -rays; x <= rays; x++)
+{
+	for (int y = -rays; y <= rays; y++)
+	{
+		Vector3 rayDir = Quaternion.Euler(x * angleBetweenRays, y * angleBetweenRays, 0) * dir;
+		Debug.DrawRay(_position, rayDir * rayLength, Color.red);
+	}
+}
+</code></pre>
+
+<p>
+And it turned out it had to be this, instead:
+</p>
+
+
+<pre><code class="language-cs">for (int x = -rays; x <= rays; x++)
+{
+	for (int y = -rays; y <= rays; y++)
+	{
+		Vector3 rayDir = Quaternion.AngleAxis(x * angleBetweenRays, _transformCached.TransformDirection(Vector3.up))
+		               * Quaternion.AngleAxis(y * angleBetweenRays, _transformCached.TransformDirection(Vector3.right)) * dir;
+		Debug.DrawRay(_position, rayDir * rayLength, Color.red);
+	}
+}
+</code></pre>
+
+<p>
+I'm not too familiar with how quaternions work exactly yet,
+but I think it had to do with the rays not taking the rotation on the enemy transform into account correctly.
+By explicitly doing TransformDirection for each axis, that solved it.
+</p>
+
+
+<p>
+In this video, you can see it finally working correctly!
+</p>
+
+
+<p>
+<video src="Video4.mp4" autoplay controls loop muted playsinline></video>
+</p>
+
+
+<p>
+So with this better system for continuous raycasting, I could continue working on the actual choice of direction!
+</p>
+
+
+<p>
+I tried quite another few different comparison methods, but this is what I ended up going with:
+The enemy shoots out all the rays first, and if it hits anything,
+it chooses the direction of the ray that's the furthest point from anything it hit.
+As such, it can pretty nicely avoid asteroids!
+</p>
+
+
+<p>
+You can see the final result in the YouTube video all the way
+at the <a href="#enemy-ai-in-my-space-shooter-game">top</a> of this post!
+</p>
+
+
+<p>
+<strong>You can download this version of the game
+<a href="https://github.com/TechnicJelle/SpaceCombat3DX/releases/tag/v0.0.2">here</a></strong><br /><em>(builds available for both Windows and Linux)</em>
+</p>
+
+
+<p>
+And you can see the source code of this version <a href="https://github.com/TechnicJelle/SpaceCombat3DX/tree/v0.0.2">here</a>.
+</p>
+
+
+<hr />
+
+<p>
+By the way, this is what happens if you turn up the amount of rays and the distance between them too much:
+</p>
+
+
+<p>
+<img src="Image3.png" alt="" />
+</p>
+
+
+<nav class="center">
+<p>
+<a href="/blog/2022/06/30/space-compat-3dx-001-spaceflight">← Previous Post</a> | <a href="/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">Next Post →</a>
+</p>
+
+</nav>
+</main>
+
+<footer>
+<p>
+Website last updated on <time datetime="2026-05-05T21:38:27.446043">2026-05-05 21:38:27.446</time>
+</p>
+
+
+<address><p style="margin-bottom: 0;">
+Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a>
+</p>
+
+</address>
+
+<p style="margin-top: 0;">
+©Copyright 2026 by TechnicJelle. All rights reserved.
+</p>
+
+</footer>
+</body>
+</html>

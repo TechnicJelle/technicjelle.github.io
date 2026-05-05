@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Controller-less VR teleportation | TechnicJelle</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Controller-less VR teleportation | TechnicJelle" />
+<meta name="description" content="On this website you'll find info about me and my projects" />
+<meta property="og:description" content="On this website you'll find info about me and my projects" />
+<meta name="theme-color" content="#001FF1" />
+<meta property="og:image" content="https://technicjelle.com/images/logo-128.gif" />
+<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+
+<link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+<link rel="preload" href="/styles/main.css" as="style" />
+<link rel="stylesheet" href="/styles/main.css" />
+<link rel="preload" href="/styles/blog-post.css" as="style" />
+<link rel="stylesheet" href="/styles/blog-post.css" />
+<link rel="alternate" href="/blog/feed.xml" type="application/atom+xml" title="Blog Atom Feed" />
+
+<style>
+body { background: #151515; }
+</style>
+</head>
+
+<body>
+<header class="mono-font">
+<nav>
+<a href="/">TechnicJelle</a>
+<span class="small">/</span>
+<a href="/blog">Blog</a>
+<span class="small">/</span>
+<a href="/blog/2024">2024</a>
+<span class="small">/</span>
+<a href="/blog/2024/11">11</a>
+<span class="small">/</span>
+<a href="/blog/2024/11/08">08</a>
+<span class="small">/</span>
+<span>controller-less-vr-teleportation</span>
+<span class="small">.md</span>
+</nav>
+</header>
+
+<main>
+<h1 id="controllerless-vr-teleportation">Controller-less VR teleportation</h1>
+
+<p>
+For my study, I am currently working with a team of other students on a VR experience for a local museum.
+</p>
+
+
+<p>
+The museum plans to have a VR headset somewhere, which visitors can put on to experience how life was like in the past.
+</p>
+
+
+<p>
+There are lots of things to show, so the user needs some way to move from one place to another.
+</p>
+
+
+<p>
+Sometimes, this is done with a Controller, where the user can move the joystick,
+which moves the camera around the virtual world.
+</p>
+
+
+<p>
+<img src="controllers.png" alt="controllers" />
+</p>
+
+
+<p>
+This has a big problem, however: such smooth movement in VR is incredibly nauseating
+for people who are not accustomed to it, which is definitely most museum visitors.
+</p>
+
+
+<p>
+As such, game designers in the past invented the now common mechanic of <strong>teleportation</strong>.
+You point the controller somewhere, click a button, and you get teleported to where you were pointing.<br />
+The range is usually not very large, to keep it balanced.<br />
+I have also seen a slightly different mechanic in some VR games,
+where there isn't a <em>button</em> to teleport, but it is the <em>joystick</em>.
+You point the joystick somewhere, and you can choose which direction you want to end up in after the teleport.
+</p>
+
+
+<p>
+The concern is that this can be a bit tricky to learn how to do.
+</p>
+
+
+<p>
+Especially <strong>if we decide to not use any controllers</strong>. To keep things simpler, we would like to not need controllers.
+Putting on the headset is already complicated enough, and we need to keep this experience as accessible as possible.<br />
+Controllers can also get stolen or damaged.
+</p>
+
+
+<p>
+Luckily, there are ways to do this teleportation with hand gestures only!
+</p>
+
+
+<p>
+However, these gestures are even more complicated than the controller buttons for it.
+</p>
+
+
+<p>
+So we racked our brains over a really nice way to handle moving around the environment.
+</p>
+
+
+<p>
+Finally, I had an idea!
+</p>
+
+
+<p>
+We can designate specific <em>Points Of Interest</em> in the environment, which will be the only places the user can be at.<br />
+Then to move from one POI to the other, the user can just look over to such a POI, and they will teleport to it.
+</p>
+
+
+<p>
+Of course, that teleportation should not be instant, otherwise that will still be confusing and disorienting.
+</p>
+
+
+<p>
+So if the user looks at a POI, a small animation will play in front of them to show that something will happen
+shortly.<br />
+(If they look away again, the countdown and whole teleportation process will be cancelled, naturally.
+They really need to stare at the POI for a solid few seconds, to make sure they really want to do it.)
+</p>
+
+
+<p>
+After that animation finishes playing, the screen will fade to black and back. During the darkness,
+the user will have been teleported.<br />
+The teleportation is not instant, again, to prevent disorienting the user.
+</p>
+
+
+<p>
+I mocked up a small visual example of how this system could look like in Blender, and showed it to my team.<br />
+They unanimously agreed with the system! 🥳
+</p>
+
+
+<p>
+Here is that animation:
+</p>
+
+
+<p>
+<video src="MovementConcept0001-0250.mp4" controls loop muted playsinline></video>
+</p>
+
+
+<p>
+You will see that the Points Of Interest are marked with blue holograms,
+which become taller if the user looks near them.
+</p>
+
+
+<p>
+We are not entirely sure if this part will remain this way,
+as the museum really wants the experience to be as purely realistic as possible.
+</p>
+
+</main>
+
+<footer>
+<p>
+Website last updated on <time datetime="2026-05-05T21:38:27.377843">2026-05-05 21:38:27.377</time>
+</p>
+
+
+<address><p style="margin-bottom: 0;">
+Website made by <a href="mailto:technicjelleplay@gmail.com">TechnicJelle</a>
+</p>
+
+</address>
+
+<p style="margin-top: 0;">
+©Copyright 2026 by TechnicJelle. All rights reserved.
+</p>
+
+</footer>
+</body>
+</html>
