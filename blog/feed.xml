@@ -5,7 +5,7 @@
   <link href="https://technicjelle.com/blog/feed.xml" rel="self" />
   <link href="https://technicjelle.com/blog" rel="alternate" />
   <link href="https://technicjelle.com" rel="related" />
-  <updated>2026-05-05T22:25:11.784Z</updated>
+  <updated>2026-05-07T19:17:59.151Z</updated>
   <author>
     <name>TechnicJelle</name>
   </author>
@@ -132,24 +132,15 @@
         </p>
         <p>It took many days of constant iteration, but in the end, I got it to work very well!</p>
         <p>I also wrote some explanations of what Jenkins is and how to use it on the Jenkins pages themselves, for my teammates to read:</p>
-        <h2 id="dashboard-the-home-page">
-          Dashboard (The Home Page):
-          <a href="#dashboard-the-home-page" class="link">🔗</a>
-        </h2>
+        <h2 id="dashboard-the-home-page">Dashboard (The Home Page):</h2>
         <p>
           <img src="https://technicjelle.com/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds/jenkins_dashboard.png" alt="dashboard" />
         </p>
-        <h2 id="project-page">
-          Project Page:
-          <a href="#project-page" class="link">🔗</a>
-        </h2>
+        <h2 id="project-page">Project Page:</h2>
         <p>
           <img src="https://technicjelle.com/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds/jenkins_bwe.png" alt="project" />
         </p>
-        <h2 id="notifications">
-          Notifications
-          <a href="#notifications" class="link">🔗</a>
-        </h2>
+        <h2 id="notifications">Notifications</h2>
         <p>
           Now, it is of course very useful to build the project and catch errors when they happen, but if no-one looks on the Jenkins page, then no-one will see the status!
           <br />
@@ -180,10 +171,7 @@
           <br />
           This meant that keeping every change small, made it easier to find and fix problems!
         </p>
-        <h2 id="archive">
-          Archive
-          <a href="#archive" class="link">🔗</a>
-        </h2>
+        <h2 id="archive">Archive</h2>
         <p>Whenever a build succeeds, it gets stored on the server, in the build archive.</p>
         <p>
           <img src="https://technicjelle.com/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds/Screenshot_2025-01-17_23-02-45.png" alt="archive" />
@@ -236,18 +224,12 @@
         <p>
           <img src="https://technicjelle.com/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds/caddy.png" alt="list of files" />
         </p>
-        <h2 id="network-map">
-          Network map
-          <a href="#network-map" class="link">🔗</a>
-        </h2>
+        <h2 id="network-map">Network map</h2>
         <p>Here's a summary of the setup, drawn as a network map:</p>
         <p>
           <img src="https://technicjelle.com/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds/NetworkMap.excalidraw.png" alt="network map" />
         </p>
-        <h2 id="future">
-          Future
-          <a href="#future" class="link">🔗</a>
-        </h2>
+        <h2 id="future">Future</h2>
         <p>
           There is a concept called
           <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code">IAC, Infrastructure As Code</a>
@@ -255,10 +237,7 @@
           <br />
           It seems very useful for these kinds of situations where other people have to be able to take over and reproduce the setups.
         </p>
-        <h2 id="inheritance">
-          Inheritance
-          <a href="#inheritance" class="link">🔗</a>
-        </h2>
+        <h2 id="inheritance">Inheritance</h2>
         <p>And I think that's it! Unfortunately, likely none of this will roll over to the next team that has to work on this project, because none of this is code that is inside our project folder. I requested that they inherit the server computer, but I'm not confident that they will accept it.</p>
         <nav class="center">
           <p>
@@ -513,27 +492,18 @@
         <p>
           <em>(This post was written years later, because I found some more early footage)</em>
         </p>
-        <h2 id="enemies">
-          Enemies
-          <a href="#enemies" class="link">🔗</a>
-        </h2>
+        <h2 id="enemies">Enemies</h2>
         <p>The following video was recorded right after I added an enemy object, which can follow the paths I described in the previous post.</p>
         <p>
           <video src="https://technicjelle.com/blog/2023/01/28/planes-tower-defence-003-the-rest/Peek 2023-01-02 01-08.mp4" controls="" muted="" playsinline=""></video>
         </p>
         <p>I then also added a secondary, faster but weaker enemy, which is red.</p>
-        <h2 id="waves">
-          Waves
-          <a href="#waves" class="link">🔗</a>
-        </h2>
+        <h2 id="waves">Waves</h2>
         <p>The waves are defined through Unity ScriptableObjects. In the next video, you can see a countdown in the Console in the bottom left, and the ScriptableObjects in the Asset Browser in the bottom right.</p>
         <p>
           <video src="https://technicjelle.com/blog/2023/01/28/planes-tower-defence-003-the-rest/Peek 2023-01-11 20-51.mp4" controls="" muted="" playsinline=""></video>
         </p>
-        <h2 id="ui-enemy-sprites">
-          UI &amp; Enemy sprites
-          <a href="#ui-enemy-sprites" class="link">🔗</a>
-        </h2>
+        <h2 id="ui-enemy-sprites">UI &amp; Enemy sprites</h2>
         <p>Enemies now are not just white/red squares anymore, but actual sprites. I chose the tanks for them.</p>
         <p>They now also have health and a health bar.</p>
         <p>I added UI in the top left corner that displays the current wave, and the countdown to the next wave.</p>
@@ -541,10 +511,7 @@
         <p>
           <video src="https://technicjelle.com/blog/2023/01/28/planes-tower-defence-003-the-rest/Peek 2023-01-14 00-40.mp4" controls="" muted="" playsinline=""></video>
         </p>
-        <h2 id="towers">
-          Towers
-          <a href="#towers" class="link">🔗</a>
-        </h2>
+        <h2 id="towers">Towers</h2>
         <p>It was finally time to actually add the towers!</p>
         <p>I added some pre-defined spots where they can be placed in the level. Players can click on one, and a pop-up menu will appear around there, showing the four available towers types.</p>
         <p>The towers point to the nearest enemy, spawn bullets that travel forwards and hit the enemies, doing damage.</p>
@@ -553,10 +520,7 @@
         <p>
           <video src="https://technicjelle.com/blog/2023/01/28/planes-tower-defence-003-the-rest/Peek 2023-01-28 00-22.mp4" controls="" muted="" playsinline=""></video>
         </p>
-        <h2 id="final-result">
-          Final Result
-          <a href="#final-result" class="link">🔗</a>
-        </h2>
+        <h2 id="final-result">Final Result</h2>
         <p>I don't have any more videos, but I implemented everything I set out to implement!</p>
         <p>There is one level with a few waves, two enemy types, four tower types, player HP and economy.</p>
         <p>(Balancing is probably not very good, but that wasn't the goal of this project anyway.)</p>
@@ -659,10 +623,7 @@
         <p>
           <img src="https://technicjelle.com/blog/2023/01/14/planes-tower-defence-001-level/level.png" alt="level" />
         </p>
-        <h2 id="tiles">
-          Tiles
-          <a href="#tiles" class="link">🔗</a>
-        </h2>
+        <h2 id="tiles">Tiles</h2>
         <p>
           I started off with finding a good tileset to use. For this game, I wanted to focus on the code and behaviours, instead of on the art. So I found
           <a href="https://kenney.nl/assets/pixel-shmup">this nice Kenney pack</a>
@@ -680,10 +641,7 @@
         <p>
           <img src="https://technicjelle.com/blog/2023/01/14/planes-tower-defence-001-level/tiling-rules.png" alt="tiling rules in unity" />
         </p>
-        <h2 id="artifacting">
-          Artifacting
-          <a href="#artifacting" class="link">🔗</a>
-        </h2>
+        <h2 id="artifacting">Artifacting</h2>
         <p>During the process of working with this grid of tiles, I found a strange problem, though. Sometimes there would be small lines where they shouldn't be, as you can see here:</p>
         <p>
           <img src="https://technicjelle.com/blog/2023/01/14/planes-tower-defence-001-level/artifacts.png" alt="pixel artifacting" />
@@ -730,10 +688,7 @@
     <updated>2022-10-10T00:00:00.000Z</updated>
     <content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/10/10/october-geonodes">
       <div xmlns="http://www.w3.org/1999/xhtml">
-        <h2 id="whizzy-points-along-curve">
-          Whizzy Points Along Curve
-          <a href="#whizzy-points-along-curve" class="link">🔗</a>
-        </h2>
+        <h2 id="whizzy-points-along-curve">Whizzy Points Along Curve</h2>
         <p>
           <video src="https://technicjelle.com/blog/2022/10/10/october-geonodes/Whizzy0001-0300.mp4" autoplay="" loop="" muted="" playsinline=""></video>
         </p>
@@ -751,10 +706,7 @@
           I posted this on ArtStation, too, so give me a like and a follow over there if you want:
           <a href="https://www.artstation.com/artwork/eJn9ew">https://www.artstation.com/artwork/eJn9ew</a>
         </p>
-        <h2 id="cracks">
-          Cracks
-          <a href="#cracks" class="link">🔗</a>
-        </h2>
+        <h2 id="cracks">Cracks</h2>
         <p>Originally, this was a post solely about the Whizzy Points setup, but while porting the post to my new blog site, I found another two pieces I made in the same timeframe, so I thought I might as well share it here! :)</p>
         <p>
           <video src="https://technicjelle.com/blog/2022/10/10/october-geonodes/Cracks0001-0250.mp4" autoplay="" loop="" muted="" playsinline=""></video>
@@ -762,10 +714,7 @@
         <p>
           <img src="https://technicjelle.com/blog/2022/10/10/october-geonodes/Cracks_Nodes.png" alt="" />
         </p>
-        <h2 id="negative-text">
-          Negative Text
-          <a href="#negative-text" class="link">🔗</a>
-        </h2>
+        <h2 id="negative-text">Negative Text</h2>
         <p>This one was made before October, but 🤫</p>
         <p>
           <img src="https://technicjelle.com/blog/2022/10/10/october-geonodes/NegativeText.png" alt="" />
@@ -863,15 +812,9 @@
         </nav>
         <iframe src="https://www.youtube-nocookie.com/embed/aCmfekB2mho" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
         <p>Since the last post, I've been hard at work adding more and more features! Mainly the second level and sounds, but there's a lot more that went into it all!</p>
-        <h2 id="enemy-health">
-          Enemy health
-          <a href="#enemy-health" class="link">🔗</a>
-        </h2>
+        <h2 id="enemy-health">Enemy health</h2>
         <p>Enemies now have health and can be defeated by bumping into them. I'll add an actual shooting mechanic to both the player and the enemies later. For now, this slightly more crude solution will have to do. The enemies also now have thruster particles of their own, just like the player.</p>
-        <h2 id="skybox">
-          Skybox
-          <a href="#skybox" class="link">🔗</a>
-        </h2>
+        <h2 id="skybox">Skybox</h2>
         <p>I have added a second level with another completely custom skybox made in Blender! Those top two voronoi textures with the very wide colour ramps together are actually the first level's skybox. It just generates a ton of tiny white dots. There are two layers, because one makes tiny dots and the other makes even more and smaller dots.</p>
         <p>The bottom part is two layers of noise, distorting the UV space to generate a warped line going around the skybox. That line is then coloured in by the last colour ramp.</p>
         <p>
@@ -882,18 +825,12 @@
           <a href="https://blendswap.com/blend/17087">Cube Map Creation Toolkit</a>
           .
         </p>
-        <h2 id="portals">
-          Portals
-          <a href="#portals" class="link">🔗</a>
-        </h2>
+        <h2 id="portals">Portals</h2>
         <p>You can go from one level to the other by travelling through a portal that appears once you've defeated all the enemies!</p>
         <p>
           <img src="https://technicjelle.com/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds/Screenshot_(8).png" alt="" />
         </p>
-        <h2 id="sound">
-          Sound
-          <a href="#sound" class="link">🔗</a>
-        </h2>
+        <h2 id="sound">Sound</h2>
         <p>I also added sounds to the player's engine and also the enemies make buzzing sounds.</p>
         <p>And the game has some nice background music to fill up the empty space!</p>
         <p>
@@ -901,18 +838,12 @@
           <a href="https://github.com/TechnicJelle/SpaceCombat3DX/tree/main#assets-used">README</a>
           .
         </p>
-        <h2 id="menu">
-          Menu
-          <a href="#menu" class="link">🔗</a>
-        </h2>
+        <h2 id="menu">Menu</h2>
         <p>There's now a pause menu with volume sliders for three different categories of sounds! There is now also a quit button there. That is useful, because before there was no other way to stop the game than to press Alt+F4!</p>
         <p>
           <img src="https://technicjelle.com/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds/Screenshot_(9).png" alt="" />
         </p>
-        <h2 id="tutorial">
-          Tutorial
-          <a href="#tutorial" class="link">🔗</a>
-        </h2>
+        <h2 id="tutorial">Tutorial</h2>
         <p>There's now also a bit of a tutorial in the top left that explains what to do:</p>
         <div class="img-list">
           <p>
