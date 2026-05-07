@@ -5,7 +5,7 @@
 	<link href="https://technicjelle.com/blog/feed.xml" rel="self" />
 	<link href="https://technicjelle.com/blog" rel="alternate" />
 	<link href="https://technicjelle.com" rel="related" />
-	<updated>2026-05-07T20:06:33.375Z</updated>
+	<updated>2026-05-07T21:13:40.951Z</updated>
 	<author>
 		<name>TechnicJelle</name>
 	</author>
@@ -18,7 +18,7 @@
 		<updated>2026-05-05T00:00:00.000Z</updated>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2026/05/05/new-blog-milestone-1">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2026/04/18/new-blog-site">← Previous Post</a>
 </p>
@@ -43,7 +43,7 @@ The third milestone will be syntax highlighting for code blocks.<br />
 I've done some research already, and I think I'll use tree-sitter for this.<br />
 But more research and experimentation will need to be done. Later, though.
 </p>
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2026/04/18/new-blog-site">← Previous Post</a>
 </p>
@@ -59,7 +59,7 @@ But more research and experimentation will need to be done. Later, though.
 		<updated>2026-04-18T00:00:00.000Z</updated>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2026/04/18/new-blog-site">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2026/05/05/new-blog-milestone-1">Next Post →</a>
 </p>
@@ -74,7 +74,7 @@ I will be "in-housing" my blog from Tumblr to my own custom site.
 				<p>
 Today, I've been laying the groundworks for this, and I'm looking forward to seeing what you all think! :)
 </p>
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2026/05/05/new-blog-milestone-1">Next Post →</a>
 </p>
@@ -90,7 +90,7 @@ Today, I've been laying the groundworks for this, and I'm looking forward to see
 		<updated>2025-01-19T00:00:00.000Z</updated>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2025/01/18/infrastructure-for-teamwork-aka-version-control">← Previous Post</a>
 </p>
@@ -135,7 +135,7 @@ Here is a list of every build run that Jenkins did, including a neat little grap
 </p>
 				<p>
 Configuring it was quite tricky, though.<br />
-I had to create a console terminal CLI command that makes Unreal Engine build project.<br /><span class="small">
+I had to create a console terminal CLI command that makes Unreal Engine build project.<br /><span style="font-size: 0.8em;">
 Resources used:
 ( <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-automation-tool-overview-for-unreal-engine?application_version=5.4">one</a> )
 ( <a href="https://github.com/botman99/ue4-unreal-automation-tool">two</a> )
@@ -222,7 +222,7 @@ For actual full websites, I've always used nginx.<br />
 After some time of looking at the official documentation of caddy's various configuration file formats
 and command-line arguments, and tweaking things, I had it working like I wanted!<br />
 It now even automatically starts when the computer boots up,
-which is something that Perforce and Jenkins set up automatically.<br /><span class="small">
+which is something that Perforce and Jenkins set up automatically.<br /><span style="font-size: 0.8em;">
 Resources used:
 ( <a href="https://caddyserver.com/">one</a> )
 ( <a href="https://caddyserver.com/docs/quick-starts/static-files">two</a> )
@@ -254,7 +254,7 @@ Unfortunately, likely none of this will roll over to the next team that has to w
 because none of this is code that is inside our project folder.
 I requested that they inherit the server computer, but I'm not confident that they will accept it.
 </p>
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2025/01/18/infrastructure-for-teamwork-aka-version-control">← Previous Post</a>
 </p>
@@ -270,7 +270,7 @@ I requested that they inherit the server computer, but I'm not confident that th
 		<updated>2025-01-18T00:00:00.000Z</updated>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2025/01/18/infrastructure-for-teamwork-aka-version-control">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds">Next Post →</a>
 </p>
@@ -366,7 +366,7 @@ The documentation was pretty good, and they have a lot of tutorials, guide, and 
 which have been very helpful during the setup.<br />
 It's very useful to be able to follow along every single click.
 </p>
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds">Next Post →</a>
 </p>
@@ -505,7 +505,7 @@ as the museum really wants the experience to be as purely realistic as possible.
 		<updated>2023-01-28T00:00:00.000Z</updated>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2023/01/28/planes-tower-defence-003-the-rest">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">← Previous Post</a>
 </p>
@@ -587,7 +587,7 @@ There is one level with a few waves, two enemy types, four tower types, player H
 				<p>
 Source code available <a href="https://github.com/TechnicJelle/PlanesTowerDefence">here</a>
 </p>
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">← Previous Post</a>
 </p>
@@ -603,7 +603,7 @@ Source code available <a href="https://github.com/TechnicJelle/PlanesTowerDefenc
 		<updated>2023-01-19T00:00:00.000Z</updated>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2023/01/19/planes-tower-defence-002-pathfinding">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2023/01/14/planes-tower-defence-001-level">← Previous Post</a> | <a href="/blog/2023/01/28/planes-tower-defence-003-the-rest">Next Post →</a>
 </p>
@@ -732,7 +732,7 @@ Instead of having directional links, they just throw all nodes into one big, ful
 and use a proper pathfinding algorithm like A* ("a star") to calculate the best route to get from one point to another.
 A* is used in many, many games, due to its versatility and relatively accurate and speedy performance.
 I've programmed A* before, but I didn't feel like doing it again
-<span class="small">(because it's kind of annoying)</span> so I went for something simpler for this game.
+<span style="font-size: 0.8em;">(because it's kind of annoying)</span> so I went for something simpler for this game.
 </p>
 				<p>
 The enemies in this game don't plan a route beforehand, but instead chooses where to go on the fly:
@@ -771,7 +771,7 @@ As a bonus, here's a video I recorded during this process, when the node linking
 				<p>
 <video src="https://technicjelle.com/blog/2023/01/19/planes-tower-defence-002-pathfinding/Peek 2022-12-23 11-09.mp4" controls="" loop="" muted="" playsinline=""></video>
 </p>
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2023/01/14/planes-tower-defence-001-level">← Previous Post</a> | <a href="/blog/2023/01/28/planes-tower-defence-003-the-rest">Next Post →</a>
 </p>
@@ -787,7 +787,7 @@ As a bonus, here's a video I recorded during this process, when the node linking
 		<updated>2023-01-14T00:00:00.000Z</updated>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2023/01/14/planes-tower-defence-001-level">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">Next Post →</a>
 </p>
@@ -850,7 +850,7 @@ Next post will be about the "pathfinding" I did.
 				<p>
 <strong>Source code available <a href="https://github.com/TechnicJelle/PlanesTowerDefence">here</a></strong>
 </p>
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">Next Post →</a>
 </p>
@@ -1091,7 +1091,7 @@ So that's it!
 		<updated>2022-07-13T00:00:00.000Z</updated>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2022/07/10/space-combat-3dx-002-enemies">← Previous Post</a>
 </p>
@@ -1171,7 +1171,7 @@ Perhaps I'll write about those too! :D
 				<p>
 <strong>Download the game <a href="https://github.com/TechnicJelle/SpaceCombat3DX#readme">here</a>!</strong>
 </p>
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2022/07/10/space-combat-3dx-002-enemies">← Previous Post</a>
 </p>
@@ -1187,7 +1187,7 @@ Perhaps I'll write about those too! :D
 		<updated>2022-07-10T00:00:00.000Z</updated>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/07/10/space-combat-3dx-002-enemies">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2022/06/30/space-compat-3dx-001-spaceflight">← Previous Post</a> | <a href="/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">Next Post →</a>
 </p>
@@ -1317,7 +1317,7 @@ By the way, this is what happens if you turn up the amount of rays and the dista
 				<p>
 <img src="https://technicjelle.com/blog/2022/07/10/space-combat-3dx-002-enemies/Image3.png" alt="" />
 </p>
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2022/06/30/space-compat-3dx-001-spaceflight">← Previous Post</a> | <a href="/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">Next Post →</a>
 </p>
@@ -1371,7 +1371,7 @@ I posted it on ArtStation, too, so give me a like and a follow over there if you
 		<updated>2022-06-30T00:00:00.000Z</updated>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/06/30/space-compat-3dx-001-spaceflight">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2022/07/10/space-combat-3dx-002-enemies">Next Post →</a>
 </p>
@@ -1391,7 +1391,7 @@ The space environment has been created with Blender, and rendered out using the 
 				<p>
 And you can see the source code of this version <a href="https://github.com/TechnicJelle/SpaceCombat3DX/tree/v0.0.1">here</a>
 </p>
-				<nav class="center">
+				<nav style="text-align: center;">
 					<p>
 <a href="/blog/2022/07/10/space-combat-3dx-002-enemies">Next Post →</a>
 </p>
