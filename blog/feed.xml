@@ -5,7 +5,7 @@
 	<link href="https://technicjelle.com/blog/feed.xml" rel="self" />
 	<link href="https://technicjelle.com/blog" rel="alternate" />
 	<link href="https://technicjelle.com" rel="related" />
-	<updated>2026-05-07T19:29:59.327Z</updated>
+	<updated>2026-05-07T19:53:15.223Z</updated>
 	<author>
 		<name>TechnicJelle</name>
 	</author>
@@ -570,13 +570,86 @@
 					<img src="https://technicjelle.com/blog/2023/01/19/planes-tower-defence-002-pathfinding/route-list.png" alt="" />
 				</p>
 				<p>Then I wrote a script for the Route, that draws a little sphere and a label for the name around each node, but only when I'm editing the level; when the game is exported, it doesn't do anything.</p>
-				<pre>
-					<code class="language-cs">[ExecuteInEditMode] public class RouteNodeDrawer : MonoBehaviour { #if UNITY_EDITOR [SerializeField] private float nodeSize = 0.1f; [SerializeField] private int fontSize = 20; private IEnumerable&lt;Transform> _points; private IEnumerable&lt;Transform> GetRoutePoints() => GetComponentsInChildren&lt;Transform>().Where(t => t != transform); private void Awake() { _points = GetRoutePoints(); } private void Update() { if (EditorApplication.isPlaying) return; _points = GetRoutePoints(); } private void OnDrawGizmos() { if (_points == null) return; foreach (Transform point in _points) { if (point == null) continue; Gizmos.color = Color.red; Vector3 position = point.position; Gizmos.DrawSphere(position, nodeSize); Handles.Label(position, point.name, new GUIStyle{fontSize = fontSize}); } } #endif }</code>
-				</pre>
+				<pre><code class="language-cs">[ExecuteInEditMode]
+public class RouteNodeDrawer : MonoBehaviour
+{
+#if UNITY_EDITOR
+	[SerializeField] private float nodeSize = 0.1f;
+	[SerializeField] private int fontSize = 20;
+
+	private IEnumerable&lt;Transform> _points;
+
+	private IEnumerable&lt;Transform> GetRoutePoints() => GetComponentsInChildren&lt;Transform>().Where(t => t != transform);
+
+	private void Awake()
+	{
+		_points = GetRoutePoints();
+	}
+
+	private void Update()
+	{
+		if (EditorApplication.isPlaying) return;
+		_points = GetRoutePoints();
+	}
+
+	private void OnDrawGizmos()
+	{
+		if (_points == null) return;
+		foreach (Transform point in _points)
+		{
+			if (point == null) continue;
+			Gizmos.color = Color.red;
+			Vector3 position = point.position;
+			Gizmos.DrawSphere(position, nodeSize);
+			Handles.Label(position, point.name, new GUIStyle{fontSize = fontSize});
+		}
+	}
+#endif
+}
+</code></pre>
 				<p>To have a nice base to pathfind on, we need what is called a Node Tree, which is simply a network of linked nodes. So I had to link each node to the next one. There aren't too many nodes here, so I could totally have done this by hand. That wouldn't be any fun, though, so I wrote another script that automatically links nodes together!</p>
-				<pre>
-					<code class="language-cs">public class RouteNodeSetup : MonoBehaviour { private static bool IsAboutEqual(float a, float b) => Mathf.Abs(a - b) &lt; 0.01f; private void Awake() { RouteNode[] nodes = GetComponentsInChildren&lt;RouteNode>().ToArray(); foreach (RouteNode node in nodes) { if (node.nextNodes.Count != 0) continue; //don't overwrite manually set connections List&lt;RouteNode> rightNodes = new(); List&lt;RouteNode> bottomNodes = new(); foreach (RouteNode otherNode in nodes) { if (node == otherNode) continue; //don't connect to self //if otherPoint is to the right of this point if (IsAboutEqual(node.transform.position.y, otherNode.transform.position.y) &amp;&amp; otherNode.transform.position.x > node.transform.position.x) { rightNodes.Add(otherNode); } //if otherPoint is to the bottom of this point else if (IsAboutEqual(node.transform.position.x, otherNode.transform.position.x) &amp;&amp; node.transform.position.y > otherNode.transform.position.y) { bottomNodes.Add(otherNode); } } //sort by x position rightNodes.Sort((a, b) => a.transform.position.x.CompareTo(b.transform.position.x)); //sort by y position bottomNodes.Sort((a, b) => b.transform.position.y.CompareTo(a.transform.position.y)); if (rightNodes.Count > 0) node.nextNodes.Add(rightNodes[0]); if (bottomNodes.Count > 0) node.nextNodes.Add(bottomNodes[0]); } } }</code>
-				</pre>
+				<pre><code class="language-cs">public class RouteNodeSetup : MonoBehaviour
+{
+	private static bool IsAboutEqual(float a, float b) => Mathf.Abs(a - b) &lt; 0.01f;
+
+	private void Awake()
+	{
+		RouteNode[] nodes = GetComponentsInChildren&lt;RouteNode>().ToArray();
+
+		foreach (RouteNode node in nodes)
+		{
+			if (node.nextNodes.Count != 0) continue; //don't overwrite manually set connections
+
+			List&lt;RouteNode> rightNodes = new();
+			List&lt;RouteNode> bottomNodes = new();
+
+			foreach (RouteNode otherNode in nodes)
+			{
+				if (node == otherNode) continue; //don't connect to self
+
+				//if otherPoint is to the right of this point
+				if (IsAboutEqual(node.transform.position.y, otherNode.transform.position.y) &amp;&amp; otherNode.transform.position.x > node.transform.position.x)
+				{
+					rightNodes.Add(otherNode);
+				}
+				//if otherPoint is to the bottom of this point
+				else if (IsAboutEqual(node.transform.position.x, otherNode.transform.position.x) &amp;&amp; node.transform.position.y > otherNode.transform.position.y)
+				{
+					bottomNodes.Add(otherNode);
+				}
+			}
+
+			//sort by x position
+			rightNodes.Sort((a, b) => a.transform.position.x.CompareTo(b.transform.position.x));
+			//sort by y position
+			bottomNodes.Sort((a, b) => b.transform.position.y.CompareTo(a.transform.position.y));
+
+			if (rightNodes.Count > 0) node.nextNodes.Add(rightNodes[0]);
+			if (bottomNodes.Count > 0) node.nextNodes.Add(bottomNodes[0]);
+		}
+	}
+}
+</code></pre>
 				<p>This script loops through all the Empties, and makes them check all other Empties. If there's an Empty to the right or to the bottom of this, we link that one as being a possible next node in the tree.</p>
 				<p>Due to the way I laid out this level, there are a couple nodes in this network that either have dead ends (10 and 13), or neighbours that shouldn't actually be connected (5 and 16). So those nodes, I set up manually, but the other ones all connect themselves automatically!</p>
 				<p>The Route Nodes then draw little debug arrows, so we can easily see which nodes point to which other nodes.</p>
@@ -781,18 +854,41 @@
 						is the delta time)
 					</em>
 				</p>
-				<pre>
-					<code class="language-cpp">void Particle::Update(float fElapsedTime) { velocity += acceleration; position += velocity * fElapsedTime; acceleration = { 0.0f, 0.0f };</code>
-				</pre>
+				<pre><code class="language-cpp">void Particle::Update(float fElapsedTime)
+{
+	velocity += acceleration;
+	position += velocity * fElapsedTime;
+	acceleration = { 0.0f, 0.0f };
+</code></pre>
 				<p>But in the end, I had to give up on that and go for a different way of calculating the delta time into my code...</p>
 				<p>
 					I was helpfully given a link to
 					<a href="https://code.tutsplus.com/how-to-create-a-custom-2d-physics-engine-the-core-engine--gamedev-7493t#timestepping">this blog</a>
 					that explains a new (to me) way of handling cases like exactly these!
 				</p>
-				<pre>
-					<code class="language-cpp">const float fps = 100 const float dt = 1 / fps float accumulator = 0 // In units of seconds float frameStart = GetCurrentTime( ) // main loop while(true) const float currentTime = GetCurrentTime( ) // Store the time elapsed since the last frame began accumulator += currentTime - frameStart( ) // Record the starting of this frame frameStart = currentTime while(accumulator > dt) UpdatePhysics( dt ) accumulator -= dt RenderGame( )</code>
-				</pre>
+				<pre><code class="language-cpp">const float fps = 100
+const float dt = 1 / fps
+float accumulator = 0
+
+// In units of seconds 
+float frameStart = GetCurrentTime( )
+
+// main loop 
+while(true)
+	const float currentTime = GetCurrentTime( )
+
+	// Store the time elapsed since the last frame began 
+	accumulator += currentTime - frameStart( )
+
+	// Record the starting of this frame 
+	frameStart = currentTime
+
+	while(accumulator > dt)
+		UpdatePhysics( dt )
+		accumulator -= dt
+
+	RenderGame( )
+</code></pre>
 				<p>This method, simply put, keeps track of the delta time over a longer amount of time, and if a certain amount of time has passed, let's say a tenth of a second, a new physics calculation is done.</p>
 				<p>This effectively decouples the rendering and the physics from each other, allowing the physics to run at its own pace, while letting the rendering go at its own breakneck speed.</p>
 				<p>What that also gives me, is a way to choose how often I want to calculate the next physics step, resulting in a simple way to set how accurate I want the simulation to be!</p>
@@ -927,13 +1023,26 @@
 					<video src="https://technicjelle.com/blog/2022/07/10/space-combat-3dx-002-enemies/Video3.mp4" autoplay="" controls="" loop="" muted="" playsinline=""></video>
 				</p>
 				<p>This had to do with the way I calculated the direction in which to shoot the rays, which at first was this:</p>
-				<pre>
-					<code class="language-cs">for (int x = -rays; x &lt;= rays; x++) { for (int y = -rays; y &lt;= rays; y++) { Vector3 rayDir = Quaternion.Euler(x * angleBetweenRays, y * angleBetweenRays, 0) * dir; Debug.DrawRay(_position, rayDir * rayLength, Color.red); } }</code>
-				</pre>
+				<pre><code class="language-cs">for (int x = -rays; x &lt;= rays; x++)
+{
+	for (int y = -rays; y &lt;= rays; y++)
+	{
+		Vector3 rayDir = Quaternion.Euler(x * angleBetweenRays, y * angleBetweenRays, 0) * dir;
+		Debug.DrawRay(_position, rayDir * rayLength, Color.red);
+	}
+}
+</code></pre>
 				<p>And it turned out it had to be this, instead:</p>
-				<pre>
-					<code class="language-cs">for (int x = -rays; x &lt;= rays; x++) { for (int y = -rays; y &lt;= rays; y++) { Vector3 rayDir = Quaternion.AngleAxis(x * angleBetweenRays, _transformCached.TransformDirection(Vector3.up)) * Quaternion.AngleAxis(y * angleBetweenRays, _transformCached.TransformDirection(Vector3.right)) * dir; Debug.DrawRay(_position, rayDir * rayLength, Color.red); } }</code>
-				</pre>
+				<pre><code class="language-cs">for (int x = -rays; x &lt;= rays; x++)
+{
+	for (int y = -rays; y &lt;= rays; y++)
+	{
+		Vector3 rayDir = Quaternion.AngleAxis(x * angleBetweenRays, _transformCached.TransformDirection(Vector3.up))
+		               * Quaternion.AngleAxis(y * angleBetweenRays, _transformCached.TransformDirection(Vector3.right)) * dir;
+		Debug.DrawRay(_position, rayDir * rayLength, Color.red);
+	}
+}
+</code></pre>
 				<p>I'm not too familiar with how quaternions work exactly yet, but I think it had to do with the rays not taking the rotation on the enemy transform into account correctly. By explicitly doing TransformDirection for each axis, that solved it.</p>
 				<p>In this video, you can see it finally working correctly!</p>
 				<p>
