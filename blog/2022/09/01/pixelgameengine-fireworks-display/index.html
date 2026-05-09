@@ -53,7 +53,7 @@ Over the last couple of days, I've made a simple, little fireworks display:
 
 
 <p>
-<video src="fireworks.mp4" autoplay loop muted playsinline></video>
+<video src="https://technicjelle.com/blog/2022/09/01/pixelgameengine-fireworks-display/fireworks.mp4" autoplay loop muted playsinline></video>
 </p>
 
 
@@ -168,23 +168,23 @@ that explains a new (to me) way of handling cases like exactly these!
 
 
 <pre><code class="language-cpp">const float fps = 100
-const float dt = 1 / fps
+const float dt = 1 &#47; fps
 float accumulator = 0
 
-// In units of seconds 
+&#47;&#47; In units of seconds 
 float frameStart = GetCurrentTime( )
 
-// main loop 
+&#47;&#47; main loop 
 while(true)
 	const float currentTime = GetCurrentTime( )
 
-	// Store the time elapsed since the last frame began 
+	&#47;&#47; Store the time elapsed since the last frame began 
 	accumulator += currentTime - frameStart( )
 
-	// Record the starting of this frame 
+	&#47;&#47; Record the starting of this frame 
 	frameStart = currentTime
 
-	while(accumulator > dt)
+	while(accumulator &gt; dt)
 		UpdatePhysics( dt )
 		accumulator -= dt
 
@@ -228,7 +228,7 @@ So that's it!
 <hr />
 
 <p>
-<img src="always-bet-on-red.png" alt="" />
+<img src="https://technicjelle.com/blog/2022/09/01/pixelgameengine-fireworks-display/always-bet-on-red.png" alt="" />
 </p>
 
 </main>

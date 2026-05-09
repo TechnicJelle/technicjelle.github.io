@@ -55,7 +55,7 @@ body { background: #151515; }
 </nav>
 
 <p>
-<img src="path-links.png" alt="" />
+<img src="https://technicjelle.com/blog/2023/01/19/planes-tower-defence-002-pathfinding/path-links.png" alt="" />
 </p>
 
 
@@ -78,7 +78,7 @@ I placed all the Empty route points in a group called "Route" and named them:
 
 
 <p>
-<img src="route-list.png" alt="" />
+<img src="https://technicjelle.com/blog/2023/01/19/planes-tower-defence-002-pathfinding/route-list.png" alt="" />
 </p>
 
 
@@ -95,9 +95,9 @@ public class RouteNodeDrawer : MonoBehaviour
 	[SerializeField] private float nodeSize = 0.1f;
 	[SerializeField] private int fontSize = 20;
 
-	private IEnumerable<Transform> _points;
+	private IEnumerable&lt;Transform&gt; _points;
 
-	private IEnumerable<Transform> GetRoutePoints() => GetComponentsInChildren<Transform>().Where(t => t != transform);
+	private IEnumerable&lt;Transform&gt; GetRoutePoints() =&gt; GetComponentsInChildren&lt;Transform&gt;().Where(t =&gt; t != transform);
 
 	private void Awake()
 	{
@@ -135,42 +135,42 @@ That wouldn't be any fun, though, so I wrote another script that automatically l
 
 <pre><code class="language-cs">public class RouteNodeSetup : MonoBehaviour
 {
-	private static bool IsAboutEqual(float a, float b) => Mathf.Abs(a - b) < 0.01f;
+	private static bool IsAboutEqual(float a, float b) =&gt; Mathf.Abs(a - b) &lt; 0.01f;
 
 	private void Awake()
 	{
-		RouteNode[] nodes = GetComponentsInChildren<RouteNode>().ToArray();
+		RouteNode[] nodes = GetComponentsInChildren&lt;RouteNode&gt;().ToArray();
 
 		foreach (RouteNode node in nodes)
 		{
-			if (node.nextNodes.Count != 0) continue; //don't overwrite manually set connections
+			if (node.nextNodes.Count != 0) continue; &#47;&#47;don&#39;t overwrite manually set connections
 
-			List<RouteNode> rightNodes = new();
-			List<RouteNode> bottomNodes = new();
+			List&lt;RouteNode&gt; rightNodes = new();
+			List&lt;RouteNode&gt; bottomNodes = new();
 
 			foreach (RouteNode otherNode in nodes)
 			{
-				if (node == otherNode) continue; //don't connect to self
+				if (node == otherNode) continue; &#47;&#47;don&#39;t connect to self
 
-				//if otherPoint is to the right of this point
-				if (IsAboutEqual(node.transform.position.y, otherNode.transform.position.y) && otherNode.transform.position.x > node.transform.position.x)
+				&#47;&#47;if otherPoint is to the right of this point
+				if (IsAboutEqual(node.transform.position.y, otherNode.transform.position.y) &amp;&amp; otherNode.transform.position.x &gt; node.transform.position.x)
 				{
 					rightNodes.Add(otherNode);
 				}
-				//if otherPoint is to the bottom of this point
-				else if (IsAboutEqual(node.transform.position.x, otherNode.transform.position.x) && node.transform.position.y > otherNode.transform.position.y)
+				&#47;&#47;if otherPoint is to the bottom of this point
+				else if (IsAboutEqual(node.transform.position.x, otherNode.transform.position.x) &amp;&amp; node.transform.position.y &gt; otherNode.transform.position.y)
 				{
 					bottomNodes.Add(otherNode);
 				}
 			}
 
-			//sort by x position
-			rightNodes.Sort((a, b) => a.transform.position.x.CompareTo(b.transform.position.x));
-			//sort by y position
-			bottomNodes.Sort((a, b) => b.transform.position.y.CompareTo(a.transform.position.y));
+			&#47;&#47;sort by x position
+			rightNodes.Sort((a, b) =&gt; a.transform.position.x.CompareTo(b.transform.position.x));
+			&#47;&#47;sort by y position
+			bottomNodes.Sort((a, b) =&gt; b.transform.position.y.CompareTo(a.transform.position.y));
 
-			if (rightNodes.Count > 0) node.nextNodes.Add(rightNodes[0]);
-			if (bottomNodes.Count > 0) node.nextNodes.Add(bottomNodes[0]);
+			if (rightNodes.Count &gt; 0) node.nextNodes.Add(rightNodes[0]);
+			if (bottomNodes.Count &gt; 0) node.nextNodes.Add(bottomNodes[0]);
 		}
 	}
 }
@@ -200,7 +200,7 @@ Instead of having directional links, they just throw all nodes into one big, ful
 and use a proper pathfinding algorithm like A* ("a star") to calculate the best route to get from one point to another.
 A* is used in many, many games, due to its versatility and relatively accurate and speedy performance.
 I've programmed A* before, but I didn't feel like doing it again
-<span class="small">(because it's kind of annoying)</span> so I went for something simpler for this game.
+<span style="font-size: 0.8em;">(because it's kind of annoying)</span> so I went for something simpler for this game.
 </p>
 
 
@@ -254,7 +254,7 @@ As a bonus, here's a video I recorded during this process, when the node linking
 
 
 <p>
-<video src="Peek 2022-12-23 11-09.mp4" controls loop muted playsinline></video>
+<video src="https://technicjelle.com/blog/2023/01/19/planes-tower-defence-002-pathfinding/Peek 2022-12-23 11-09.mp4" controls loop muted playsinline></video>
 </p>
 
 
