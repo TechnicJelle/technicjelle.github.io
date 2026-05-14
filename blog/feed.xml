@@ -5,7 +5,7 @@
 	<link href="https://technicjelle.com/blog/feed.xml" rel="self" />
 	<link href="https://technicjelle.com/blog" rel="alternate" />
 	<link href="https://technicjelle.com" rel="related" />
-	<updated>2026-05-14T21:55:56.664Z</updated>
+	<updated>2026-05-14T22:42:45.338Z</updated>
 	<author>
 		<name>TechnicJelle</name>
 	</author>
@@ -20,9 +20,7 @@
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2026/05/14/new-blog-milestone-2">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2026/05/05/new-blog-milestone-1">← Previous Post</a>
-</p>
+					<a href="/blog/2026/05/05/new-blog-milestone-1">← Previous Post in Series</a>
 				</nav>
 				<p>
 Today, I have completed milestone 2 of my new blog!
@@ -51,9 +49,7 @@ syntax highlighting for codeblocks.<br />
 (I mentioned my plans for that in the previous post in this series)
 </p>
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2026/05/05/new-blog-milestone-1">← Previous Post</a>
-</p>
+					<a href="/blog/2026/05/05/new-blog-milestone-1">← Previous Post in Series</a>
 				</nav>
 			</div>
 		</content>
@@ -68,9 +64,9 @@ syntax highlighting for codeblocks.<br />
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2026/05/05/new-blog-milestone-1">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2026/04/18/new-blog-site">← Previous Post</a> | <a href="/blog/2026/05/14/new-blog-milestone-2">Next Post →</a>
-</p>
+					<a href="/blog/2026/04/18/new-blog-site">← Previous Post in Series</a>
+					<span>|</span>
+					<a href="/blog/2026/05/14/new-blog-milestone-2">Next Post in Series →</a>
 				</nav>
 				<p>
 Today, I have completed what I call "milestone 1" of my new blog!
@@ -93,9 +89,9 @@ I've done some research already, and I think I'll use tree-sitter for this.<br /
 But more research and experimentation will need to be done. Later, though.
 </p>
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2026/04/18/new-blog-site">← Previous Post</a> | <a href="/blog/2026/05/14/new-blog-milestone-2">Next Post →</a>
-</p>
+					<a href="/blog/2026/04/18/new-blog-site">← Previous Post in Series</a>
+					<span>|</span>
+					<a href="/blog/2026/05/14/new-blog-milestone-2">Next Post in Series →</a>
 				</nav>
 			</div>
 		</content>
@@ -110,9 +106,7 @@ But more research and experimentation will need to be done. Later, though.
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2026/04/18/new-blog-site">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2026/05/05/new-blog-milestone-1">Next Post →</a>
-</p>
+					<a href="/blog/2026/05/05/new-blog-milestone-1">Next Post in Series →</a>
 				</nav>
 				<p>
 For a few years now, I've had my blog on Tumblr, and my portfolio on my own TechnicJelle.com site.
@@ -125,9 +119,7 @@ I will be "in-housing" my blog from Tumblr to my own custom site.
 Today, I've been laying the groundworks for this, and I'm looking forward to seeing what you all think! :)
 </p>
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2026/05/05/new-blog-milestone-1">Next Post →</a>
-</p>
+					<a href="/blog/2026/05/05/new-blog-milestone-1">Next Post in Series →</a>
 				</nav>
 			</div>
 		</content>
@@ -142,9 +134,7 @@ Today, I've been laying the groundworks for this, and I'm looking forward to see
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2025/01/18/infrastructure-for-teamwork-aka-version-control">← Previous Post</a>
-</p>
+					<a href="/blog/2025/01/18/infrastructure-for-teamwork-aka-version-control">← Previous Post in Series</a>
 				</nav>
 				<p>
 We all know the feeling of pure and utter stress when, ten minutes before the deadline,
@@ -306,9 +296,7 @@ because none of this is code that is inside our project folder.
 I requested that they inherit the server computer, but I'm not confident that they will accept it.
 </p>
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2025/01/18/infrastructure-for-teamwork-aka-version-control">← Previous Post</a>
-</p>
+					<a href="/blog/2025/01/18/infrastructure-for-teamwork-aka-version-control">← Previous Post in Series</a>
 				</nav>
 			</div>
 		</content>
@@ -323,9 +311,7 @@ I requested that they inherit the server computer, but I'm not confident that th
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2025/01/18/infrastructure-for-teamwork-aka-version-control">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds">Next Post →</a>
-</p>
+					<a href="/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds">Next Post in Series →</a>
 				</nav>
 				<p>
 Working together on a game is quite difficult.<br />
@@ -419,9 +405,7 @@ which have been very helpful during the setup.<br />
 It's very useful to be able to follow along every single click.
 </p>
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds">Next Post →</a>
-</p>
+					<a href="/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds">Next Post in Series →</a>
 				</nav>
 			</div>
 		</content>
@@ -561,9 +545,7 @@ as the museum really wants the experience to be as purely realistic as possible.
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2023/01/28/planes-tower-defence-003-the-rest">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">← Previous Post</a>
-</p>
+					<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">← Previous Post in Series</a>
 				</nav>
 				<p>
 <em>(This post was written years later, because I found some more early footage)</em>
@@ -643,9 +625,7 @@ There is one level with a few waves, two enemy types, four tower types, player H
 Source code available <a href="https://github.com/TechnicJelle/PlanesTowerDefence">here</a>
 </p>
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">← Previous Post</a>
-</p>
+					<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">← Previous Post in Series</a>
 				</nav>
 			</div>
 		</content>
@@ -660,9 +640,9 @@ Source code available <a href="https://github.com/TechnicJelle/PlanesTowerDefenc
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2023/01/19/planes-tower-defence-002-pathfinding">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2023/01/14/planes-tower-defence-001-level">← Previous Post</a> | <a href="/blog/2023/01/28/planes-tower-defence-003-the-rest">Next Post →</a>
-</p>
+					<a href="/blog/2023/01/14/planes-tower-defence-001-level">← Previous Post in Series</a>
+					<span>|</span>
+					<a href="/blog/2023/01/28/planes-tower-defence-003-the-rest">Next Post in Series →</a>
 				</nav>
 				<p>
 <img src="https://technicjelle.com/blog/2023/01/19/planes-tower-defence-002-pathfinding/path-links.png" alt="" />
@@ -828,9 +808,9 @@ As a bonus, here's a video I recorded during this process, when the node linking
 <video src="https://technicjelle.com/blog/2023/01/19/planes-tower-defence-002-pathfinding/Peek 2022-12-23 11-09.mp4" controls="" loop="" muted="" playsinline=""></video>
 </p>
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2023/01/14/planes-tower-defence-001-level">← Previous Post</a> | <a href="/blog/2023/01/28/planes-tower-defence-003-the-rest">Next Post →</a>
-</p>
+					<a href="/blog/2023/01/14/planes-tower-defence-001-level">← Previous Post in Series</a>
+					<span>|</span>
+					<a href="/blog/2023/01/28/planes-tower-defence-003-the-rest">Next Post in Series →</a>
 				</nav>
 			</div>
 		</content>
@@ -845,9 +825,7 @@ As a bonus, here's a video I recorded during this process, when the node linking
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2023/01/14/planes-tower-defence-001-level">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">Next Post →</a>
-</p>
+					<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">Next Post in Series →</a>
 				</nav>
 				<p>
 Over the last couple of weeks, I've been working on making a little tower defence game in Unity.
@@ -908,9 +886,7 @@ Next post will be about the "pathfinding" I did.
 <strong>Source code available <a href="https://github.com/TechnicJelle/PlanesTowerDefence">here</a></strong>
 </p>
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">Next Post →</a>
-</p>
+					<a href="/blog/2023/01/19/planes-tower-defence-002-pathfinding">Next Post in Series →</a>
 				</nav>
 			</div>
 		</content>
@@ -1153,9 +1129,7 @@ So that's it!
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">← Previous Post</a>
-</p>
+					<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">← Previous Post in Series</a>
 				</nav>
 				<iframe src="https://www.youtube-nocookie.com/embed/aCmfekB2mho" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
 				<p>
@@ -1233,9 +1207,7 @@ Perhaps I'll write about those too! :D
 <strong>Download the game <a href="https://github.com/TechnicJelle/SpaceCombat3DX#readme">here</a>!</strong>
 </p>
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">← Previous Post</a>
-</p>
+					<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">← Previous Post in Series</a>
 				</nav>
 			</div>
 		</content>
@@ -1250,9 +1222,9 @@ Perhaps I'll write about those too! :D
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/07/10/space-combat-3dx-002-enemies">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2022/06/30/space-compat-3dx-001-spaceflight">← Previous Post</a> | <a href="/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">Next Post →</a>
-</p>
+					<a href="/blog/2022/06/30/space-compat-3dx-001-spaceflight">← Previous Post in Series</a>
+					<span>|</span>
+					<a href="/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">Next Post in Series →</a>
 				</nav>
 				<iframe src="https://www.youtube-nocookie.com/embed/61txGXSI4q8" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
 				<p>
@@ -1380,9 +1352,9 @@ By the way, this is what happens if you turn up the amount of rays and the dista
 <img src="https://technicjelle.com/blog/2022/07/10/space-combat-3dx-002-enemies/Image3.png" alt="" />
 </p>
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2022/06/30/space-compat-3dx-001-spaceflight">← Previous Post</a> | <a href="/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">Next Post →</a>
-</p>
+					<a href="/blog/2022/06/30/space-compat-3dx-001-spaceflight">← Previous Post in Series</a>
+					<span>|</span>
+					<a href="/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">Next Post in Series →</a>
 				</nav>
 			</div>
 		</content>
@@ -1436,9 +1408,7 @@ I posted it on ArtStation, too, so give me a like and a follow over there if you
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/06/30/space-compat-3dx-001-spaceflight">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">Next Post →</a>
-</p>
+					<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">Next Post in Series →</a>
 				</nav>
 				<p>
 <em>(This post was written years later, because I found some more early footage)</em>
@@ -1456,9 +1426,7 @@ The space environment has been created with Blender, and rendered out using the 
 And you can see the source code of this version <a href="https://github.com/TechnicJelle/SpaceCombat3DX/tree/v0.0.1">here</a>
 </p>
 				<nav style="text-align: center;">
-					<p>
-<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">Next Post →</a>
-</p>
+					<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">Next Post in Series →</a>
 				</nav>
 			</div>
 		</content>
