@@ -5,7 +5,7 @@
 	<link href="https://technicjelle.com/blog/feed.xml" rel="self" />
 	<link href="https://technicjelle.com/blog" rel="alternate" />
 	<link href="https://technicjelle.com" rel="related" />
-	<updated>2026-05-14T02:47:08.866Z</updated>
+	<updated>2026-05-14T03:22:06.024Z</updated>
 	<author>
 		<name>TechnicJelle</name>
 	</author>
@@ -16,6 +16,7 @@
 		<id>urn:uuid:019e243b-27ec-79bb-b1f2-0237d125cae3</id>
 		<published>2026-05-14T00:00:00.000Z</published>
 		<updated>2026-05-14T00:00:00.000Z</updated>
+		<summary>Today, I have completed milestone 2 of my new blog! Now, each blogpost has tags, which can be clicked to...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2026/05/14/new-blog-milestone-2">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
@@ -63,6 +64,7 @@ syntax highlighting for codeblocks.<br />
 		<id>urn:uuid:019dfa0a-608e-78b6-a505-72db8b7f652a</id>
 		<published>2026-05-05T00:00:00.000Z</published>
 		<updated>2026-05-05T00:00:00.000Z</updated>
+		<summary>Today, I have completed what I call "milestone 1" of my new blog! I have the basic infrastructure for my...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2026/05/05/new-blog-milestone-1">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
@@ -104,6 +106,7 @@ But more research and experimentation will need to be done. Later, though.
 		<id>urn:uuid:019dc1ff-801e-757d-8c69-1ef41d0b25a3</id>
 		<published>2026-04-18T00:00:00.000Z</published>
 		<updated>2026-04-18T00:00:00.000Z</updated>
+		<summary>For a few years now, I've had my blog on Tumblr, and my portfolio on my own TechnicJelle.com site. Today...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2026/04/18/new-blog-site">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
@@ -135,6 +138,7 @@ Today, I've been laying the groundworks for this, and I'm looking forward to see
 		<id>urn:uuid:019dc1ff-801e-7b3f-a8df-9692e3317030</id>
 		<published>2025-01-19T00:00:00.000Z</published>
 		<updated>2025-01-19T00:00:00.000Z</updated>
+		<summary>We all know the feeling of pure and utter stress when, ten minutes before the deadline, you finally click the...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2025/01/19/infrastructure-for-disaster-control-aka-automatic-builds">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
@@ -315,6 +319,7 @@ I requested that they inherit the server computer, but I'm not confident that th
 		<id>urn:uuid:019dc1ff-801e-713c-b344-19289f5adb28</id>
 		<published>2025-01-18T00:00:00.000Z</published>
 		<updated>2025-01-18T00:00:00.000Z</updated>
+		<summary>Working together on a game is quite difficult. How do you make sure everyone is on the same page?...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2025/01/18/infrastructure-for-teamwork-aka-version-control">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
@@ -427,6 +432,7 @@ It's very useful to be able to follow along every single click.
 		<id>urn:uuid:019dc1ff-801e-7675-b43c-a8302dd585b2</id>
 		<published>2024-12-17T00:00:00.000Z</published>
 		<updated>2024-12-17T00:00:00.000Z</updated>
+		<summary>These are a few excerpts from a recording of the first time I managed to get the experience running on...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2024/12/17/weaving-factory-screenshots">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<p>
@@ -455,6 +461,7 @@ Still one of the wildest tech-stacks I've ever used, haha)</em>
 		<id>urn:uuid:019dc1ff-801e-795c-8190-b73dba486e4f</id>
 		<published>2024-11-08T00:00:00.000Z</published>
 		<updated>2024-11-08T00:00:00.000Z</updated>
+		<summary>For my study, I am currently working with a team of other students on a VR experience for a local...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2024/11/08/controller-less-vr-teleportation">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<p>
@@ -550,6 +557,7 @@ as the museum really wants the experience to be as purely realistic as possible.
 		<id>urn:uuid:019df518-b25f-79fd-8a07-11a427e969bf</id>
 		<published>2023-01-28T00:00:00.000Z</published>
 		<updated>2023-01-28T00:00:00.000Z</updated>
+		<summary>(This post was written years later, because I found some more early footage) The following video was recorded right...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2023/01/28/planes-tower-defence-003-the-rest">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
@@ -648,6 +656,7 @@ Source code available <a href="https://github.com/TechnicJelle/PlanesTowerDefenc
 		<id>urn:uuid:019dc1ff-801e-735d-a3ab-ac4424599656</id>
 		<published>2023-01-19T00:00:00.000Z</published>
 		<updated>2023-01-19T00:00:00.000Z</updated>
+		<summary>In the last post, I wrote about the creation of the level, so now in this one, I'll...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2023/01/19/planes-tower-defence-002-pathfinding">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
@@ -832,6 +841,7 @@ As a bonus, here's a video I recorded during this process, when the node linking
 		<id>urn:uuid:019dc1ff-801e-717d-befd-d6c76e0520df</id>
 		<published>2023-01-14T00:00:00.000Z</published>
 		<updated>2023-01-14T00:00:00.000Z</updated>
+		<summary>Over the last couple of weeks, I've been working on making a little tower defence game in Unity. Now that...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2023/01/14/planes-tower-defence-001-level">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
@@ -911,6 +921,7 @@ Next post will be about the "pathfinding" I did.
 		<id>urn:uuid:019dc1ff-801e-7900-b5a7-e40f25e2a45a</id>
 		<published>2022-10-11T00:00:00.000Z</published>
 		<updated>2022-10-11T00:00:00.000Z</updated>
+		<summary>Today I spent the evening (~6 hours) writing a custom Android app to connect my Arduino to with a custom...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/10/11/custom-android-to-arduino-communication">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<p>
@@ -940,6 +951,7 @@ so hardly any of this is actually my own code.
 		<id>urn:uuid:019dc1ff-801e-7748-8718-3f2e2a0b15ec</id>
 		<published>2022-10-10T00:00:00.000Z</published>
 		<updated>2022-10-10T00:00:00.000Z</updated>
+		<summary>I made some particles that spin around in a fun way! :D The main node network...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/10/10/october-geonodes">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<h2 id="whizzy-points-along-curve">Whizzy Points Along Curve</h2>
@@ -995,6 +1007,7 @@ This one was made before October, but 🤫
 		<id>urn:uuid:019dc1ff-801e-7eab-a7f5-003f24ea24f6</id>
 		<published>2022-09-01T00:00:00.000Z</published>
 		<updated>2022-09-01T00:00:00.000Z</updated>
+		<summary>Over the last couple of days, I've made a simple, little fireworks display: It was supposed to be...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/09/01/pixelgameengine-fireworks-display">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<p>
@@ -1136,6 +1149,7 @@ So that's it!
 		<id>urn:uuid:019dc1ff-801e-74dc-9432-d4595cbff6c3</id>
 		<published>2022-07-13T00:00:00.000Z</published>
 		<updated>2022-07-13T00:00:00.000Z</updated>
+		<summary>Since the last post, I've been hard at work adding more and more features! Mainly the second level and...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
@@ -1232,6 +1246,7 @@ Perhaps I'll write about those too! :D
 		<id>urn:uuid:019dc1ff-801e-7d68-bf34-8f48cb7679a6</id>
 		<published>2022-07-10T00:00:00.000Z</published>
 		<updated>2022-07-10T00:00:00.000Z</updated>
+		<summary>Today, I felt motivated to make the movement AI for the enemies in my in-development Space Shooter game in...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/07/10/space-combat-3dx-002-enemies">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
@@ -1378,6 +1393,7 @@ By the way, this is what happens if you turn up the amount of rays and the dista
 		<id>urn:uuid:019dc1ff-801c-7c3c-a452-ac0b4c785f97</id>
 		<published>2022-07-01T00:00:00.000Z</published>
 		<updated>2022-07-01T00:00:00.000Z</updated>
+		<summary>I made a Pacman! Blender YouTuber Default Cube uploaded a video tutorial on how to make a Pacman with...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/07/01/pacman">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<p>
@@ -1416,6 +1432,7 @@ I posted it on ArtStation, too, so give me a like and a follow over there if you
 		<id>urn:uuid:019de611-44c9-7c94-8b03-7cb50baf4db7</id>
 		<published>2022-06-30T00:00:00.000Z</published>
 		<updated>2022-06-30T00:00:00.000Z</updated>
+		<summary>(This post was written years later, because I found some more early footage) The space environment has been...</summary>
 		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2022/06/30/space-compat-3dx-001-spaceflight">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
