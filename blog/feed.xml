@@ -5,13 +5,60 @@
 	<link href="https://technicjelle.com/blog/feed.xml" rel="self" />
 	<link href="https://technicjelle.com/blog" rel="alternate" />
 	<link href="https://technicjelle.com" rel="related" />
-	<updated>2026-05-14T00:21:23.729Z</updated>
+	<updated>2026-05-14T02:27:33.453Z</updated>
 	<author>
 		<name>TechnicJelle</name>
 	</author>
 	<id>urn:uuid:019dc1b3-1427-7fbf-b058-015b535012e1</id>
 	<entry>
-		<title>New Blog: Milestone 1</title>
+		<title>New Blog: Milestone 2: Tags</title>
+		<link href="https://technicjelle.com/blog/2026/05/14/new-blog-milestone-2" rel="alternate" />
+		<id>urn:uuid:019e243b-27ec-79bb-b1f2-0237d125cae3</id>
+		<published>2026-05-14T00:00:00.000Z</published>
+		<updated>2026-05-14T00:00:00.000Z</updated>
+		<content type="xhtml" xml:lang="en" xml:base="https://technicjelle.com/blog/2026/05/14/new-blog-milestone-2">
+			<div xmlns="http://www.w3.org/1999/xhtml">
+				<nav style="text-align: center;">
+					<p>
+<a href="/blog/2026/05/05/new-blog-milestone-1">← Previous Post</a>
+</p>
+				</nav>
+				<p>
+Today, I have completed milestone 2 of my new blog!
+</p>
+				<p>
+Now, each blogpost has tags, which can be clicked to see other posts with that same tag!
+</p>
+				<p>
+The homepage of my website already had a tagging system for the projects,
+so I was able to take that system, make it a bit more generic, and then use it for the blog tags as well.
+</p>
+				<p>
+I'm not quite ready to publicise the blog fully, just quite yet,
+as I would like to get some more testing in first.
+</p>
+				<p>
+I'll ask my friends to look through (the whole blog section of) my site and provide feedback.
+</p>
+				<p>
+Hopefully, there'll be some good stuff in there, so I can make my website even better! :)
+</p>
+				<hr />
+				<p>
+Once I've implemented all that feedback, I will continue onto milestone 3:
+syntax highlighting for codeblocks.<br />
+(I mentioned my plans for that in the previous post in this series)
+</p>
+				<nav style="text-align: center;">
+					<p>
+<a href="/blog/2026/05/05/new-blog-milestone-1">← Previous Post</a>
+</p>
+				</nav>
+			</div>
+		</content>
+	</entry>
+	<entry>
+		<title>New Blog: Milestone 1: Basic Infrastructure</title>
 		<link href="https://technicjelle.com/blog/2026/05/05/new-blog-milestone-1" rel="alternate" />
 		<id>urn:uuid:019dfa0a-608e-78b6-a505-72db8b7f652a</id>
 		<published>2026-05-05T00:00:00.000Z</published>
@@ -20,7 +67,7 @@
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				<nav style="text-align: center;">
 					<p>
-<a href="/blog/2026/04/18/new-blog-site">← Previous Post</a>
+<a href="/blog/2026/04/18/new-blog-site">← Previous Post</a> | <a href="/blog/2026/05/14/new-blog-milestone-2">Next Post →</a>
 </p>
 				</nav>
 				<p>
@@ -45,7 +92,7 @@ But more research and experimentation will need to be done. Later, though.
 </p>
 				<nav style="text-align: center;">
 					<p>
-<a href="/blog/2026/04/18/new-blog-site">← Previous Post</a>
+<a href="/blog/2026/04/18/new-blog-site">← Previous Post</a> | <a href="/blog/2026/05/14/new-blog-milestone-2">Next Post →</a>
 </p>
 				</nav>
 			</div>
