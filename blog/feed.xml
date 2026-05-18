@@ -5,7 +5,7 @@
 	<link href="https://technicjelle.com/blog/feed.xml" rel="self" />
 	<link href="https://technicjelle.com/blog" rel="alternate" />
 	<link href="https://technicjelle.com" rel="related" />
-	<updated>2026-05-18T23:37:33.751Z</updated>
+	<updated>2026-05-18T23:42:52.507Z</updated>
 	<author>
 		<name>TechnicJelle</name>
 	</author>
@@ -351,7 +351,7 @@ Though that might also have been due to the fact that they barely used any of it
 				<p>
 Unreal Engine itself recommends using Perforce Helix Core.<br />
 (Perforce is the company, Helix Core is the VCS, but the term "Perforce" is usually used to refer to the VCS itself,
-due to historical reasons. <a href="https://www.youtube.com/watch?v=jIQEjDiSe0g">Source</a>)<br />
+due to historical reasons. <a href="https://youtube.com/watch?v=jIQEjDiSe0g">Source</a>)<br />
 So I looked into it, and indeed, it seemed very suitable!
 </p>
 				<p>
@@ -850,7 +850,7 @@ So I found <a href="https://kenney.nl/assets/pixel-shmup">this nice Kenney pack<
 				<p>
 So then I got to work importing this into Unity, to make a nice level with these tiles.
 This is the first time I'm making a 2D game in Unity, so I had to look up how to make tile grids work and found
-<a href="https://www.youtube.com/watch?v=g83_gwEO0kM">this great tutorial</a>.
+<a href="https://youtube.com/watch?v=g83_gwEO0kM">this great tutorial</a>.
 </p>
 				<p>
 I made good use of the auto-tiling feature that Unity provides,
@@ -954,7 +954,7 @@ With the GeoNodes setup, you can easily add more points on the curve and change 
 </p>
 				<p>
 I posted this on ArtStation, too, so give me a like and a follow over there if you want:
-<a href="https://www.artstation.com/artwork/eJn9ew">https://www.artstation.com/artwork/eJn9ew</a>
+<a href="https://artstation.com/artwork/eJn9ew">https://artstation.com/artwork/eJn9ew</a>
 </p>
 				<h2 id="cracks">Cracks</h2>
 				<p>
@@ -1131,7 +1131,7 @@ So that's it!
 				<nav style="text-align: center;">
 					<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">← Previous Post in Series</a>
 				</nav>
-				<iframe src="https://www.youtube-nocookie.com/embed/aCmfekB2mho" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
+				<iframe src="https://youtube-nocookie.com/embed/aCmfekB2mho" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
 				<p>
 Since the last post, I've been hard at work adding more and more features! Mainly the second level and sounds,
 but there's a lot more that went into it all!
@@ -1226,7 +1226,7 @@ Perhaps I'll write about those too! :D
 					<span>|</span>
 					<a href="/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">Next Post in Series →</a>
 				</nav>
-				<iframe src="https://www.youtube-nocookie.com/embed/61txGXSI4q8" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
+				<iframe src="https://youtube-nocookie.com/embed/61txGXSI4q8" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
 				<p>
 Today, I felt motivated to make the movement AI for the enemies in my in-development Space Shooter game in Unity.
 </p>
@@ -1372,7 +1372,7 @@ By the way, this is what happens if you turn up the amount of rays and the dista
 I made a Pacman!
 </p>
 				<p>
-Blender YouTuber Default Cube uploaded <a href="https://www.youtube.com/watch?v=AM_HYYY6VII">a video tutorial</a>
+Blender YouTuber Default Cube uploaded <a href="https://youtube.com/watch?v=AM_HYYY6VII">a video tutorial</a>
 on how to make a Pacman with Blender Geometry Nodes.
 </p>
 				<p>
@@ -1393,7 +1393,7 @@ Here is the final node-tree:
 </p>
 				<p>
 I posted it on ArtStation, too, so give me a like and a follow over there if you want:
-<a href="https://www.artstation.com/artwork/KO9Y1o">https://www.artstation.com/artwork/KO9Y1o</a>
+<a href="https://artstation.com/artwork/KO9Y1o">https://artstation.com/artwork/KO9Y1o</a>
 </p>
 			</div>
 		</content>
@@ -1413,7 +1413,7 @@ I posted it on ArtStation, too, so give me a like and a follow over there if you
 				<p>
 <em>(This post was written years later, because I found some more early footage)</em>
 </p>
-				<iframe src="https://www.youtube-nocookie.com/embed/cKj2shehFGs" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
+				<iframe src="https://youtube-nocookie.com/embed/cKj2shehFGs" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
 				<p>
 The space environment has been created with Blender, and rendered out using the excellent
 <a href="https://blendswap.com/blend/17087">Cube Map Creation Toolkit</a>.
