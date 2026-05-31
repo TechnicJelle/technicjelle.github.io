@@ -5,7 +5,7 @@
 	<link href="https://technicjelle.com/blog/feed.xml" rel="self" />
 	<link href="https://technicjelle.com/blog" rel="alternate" />
 	<link href="https://technicjelle.com" rel="related" />
-	<updated>2026-05-27T01:39:10.232Z</updated>
+	<updated>2026-05-31T23:07:06.800Z</updated>
 	<author>
 		<name>TechnicJelle</name>
 	</author>
@@ -1131,7 +1131,7 @@ So that's it!
 				<nav style="text-align: center;">
 					<a href="/blog/2022/07/10/space-combat-3dx-002-enemies">← Previous Post in Series</a>
 				</nav>
-				<iframe src="https://youtube-nocookie.com/embed/aCmfekB2mho" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
+				<iframe src="https://www.youtube-nocookie.com/embed/aCmfekB2mho" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
 				<p>
 Since the last post, I've been hard at work adding more and more features! Mainly the second level and sounds,
 but there's a lot more that went into it all!
@@ -1226,7 +1226,7 @@ Perhaps I'll write about those too! :D
 					<span>|</span>
 					<a href="/blog/2022/07/13/space-combat-3dx-003-second-level-and-sounds">Next Post in Series →</a>
 				</nav>
-				<iframe src="https://youtube-nocookie.com/embed/61txGXSI4q8" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
+				<iframe src="https://www.youtube-nocookie.com/embed/61txGXSI4q8" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
 				<p>
 Today, I felt motivated to make the movement AI for the enemies in my in-development Space Shooter game in Unity.
 </p>
@@ -1413,7 +1413,7 @@ I posted it on ArtStation, too, so give me a like and a follow over there if you
 				<p>
 <em>(This post was written years later, because I found some more early footage)</em>
 </p>
-				<iframe src="https://youtube-nocookie.com/embed/cKj2shehFGs" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
+				<iframe src="https://www.youtube-nocookie.com/embed/cKj2shehFGs" title="YouTube video player" style="border: 0;" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin"></iframe>
 				<p>
 The space environment has been created with Blender, and rendered out using the excellent
 <a href="https://blendswap.com/blend/17087">Cube Map Creation Toolkit</a>.
